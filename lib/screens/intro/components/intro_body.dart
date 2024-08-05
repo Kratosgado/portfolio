@@ -7,7 +7,7 @@ import 'package:mbeah_online/screens/intro/components/headline_text.dart';
 import 'package:mbeah_online/resources/responsive.dart';
 
 import 'animated_description_text.dart';
-import 'download_button.dart';
+import 'email.button.dart';
 
 class IntroBody extends StatelessWidget {
   const IntroBody({super.key});
@@ -64,7 +64,7 @@ class IntroBody extends StatelessWidget {
               const SizedBox(
                 height: defaultPadding * 2,
               ),
-              const DownloadButton(),
+              const EmailButton(),
             ],
           ),
         ),

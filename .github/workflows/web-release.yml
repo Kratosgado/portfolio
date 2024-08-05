@@ -6,46 +6,35 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: windows-latest
-
+  main:
+    runs-on: web
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Cache Flutter SDK
-        uses: actions/cache@v2
-        with:
-          path: C:\flutter\.pub-cache
-          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-flutter-
-
-      - name: Setup Flutter
+        uses: actions/checkout@v4
+      - name: Setup up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "2.x"
+          channel: stable
+          flutter-version: 3.22.3
+          cache: true
+          # optional parameters follow
+          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache
+          cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
+          pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache of dart pub get dependencies
+          pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
 
-      - name: Install Dependencies
-        run: flutter pub get
+      - run: flutter --version
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web
 
-      - name: Cache Dependency Packages
-        uses: actions/cache@v2
+      - name: Push a directory to another repository
+        uses: datalbry/copy_folder_to_another_repo_action@1.0.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          path: C:\flutter\.pub-cache
-          key: ${{ runner.os }}-pub-${{ hashFiles('**/pubspec.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pub-
-
-      - name: Build Web App
-        run: flutter build web
-
-      - name: Deploy to Kratosgado.github.io
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
-          publish_branch: gh-pages
-          cname: kratosgado.github.io
-          user_name: Kratosgado
-          user_email: mbeahessilfieprince@gmail.com
+          source_folder: "build/web"
+          destination_repo: "Kratosgado/Kratosgado.github.io"
+          user_email: "mbeahessilfieprince@gmail.com"
+          user_name: "Kratosgado"
+          commit_msg: "[GHA] Update portfolio."
