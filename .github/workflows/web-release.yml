@@ -25,25 +25,4 @@ jobs:
 
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter build web
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/web
-          force_orphan: true
-          user_name: 'Kratosgado'
-          user_email: 'mbeahessilfieprince@gmail.com'
-          commit_message: 'Publish to gh-pages'
-
-      # - name: Push a directory to another repository
-      #   uses: datalbry/copy_folder_to_another_repo_action@1.0.1
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     source_folder: "build/web"
-      #     destination_repo: "Kratosgado/Kratosgado.github.io"
-      #     user_email: "mbeahessilfieprince@gmail.com"
-      #     user_name: "Kratosgado"
-      #     commit_msg: "[GHA] Update portfolio."
+      - run: make deploy OUTPUT=Kratosgado.github.io
