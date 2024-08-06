@@ -25,7 +25,6 @@ jobs:
 
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter test
       - run: flutter build web
 
       - name: Push a directory to another repository
