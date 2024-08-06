@@ -1,52 +1,40 @@
 name: Build and Deploy Flutter Web App
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
-    runs-on: "ubuntu-18.04"
+  main:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v2
       - name: Setup up Flutter
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v1
         with:
           channel: stable
           flutter-version: 3.22.3
-          cache: true
-          # optional parameters follow
-          cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache
-          cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
-          pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache of dart pub get dependencies
-          pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
+          # cache: true
+          # # optional parameters follow
+          # cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache
+          # cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
+          # pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache of dart pub get dependencies
+          # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
 
       - run: flutter --version
       - run: flutter pub get
       - run: flutter test
       - run: flutter build web
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Push a directory to another repository
+        uses: datalbry/copy_folder_to_another_repo_action@1.0.1
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN}}
-          publish_dir: ./build/web
-          force_orphan: true
-          user_name: "Kratosgado"
+          source_folder: "build/web"
+          destination_repo: "Kratosgado/Kratosgado.github.io"
           user_email: "mbeahessilfieprince@gmail.com"
-          commit_message: "Publish to gh-pages"
-
-      # - name: Push a directory to another repository
-      #   uses: datalbry/copy_folder_to_another_repo_action@1.0.1
-      #   env:
-      #     API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-      #   with:
-      #     source_folder: "build/web"
-      #     destination_repo: "Kratosgado/Kratosgado.github.io"
-      #     user_email: "mbeahessilfieprince@gmail.com"
-      #     user_name: "Kratosgado"
-      #     commit_msg: "[GHA] Update portfolio."
+          user_name: "Kratosgado"
+          commit_msg: "[GHA] Update portfolio."
