@@ -25,4 +25,6 @@ jobs:
 
       - run: flutter --version
       - run: flutter pub get
+      - run: git config --global user.email "mbeahessilfieprince@gmail.com"
+      - run: git config --global user.name "Kratosgado"
       - run: make deploy OUTPUT=Kratosgado.github.io
