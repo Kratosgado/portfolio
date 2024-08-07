@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/resources/constants.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 
 class MySkills extends StatelessWidget {
   const MySkills({super.key});
@@ -9,16 +10,16 @@ class MySkills extends StatelessWidget {
     return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Skill(title: 'ML/AI', imageUrl: 'icons/dart.png'),
-        Skill(title: 'Flutter', imageUrl: 'icons/flutter.png'),
-        Skill(title: 'Dart', imageUrl: 'icons/dart.png'),
-        Skill(title: 'Firebase', imageUrl: 'icons/firebase.png'),
-        Skill(title: 'NestJs', imageUrl: 'icons/dart.png'),
-        Skill(title: 'Prisma', imageUrl: 'icons/dart.png'),
-        Skill(title: 'TypeOrm', imageUrl: 'icons/dart.png'),
-        Skill(title: 'Sqlite', imageUrl: 'icons/dart.png'),
-        Skill(title: 'Responsive Design', imageUrl: 'icons/flutter.png'),
-        Skill(title: 'Clean Architecture', imageUrl: 'icons/flutter.png'),
+        Skill(title: 'ML/AI', imageUrl: NetworkImages.dart),
+        Skill(title: 'Flutter', imageUrl: NetworkImages.flutter),
+        Skill(title: 'Dart', imageUrl: NetworkImages.dart),
+        Skill(title: 'Firebase', imageUrl: NetworkImages.firebase),
+        Skill(title: 'NestJs', imageUrl: NetworkImages.dart),
+        Skill(title: 'Prisma', imageUrl: NetworkImages.dart),
+        Skill(title: 'TypeOrm', imageUrl: NetworkImages.dart),
+        Skill(title: 'Sqlite', imageUrl: NetworkImages.dart),
+        Skill(title: 'Responsive Design', imageUrl: NetworkImages.flutter),
+        Skill(title: 'Clean Architecture', imageUrl: NetworkImages.flutter),
       ],
     );
   }
@@ -40,7 +41,7 @@ class Skill extends StatelessWidget {
           children: [
             Row(
               children: [
-                Image.asset(
+                Image.network(
                   imageUrl!,
                   height: 15,
                   width: 15,

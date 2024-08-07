@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'social_media_icon.dart';
@@ -11,22 +12,23 @@ class SocialMediaIconColumn extends StatelessWidget {
     return Column(
       children: [
         SocialMediaIcon(
-          icon: 'icons/linkedin.svg',
+          icon: NetworkImages.linkedin,
           onTap: () => launchUrl(
-            Uri.parse('https://www.linkedin.com/in/prince-mbeah-essilfie-6bb0b5231'),
+            
+            Uri.parse('https://www.linkedin.com/in/kratosgado'),
           ),
         ),
         SocialMediaIcon(
-          icon: 'icons/github.svg',
+          icon: NetworkImages.github,
           onTap: () => launchUrl(
             Uri.parse('https://github.com/Kratosgado'),
           ),
         ),
         const SocialMediaIcon(
-          icon: 'icons/dribble.svg',
+          icon: NetworkImages.dribble,
         ),
-        const SocialMediaIcon(icon: 'icons/twitter.svg'),
-        const SocialMediaIcon(icon: 'icons/linkedin.svg'),
+        const SocialMediaIcon(icon: NetworkImages.twitter),
+        const SocialMediaIcon(icon: NetworkImages.linkedin),
       ],
     );
   }

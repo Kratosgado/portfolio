@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/resources/constants.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 import 'package:mbeah_online/resources/responsive.dart';
 
 class AnimatedImageContainer extends StatefulWidget {
@@ -65,8 +66,8 @@ class _AnimatedImageContainerState extends State<AnimatedImageContainer>
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: Image.asset(
-                'images/image.png',
+              child: Image.network(
+                NetworkImages.logo,
                 height: Responsive.isLargeMobile(context)
                     ? MediaQuery.sizeOf(context).width * 0.2
                     : Responsive.isTablet(context)

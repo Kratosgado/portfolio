@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/resources/constants.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 import 'package:mbeah_online/screens/intro/components/side_menu_button.dart';
 import 'package:mbeah_online/resources/responsive.dart';
 
@@ -19,7 +20,7 @@ class TopNavigationBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(defaultPadding),
             child:
-                !Responsive.isLargeMobile(context) ? Image.asset('images/triange_icon.png') : MenuButton(onTap:()=> Scaffold.of(context).openDrawer(),)
+                !Responsive.isLargeMobile(context) ? Image.network(NetworkImages.triagle) : MenuButton(onTap:()=> Scaffold.of(context).openDrawer(),)
                 ,
           ),
           const Spacer(

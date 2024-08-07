@@ -7,6 +7,15 @@ List<Project> projectList = [
           "A pseudo code interpreter written in rust that interprets pseudocode file passed to it as cli argument. Handles basic operations like variable declaration, assignment, arithmetic operations, conditional statements, loops, functions, and more.",
       link: "https://github.com/Kratosgado/pseudo_interpreter"),
   Project(
+      name: "Smart Traffic Light System",
+      description: "IoT project created with Arduino(C++) and Android(Java).",
+      link: "https://github.com/Kratosgado/traffic_system"),
+  Project(
+      name: "Traffic Control App",
+      description:
+          "Android(Java) application that communicates with Arduino traffic light via bluetooth.",
+      link: "https://github.com/Kratosgado/TrafficControlApp"),
+  Project(
       name: "Pseudo Runner",
       description:
           "A vscode extension that runs pseudo code files in the editor. It is built with Typescript and uses the vscode extension API to interact with the editor. It builds on the pseudo code interpreter project.",

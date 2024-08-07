@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 
 import '../../../resources/constants.dart';
 
@@ -38,7 +39,7 @@ class KnowledgeText extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: defaultPadding/2),
       child: Row(
         children: [
-          SvgPicture.asset('icons/check.svg'),
+          SvgPicture.network(NetworkImages.check),
           const SizedBox(width: defaultPadding/2,),
           Text(knowledge),
         ],

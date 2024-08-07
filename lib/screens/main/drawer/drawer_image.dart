@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mbeah_online/resources/constants.dart';
+import 'package:mbeah_online/resources/network.images.dart';
 
 class DrawerImage extends StatelessWidget {
   const DrawerImage({super.key});
@@ -26,8 +27,8 @@ class DrawerImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         child: Transform.rotate(
           angle: 0.1,
-          child: Image.asset(
-            'images/profile.png',
+          child: Image.network(
+            NetworkImages.profile,
             fit: BoxFit.cover,
           ),
         ),
