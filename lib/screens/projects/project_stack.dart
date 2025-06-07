@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mbeah_online/screens/projects/project.list.dart';
+import 'package:kratosgado/screens/projects/project.list.dart';
 
 import '../../resources/constants.dart';
 import '../../resources/getx_controllers/projects_controller.dart';

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mbeah_online/screens/certifications/certification.list.dart';
+import 'package:kratosgado/screens/certifications/certification.list.dart';
 
 class CertificationController extends GetxController {
   RxList<bool> hovers = List.generate(certificateList.length, (_) => false).obs;

@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/home/home.dart';
-import 'package:mbeah_online/screens/intro/components/animated_texts.dart';
-import 'package:mbeah_online/screens/splash/loading_text.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/home/home.dart';
+import 'package:kratosgado/screens/intro/components/animated_texts.dart';
+import 'package:kratosgado/screens/splash/loading_text.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});

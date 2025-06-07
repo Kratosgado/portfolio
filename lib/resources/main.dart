@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/splash/splash_view.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/splash/splash_view.dart';
 
 
 void main() {

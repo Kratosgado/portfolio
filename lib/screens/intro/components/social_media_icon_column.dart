@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/network.images.dart';
+import 'package:kratosgado/resources/network.images.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'social_media_icon.dart';

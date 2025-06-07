@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mbeah_online/resources/network.images.dart';
+import 'package:kratosgado/resources/network.images.dart';
 
 import '../../../resources/constants.dart';
 

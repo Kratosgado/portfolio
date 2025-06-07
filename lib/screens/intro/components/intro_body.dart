@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/intro/components/animated_texts.dart';
-import 'package:mbeah_online/screens/intro/components/combine_subtitle.dart';
-import 'package:mbeah_online/screens/intro/components/headline_text.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/intro/components/animated_texts.dart';
+import 'package:kratosgado/screens/intro/components/combine_subtitle.dart';
+import 'package:kratosgado/screens/intro/components/headline_text.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 import 'animated_description_text.dart';
 import 'email.button.dart';

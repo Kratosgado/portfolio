@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/screens/intro/components/animated_subtitle_text.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/screens/intro/components/animated_subtitle_text.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 class CombineSubtitleText extends StatelessWidget {
   const CombineSubtitleText({super.key});

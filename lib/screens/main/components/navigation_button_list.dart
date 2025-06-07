@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/controller.dart';
-import 'package:mbeah_online/screens/main/components/navigation_button.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/controller.dart';
+import 'package:kratosgado/screens/main/components/navigation_button.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 class NavigationButtonList extends StatelessWidget {
   const NavigationButtonList({super.key});

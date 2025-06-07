@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/resources/getx_controllers/certification_controller.dart';
-import 'package:mbeah_online/screens/certifications/certification.list.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/getx_controllers/certification_controller.dart';
+import 'package:kratosgado/screens/certifications/certification.list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CertificateDetails extends StatelessWidget {

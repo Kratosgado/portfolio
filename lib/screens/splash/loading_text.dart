@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
+import 'package:kratosgado/resources/constants.dart';
 
 class LoadingText extends StatelessWidget {
   const LoadingText({super.key});

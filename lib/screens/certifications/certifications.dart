@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/certifications/components/certification_grid.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/certifications/components/certification_grid.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 import '../../resources/getx_controllers/certification_controller.dart';
 

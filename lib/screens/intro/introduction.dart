@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/screens/intro/components/intro_body.dart';
-import 'package:mbeah_online/screens/intro/components/side_menu_button.dart';
-import 'package:mbeah_online/screens/intro/components/social_media_list.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/screens/intro/components/intro_body.dart';
+import 'package:kratosgado/screens/intro/components/side_menu_button.dart';
+import 'package:kratosgado/screens/intro/components/social_media_list.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 class Introduction extends StatelessWidget {
   const Introduction({super.key});

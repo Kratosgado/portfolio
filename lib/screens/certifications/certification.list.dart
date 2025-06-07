@@ -1,5 +1,5 @@
 
-import 'package:mbeah_online/data/models/certificate_model.dart';
+import 'package:kratosgado/data/models/certificate_model.dart';
 
 List<CertificateModel> certificateList = [
   CertificateModel(

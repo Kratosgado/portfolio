@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 class AnimatedDescriptionText extends StatelessWidget {
   final double start;

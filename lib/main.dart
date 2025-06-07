@@ -1,9 +1,7 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/splash/splash_view.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/splash/splash_view.dart';
 
 
 void main() {
@@ -16,7 +14,7 @@ class MyPortfolio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'My Portfolio',
+      title: 'Kratosgado',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

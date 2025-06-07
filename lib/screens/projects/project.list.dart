@@ -1,4 +1,4 @@
-import 'package:mbeah_online/data/models/project_model.dart';
+import 'package:kratosgado/data/models/project_model.dart';
 
 List<Project> projectList = [
   Project(

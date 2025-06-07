@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/resources/network.images.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/network.images.dart';
 
 class DrawerImage extends StatelessWidget {
   const DrawerImage({super.key});

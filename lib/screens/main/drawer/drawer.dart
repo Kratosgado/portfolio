@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/main/drawer/contact_icons.dart';
-import 'package:mbeah_online/screens/main/drawer/knowledge.dart';
-import 'package:mbeah_online/screens/main/drawer/my_skills.dart';
-import 'package:mbeah_online/screens/main/drawer/personal_info.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/main/drawer/contact_icons.dart';
+import 'package:kratosgado/screens/main/drawer/knowledge.dart';
+import 'package:kratosgado/screens/main/drawer/my_skills.dart';
+import 'package:kratosgado/screens/main/drawer/personal_info.dart';
 
 import 'about.dart';
 

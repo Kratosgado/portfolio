@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/resources/network.images.dart';
-import 'package:mbeah_online/screens/intro/components/side_menu_button.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/network.images.dart';
+import 'package:kratosgado/screens/intro/components/side_menu_button.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 import 'connect_button.dart';
 import 'navigation_button_list.dart';

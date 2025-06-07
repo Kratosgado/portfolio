@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mbeah_online/resources/constants.dart';
+import 'package:kratosgado/resources/constants.dart';
 
 class SocialMediaIcon extends StatelessWidget {
   final String icon;

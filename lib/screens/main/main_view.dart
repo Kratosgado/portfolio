@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/main/components/navigation_button_list.dart';
-import 'package:mbeah_online/resources/controller.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/main/components/navigation_button_list.dart';
+import 'package:kratosgado/resources/controller.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 import 'components/top_navigation_bar.dart';
 import 'drawer/drawer.dart';

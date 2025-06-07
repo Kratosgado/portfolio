@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/main/drawer/header_info.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/main/drawer/header_info.dart';
 
 class PersonalInfo extends StatelessWidget {
   const PersonalInfo({super.key});

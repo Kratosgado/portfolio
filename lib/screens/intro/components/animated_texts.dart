@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/resources/network.images.dart';
-import 'package:mbeah_online/resources/responsive.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/network.images.dart';
+import 'package:kratosgado/resources/responsive.dart';
 
 class AnimatedImageContainer extends StatefulWidget {
   final double? width;

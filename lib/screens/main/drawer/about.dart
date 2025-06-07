@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mbeah_online/resources/constants.dart';
-import 'package:mbeah_online/screens/main/drawer/drawer_image.dart';
+import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/screens/main/drawer/drawer_image.dart';
 
 class About extends StatelessWidget {
   const About({super.key});
