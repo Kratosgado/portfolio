@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:kratosgado/resources/controller.dart';
+import 'package:kratosgado/resources/profile.dart';
 import 'package:kratosgado/screens/main/components/navigation_button.dart';
 import 'package:kratosgado/resources/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavigationButtonList extends StatelessWidget {
   const NavigationButtonList({super.key});
@@ -21,8 +23,8 @@ class NavigationButtonList extends StatelessWidget {
           ),
           if (!Responsive.isLargeMobile(context))
             NavigationButton(
-              onTap: () {},
-              text: 'About me',
+              onTap: () => launchUrl(Uri.parse(Profile.blog)),
+              text: 'Blog',
             ),
           NavigationButton(
               onTap: () {

@@ -2,14 +2,14 @@ class Assets {
   static const base = "assets/images";
 	static const iconbase = "assets/icons";
 
-	static const profile = "$base/profile.png";
-	static const logo = "$base/image.png";
-	static const favicon = "$base/favicon.png";
+	static const profile = "$base/profile.webp";
+	static const logo = "$base/image.webp";
+	static const favicon = "$base/favicon.webp";
 
 
-  static const firebase = "$iconbase/firebase.png";
-  static const flutter = "$iconbase/flutter.png";
-  static const dart = "$iconbase/dart.png";
+  static const firebase = "$iconbase/firebase.webp";
+  static const flutter = "$iconbase/flutter.webp";
+  static const dart = "$iconbase/dart.webp";
 
   static const check = "$iconbase/check.svg";
   static const dribble = "$iconbase/dribble.svg";
