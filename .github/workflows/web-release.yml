@@ -21,13 +21,13 @@ jobs:
       # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
       - run: flutter --version
       - run: flutter pub get
-      - run: git config --global user.email "mbeahessilfieprince@gmail.com"
-      - run: git config --global user.name "Kratosgado"
+      # - run: git config --global user.email "mbeahessilfieprince@gmail.com"
+      # - run: git config --global user.name "Kratosgado"
       - run: flutter build web --release
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.deploy_key }}
           publish_dir: ./build/web
           destination_dir: ./ # For deploying to root of Kratosgado.github.io
           external_repository: Kratosgado/Kratosgado.github.io
