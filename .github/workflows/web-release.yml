@@ -24,6 +24,6 @@ jobs:
       - run: git config --global user.email "mbeahessilfieprince@gmail.com"
       - run: git config --global user.name "Kratosgado"
       - run: flutter build web --release
-      - run: cd build && git clone https://github.com/Kratosgado/Kratosgado.github.io.git && cd Kratosgado.github.io && cp -rf ../build/web/* .
+      - run: cd build && git clone https://github.com/Kratosgado/Kratosgado.github.io.git && cd Kratosgado.github.io && cp -rf ../web/* .
       - run: git add . && git commit -m "Deploy Version $(git rev-parse --short HEAD)" && git push -u -f origin main
     # - run: make deploy OUTPUT=Kratosgado.github.io
