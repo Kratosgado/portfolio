@@ -17,7 +17,7 @@ class ProjectLinks extends StatelessWidget {
                 style: TextStyle(color: Colors.white), overflow: TextOverflow.ellipsis),
             IconButton(
                 onPressed: () {
-                  launchUrl(Uri.parse(projectList[index].link));
+                  launchUrl(Uri.parse(projectList[index].github));
                 },
                 icon: SvgPicture.asset('icons/github.svg')),
           ],
@@ -25,7 +25,7 @@ class ProjectLinks extends StatelessWidget {
         const Spacer(),
         TextButton(
             onPressed: () {
-              launchUrl(Uri.parse(projectList[index].link));
+              launchUrl(Uri.parse(projectList[index].github));
             },
             child: const Text(
               'Read More>>',

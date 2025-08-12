@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kratosgado/resources/asset.images.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:kratosgado/resources/network.images.dart';
 import 'package:kratosgado/screens/intro/components/side_menu_button.dart';
 import 'package:kratosgado/resources/responsive.dart';
 
@@ -20,8 +20,7 @@ class TopNavigationBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(defaultPadding),
             child:
-                !Responsive.isLargeMobile(context) ? Image.network(NetworkImages.triagle) : MenuButton(onTap:()=> Scaffold.of(context).openDrawer(),)
-                ,
+                !Responsive.isLargeMobile(context) ? const CircleAvatar(backgroundImage:  AssetImage(AssetImages.favicon,)) : const SizedBox(),
           ),
           const Spacer(
             flex: 2

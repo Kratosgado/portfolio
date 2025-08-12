@@ -2,7 +2,6 @@ class NetworkImages {
   static const base = "https://raw.githubusercontent.com/Kratosgado/portfolio/main/assets";
 
   static const profile = "$base/images/profile.png";
-  static const triagle = "$base/images/triange_icon.png";
   static const logo = "$base/images/image.png";
 
   static const firebase = "$base/icons/firebase.png";
