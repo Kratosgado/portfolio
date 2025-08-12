@@ -26,6 +26,7 @@ class NavigationButtonList extends StatelessWidget {
               onTap: () => launchUrl(Uri.parse(Profile.blog)),
               text: 'Blog',
             ),
+					NavigationButton(onTap: (){}, text: 'Bio'),
           NavigationButton(
               onTap: () {
                 pageController.animateToPage(1,

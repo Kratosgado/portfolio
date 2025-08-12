@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class ConnectButton extends StatelessWidget {
-  const ConnectButton({super.key});
+class CustomButton extends StatelessWidget {
+	final VoidCallback? onTap;
+	final String text;
+	final IconData icon;
+	const CustomButton({super.key, required this.onTap, required this.text, required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: defaultPadding),
       child: InkWell(
-        onTap: () {
-          launchUrl(Uri.parse('https://wa.me/233599239271'));
-        },
+				onTap: onTap,
         borderRadius: BorderRadius.circular(defaultPadding + 10),
         child: Container(
-          height: 60,
-          width: 150,
+					padding: const EdgeInsets.symmetric(vertical: defaultPadding/1.5 , horizontal: defaultPadding * 2),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(defaultPadding),
               gradient: LinearGradient(colors: [Colors.pink, Colors.blue.shade900]),
@@ -30,14 +28,14 @@ class ConnectButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(
-                FontAwesomeIcons.whatsapp,
+               Icon(
+                icon,
                 color: Colors.greenAccent,
                 size: 15,
               ),
               const SizedBox(width: defaultPadding / 4),
               Text(
-                'Whatsapp',
+                text,
                 style: Theme.of(context)
                     .textTheme
                     .labelSmall!

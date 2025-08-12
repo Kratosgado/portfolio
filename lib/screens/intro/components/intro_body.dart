@@ -1,13 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/profile.dart';
+import 'package:kratosgado/screens/components/custom.button.dart';
 import 'package:kratosgado/screens/intro/components/animated_texts.dart';
 import 'package:kratosgado/screens/intro/components/combine_subtitle.dart';
 import 'package:kratosgado/screens/intro/components/headline_text.dart';
 import 'package:kratosgado/resources/responsive.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'animated_description_text.dart';
-import 'email.button.dart';
 
 class IntroBody extends StatelessWidget {
   const IntroBody({super.key});
@@ -23,6 +25,7 @@ class IntroBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
               if (!Responsive.isDesktop(context))
                 SizedBox(
                   height: size.height * 0.06,
@@ -64,7 +67,7 @@ class IntroBody extends StatelessWidget {
               const SizedBox(
                 height: defaultPadding * 2,
               ),
-              const EmailButton(),
+               CustomButton(text: 'Send Email',icon: Icons.email, onTap: ()=> launchUrl(Uri.parse('mailto:${Profile.email}'))),
             ],
           ),
         ),
