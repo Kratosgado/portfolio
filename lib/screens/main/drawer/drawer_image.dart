@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kratosgado/resources/asset.images.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:kratosgado/resources/network.images.dart';
 
 class DrawerImage extends StatelessWidget {
   const DrawerImage({super.key});
@@ -27,8 +27,8 @@ class DrawerImage extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         child: Transform.rotate(
           angle: 0.1,
-          child: Image.network(
-            NetworkImages.profile,
+          child: Image.asset(
+            Assets.profile,
             fit: BoxFit.cover,
           ),
         ),

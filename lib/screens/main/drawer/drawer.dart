@@ -14,8 +14,8 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: primaryColor,
-      child: SingleChildScrollView(  
-        child: Column(  
+      child: SingleChildScrollView(
+        child: Column(
           children: [
             const About(),
             Container(
@@ -25,11 +25,11 @@ class CustomDrawer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   PersonalInfo(),
+                  ContactIcons(),
                   MySkills(),
                   Knowledge(),
                   Divider(),
                   SizedBox(height: defaultPadding ,),
-                  ContactIcons()
                 ],
               ),),
             )

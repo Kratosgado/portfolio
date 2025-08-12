@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/profile.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SocialMediaIcon extends StatelessWidget {
   final String icon;
@@ -10,13 +12,14 @@ class SocialMediaIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () => launchUrl(
+            Uri.parse(myProfile.github),
+          ),
       borderRadius: BorderRadius.circular(20),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: defaultPadding * 0.4),
-        child: SvgPicture.network(
+        child: SvgPicture.asset(
           icon,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.src),
           height: 15,
           width: 15,
         ),

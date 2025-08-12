@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kratosgado/resources/asset.images.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:kratosgado/resources/network.images.dart';
 import 'package:kratosgado/resources/responsive.dart';
 
 class AnimatedImageContainer extends StatefulWidget {
@@ -66,8 +66,8 @@ class _AnimatedImageContainerState extends State<AnimatedImageContainer>
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(30),
               ),
-              child: Image.network(
-                NetworkImages.logo,
+              child: Image.asset(
+                Assets.logo,
                 height: Responsive.isLargeMobile(context)
                     ? MediaQuery.sizeOf(context).width * 0.2
                     : Responsive.isTablet(context)

@@ -9,7 +9,7 @@ class LoadingText extends StatelessWidget {
     return SizedBox(
       width: defaultPadding * 5,
       child: TweenAnimationBuilder(
-        duration: const Duration(seconds: 3),
+        duration: const Duration(seconds: 2),
         tween: Tween(begin: 0.0, end: 1.0),
         builder: (context, value, child) => Column(
           children: [

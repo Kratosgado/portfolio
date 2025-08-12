@@ -20,7 +20,7 @@ class TopNavigationBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(defaultPadding),
             child:
-                !Responsive.isLargeMobile(context) ? const CircleAvatar(backgroundImage:  AssetImage(AssetImages.favicon,)) : const SizedBox(),
+                !Responsive.isLargeMobile(context) ? const CircleAvatar(backgroundImage:  AssetImage(Assets.favicon,)) : const SizedBox(),
           ),
           const Spacer(
             flex: 2

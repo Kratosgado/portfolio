@@ -1,7 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:kratosgado/resources/network.images.dart';
+import 'package:kratosgado/resources/asset.images.dart';
 
 import '../../../resources/constants.dart';
 
@@ -39,7 +38,7 @@ class KnowledgeText extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: defaultPadding/2),
       child: Row(
         children: [
-          SvgPicture.network(NetworkImages.check),
+          SvgPicture.asset(Assets.check),
           const SizedBox(width: defaultPadding/2,),
           Text(knowledge),
         ],
@@ -47,4 +46,3 @@ class KnowledgeText extends StatelessWidget {
     );
   }
 }
-

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:kratosgado/resources/asset.images.dart';
 import 'package:kratosgado/resources/constants.dart';
+import 'package:kratosgado/resources/profile.dart';
+import 'package:kratosgado/screens/intro/components/social_media_icon.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'social_media_icon_column.dart';
 
@@ -34,7 +38,24 @@ class SocialMediaIconList extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white, borderRadius: BorderRadius.circular(defaultPadding)),
                   ),
-                  const SocialMediaIconColumn(),
+SocialMediaIcon(
+          icon: Assets.linkedin,
+          onTap: () => launchUrl(
+
+            Uri.parse(myProfile.linkedin),
+          ),
+        ),
+        SocialMediaIcon(
+          icon: Assets.github,
+          onTap: () => launchUrl(
+            Uri.parse(myProfile.github),
+          ),
+        ),
+        const SocialMediaIcon(
+          icon: Assets.dribble,
+        ),
+        const SocialMediaIcon(icon: Assets.twitter),
+        const SocialMediaIcon(icon: Assets.linkedin),
                   const Spacer(),
                 ],
               ),
