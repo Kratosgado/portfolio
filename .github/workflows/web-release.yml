@@ -13,17 +13,25 @@ jobs:
         with:
           channel: stable
           flutter-version: 3.29.2
-          # cache: true
-          #  # optional parameters follow
-          # cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache
-          # cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
-          # pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache of dart pub get dependencies
-          # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
+      # cache: true
+      #  # optional parameters follow
+      # cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache
+      # cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
+      # pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache of dart pub get dependencies
+      # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
       - run: flutter --version
       - run: flutter pub get
       - run: git config --global user.email "mbeahessilfieprince@gmail.com"
       - run: git config --global user.name "Kratosgado"
       - run: flutter build web --release
-      - run: cd build && git clone https://github.com/Kratosgado/Kratosgado.github.io.git && cd Kratosgado.github.io && cp -rf ../web/* .
-      - run: git add . && git commit -m "Deploy Version $(git rev-parse --short HEAD)" && git push -u -f origin main
-    # - run: make deploy OUTPUT=Kratosgado.github.io
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT }}
+          publish_dir: ./build/web
+          destination_dir: ./ # For deploying to root of Kratosgado.github.io
+          external_repository: Kratosgado/Kratosgado.github.io
+          keep_files: false
+    #   - run: cd build && git clone https://github.com/Kratosgado/Kratosgado.github.io.git && cd Kratosgado.github.io && cp -rf ../web/* .
+    #   - run: git add . && git commit -m "Deploy Version $(git rev-parse --short HEAD)" && git push -u -f origin main
+    #  # - run: make deploy OUTPUT=Kratosgado.github.io
