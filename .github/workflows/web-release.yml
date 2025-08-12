@@ -27,7 +27,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.ACTION_DEPLOY_KEY }}
+          deploy_key: ${{ secrets.ACTION_DEPLOY_KEY }}
+          publish_branch: main
           publish_dir: ./build/web
           destination_dir: ./ # For deploying to root of Kratosgado.github.io
           external_repository: Kratosgado/Kratosgado.github.io
