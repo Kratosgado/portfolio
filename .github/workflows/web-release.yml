@@ -1,30 +1,28 @@
 name: Build and Deploy Flutter Web App
-
 on:
   push:
-    branches:
-      - main
-
+    branches: [main]
 jobs:
   main:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup up Flutter
         uses: subosito/flutter-action@v1
         with:
           channel: stable
-          flutter-version: 3.22.3
+          flutter-version: 3.29.2
           # cache: true
-          # # optional parameters follow
-          # cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache
-          # cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
-          # pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:" # optional, change this to force refresh cache of dart pub get dependencies
-          # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:" # optional, change this to specify the cache path
-
+          #  # optional parameters follow
+          # cache-key: "flutter-:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache
+          # cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
+          # pub-cache-key: "flutter-pub:os:-:channel:-:version:-:arch:-:hash:"  # optional, change this to force refresh cache of dart pub get dependencies
+          # pub-cache-path: "${{ runner.tool_cache }}/flutter/:channel:-:version:-:arch:"  # optional, change this to specify the cache path
       - run: flutter --version
       - run: flutter pub get
       - run: git config --global user.email "mbeahessilfieprince@gmail.com"
       - run: git config --global user.name "Kratosgado"
-      - run: make deploy OUTPUT=Kratosgado.github.io
+      - run: flutter build web --release
+      - run: cd build/web && git clone https://github.com/Kratosgado/Kratosgado.github.io.git && cd Kratosgado.github.io && git add . && git commit -m "Deploy Version $(git rev-parse --short HEAD)" && git push -u -f origin main
+    # - run: make deploy OUTPUT=Kratosgado.github.io
