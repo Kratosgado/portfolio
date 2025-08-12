@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:kratosgado/screens/splash/splash_view.dart';
+import 'package:kratosgado/screens/home/home.dart';
 
 
 void main() {
@@ -27,7 +27,7 @@ class MyPortfolio extends StatelessWidget {
           bodyMedium: const TextStyle(color: bodyTextColor),
         )
       ),
-      home: const SplashView(),
+      home: const HomePage(),
     );
   }
 }

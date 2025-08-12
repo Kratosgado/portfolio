@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kratosgado/resources/constants.dart';
-import 'package:kratosgado/resources/profile.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialMediaIcon extends StatelessWidget {
   final String icon;
-  final VoidCallback? onTap;
-  const SocialMediaIcon({super.key, required this.icon, this.onTap});
+  final String link;
+  const SocialMediaIcon({super.key, required this.icon, required this.link});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => launchUrl(
-            Uri.parse(myProfile.github),
+            Uri.parse(link),
           ),
       borderRadius: BorderRadius.circular(20),
       child: Padding(

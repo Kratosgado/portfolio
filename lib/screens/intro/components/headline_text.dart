@@ -13,7 +13,7 @@ class HeadLineText extends StatelessWidget {
         tween: Tween(begin: start, end: end),
         duration: const Duration(milliseconds: 200),
         builder: (context, value, child) => Text(
-          myProfile.name,
+          Profile.name,
           style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               color: Colors.white, fontWeight: FontWeight.w900, height: 0, fontSize: value),
         ),

@@ -13,14 +13,14 @@ class SocialMediaIconColumn extends StatelessWidget {
       children: [
         SocialMediaIcon(
           icon: Assets.linkedin,
-          onTap: () => launchUrl(
+          link: () => launchUrl(
 
             Uri.parse('https://www.linkedin.com/in/kratosgado'),
           ),
         ),
         SocialMediaIcon(
           icon: Assets.github,
-          onTap: () => launchUrl(
+          link: () => launchUrl(
             Uri.parse('https://github.com/Kratosgado'),
           ),
         ),
