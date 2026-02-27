@@ -37,6 +37,23 @@ useSeoMeta({
         </NuxtLink>
       </template>
 
+      <UNavigationMenu
+        :items="[
+          {
+            label: 'Projects',
+            to: '/#projects',
+            icon: 'simple-icons:codeproject',
+            active: false,
+          },
+          {
+            label: 'Certifications',
+            to: '/#certifications',
+            icon: 'simple-icons:udemy',
+            active: false,
+          },
+        ]"
+      />
+
       <template #right>
         <UColorModeButton />
 

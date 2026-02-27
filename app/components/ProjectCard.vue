@@ -1,16 +1,5 @@
 <script setup lang="ts">
-import type { PropType } from 'vue';
-
-defineProps({
-  project: {
-    type: Object as PropType<{
-      name: string;
-      description: string;
-      github: string;
-    }>,
-    required: true,
-  },
-});
+defineProps<{ project: Project }>();
 </script>
 
 <template>

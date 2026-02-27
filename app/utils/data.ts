@@ -9,7 +9,7 @@ export const profile = {
   website: 'https://www.kratosgado.dev',
 } as const;
 
-export const projects = [
+export const projects: Project[] = [
   {
     name: 'Pseudo Code Interpreter',
     description:
@@ -74,10 +74,11 @@ export const projects = [
     github: 'https://github.com/Kratosgado/kg-dark-theme',
   },
 ] as const;
-export const certificates = [
+export const certificates: Certificate[] = [
   {
     name: 'Using Python to Interact with the Operating System',
     organization: 'Coursera',
+    skills: 'Python Programming, Bash Scripting',
     date: 'Dec 2023',
     credential: 'https://www.coursera.org/account/accomplishments/certificate/S8XAJVBEJ8LY',
   },
@@ -85,7 +86,7 @@ export const certificates = [
     name: 'Crash Course on Python',
     organization: 'Coursera',
     date: 'June 2022',
-    skills: 'Python Programming, Basic Python Data Structures, OOP',
+    skills: 'Basic Python Data Structures, OOP',
     credential: 'https://www.coursera.org/account/accomplishments/certificate/X43PFHMTRGLQ',
   },
   {
