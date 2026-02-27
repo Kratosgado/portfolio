@@ -1,35 +1,29 @@
 <script setup>
 useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
+  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  link: [{ rel: 'icon', href: '/favicon.ico' }],
   htmlAttrs: {
-    lang: 'en'
-  }
-})
+    lang: 'en',
+  },
+});
 
-const title = 'Prince Mbeah Essilfie - Portfolio'
-const description = 'Software Developer specializing in mobile apps and backend development.'
+const title = 'Prince Mbeah Essilfie - Portfolio';
+const description = 'Software Developer specializing in mobile apps and backend development.';
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  twitterCard: 'summary_large_image'
-})
+  twitterCard: 'summary_large_image',
+});
 </script>
 
 <template>
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/" class="font-bold text-xl">
-          Kratosgado
-        </NuxtLink>
+        <NuxtLink to="/" class="font-bold text-xl"> Kratosgado </NuxtLink>
       </template>
 
       <template #right>

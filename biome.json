@@ -1,0 +1,57 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "root": true,
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["app/**/*", "lib/**/*", "nuxt.config.ts", "package.json", "tsconfig.json"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 120
+  },
+  "linter": {
+    "enabled": true,
+    "domains": {
+      "vue": "recommended"
+    },
+    "rules": {
+      "recommended": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "lineWidth": 120
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "recommended": true
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.vue"],
+      "linter": {
+        "domains": { "vue": "recommended" },
+        "rules": {
+          "style": { "useConst": "off", "useImportType": "off" },
+          "correctness": {
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
+          }
+        }
+      }
+    }
+  ]
+}
