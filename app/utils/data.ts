@@ -1,3 +1,14 @@
+export const profile = {
+  name: 'Prince Mbeah Essilfie',
+  username: 'Kratosgado',
+  bio: 'Software Developer specializes in building backend systems, mobile and web apps.',
+  email: 'mbeahessilfieprince@gmail.com',
+  location: 'Takoradi, Ghana',
+  github: 'https://github.com/Kratosgado',
+  linkedin: 'https://www.linkedin.com/in/kratosgado',
+  website: 'https://www.kratosgado.dev',
+} as const;
+
 export const projects = [
   {
     name: 'Pseudo Code Interpreter',
@@ -62,7 +73,7 @@ export const projects = [
       'A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme.',
     github: 'https://github.com/Kratosgado/kg-dark-theme',
   },
-];
+] as const;
 export const certificates = [
   {
     name: 'Using Python to Interact with the Operating System',
@@ -91,18 +102,4 @@ export const certificates = [
     skills: 'Pandas',
     credential: 'https://www.udemy.com/certificate/UC-0cfc2114-4c6f-43bd-a855-7b40902263ed/',
   },
-];
-
-export const skills = [
-  'Modern C++',
-  'Backend Development',
-  'Database Management',
-  'Flutter',
-  'Dart',
-  'Machine Learning/AI',
-  'Git',
-  'GitHub',
-  'Nuxt.js',
-  'Vue.js',
-  'TypeScript',
-];
+] as const;

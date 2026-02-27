@@ -3,8 +3,8 @@
 <template>
   <div>
     <UPageHero
-      title="Prince Mbeah Essilfie"
-      description="Software Developer. I'm capable of creating mobile apps, handling every step from concept to deployment."
+      :title="profile.name"
+      :description="profile.bio"
       align="left"
       orientation="horizontal"
       :links="[
@@ -38,24 +38,6 @@
         class="rounded-lg shadow-lg w-full max-w-sm mx-auto"
       />
     </UPageHero>
-
-    <UPageSection
-      id="skills"
-      title="Skills & Knowledge"
-      description="Technologies and tools I work with."
-      align="center"
-    >
-      <div class="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto mt-4">
-        <UBadge
-          v-for="skill in skills"
-          :key="skill"
-          :label="skill"
-          size="md"
-          variant="soft"
-          class="font-medium"
-        />
-      </div>
-    </UPageSection>
 
     <UPageSection
       id="projects"

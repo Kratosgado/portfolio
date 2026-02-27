@@ -8,13 +8,12 @@ useHead({
 });
 
 const title = 'Prince Mbeah Essilfie - Portfolio';
-const description = 'Software Developer specializing in mobile apps and backend development.';
 
 useSeoMeta({
   title,
-  description,
+  description: profile.bio,
   ogTitle: title,
-  ogDescription: description,
+  ogDescription: profile.bio,
   twitterCard: 'summary_large_image',
 });
 </script>
@@ -23,16 +22,36 @@ useSeoMeta({
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/" class="font-bold text-xl"> Kratosgado </NuxtLink>
+        <NuxtLink
+          to="/"
+          class="font-bold text-xl flex flex-row items-center gap-2"
+        >
+          <NuxtImg
+            src="/images/favicon.webp"
+            alt="Profile Picture"
+            class="rounded-full"
+            width="40"
+            height="40"
+          />
+          {{ profile.username }}
+        </NuxtLink>
       </template>
 
       <template #right>
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/Kratosgado"
+          :to="profile.github"
           target="_blank"
           icon="i-simple-icons-github"
+          aria-label="GitHub"
+          color="neutral"
+          variant="ghost"
+        />
+        <UButton
+          :to="profile.linkedin"
+          target="_blank"
+          icon="i-simple-icons-linkedin"
           aria-label="GitHub"
           color="neutral"
           variant="ghost"
@@ -49,13 +68,13 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          © {{ new Date().getFullYear() }} Prince Mbeah Essilfie
+          © {{ new Date().getFullYear() }} {{ profile.username }}
         </p>
       </template>
 
       <template #right>
         <UButton
-          to="https://github.com/Kratosgado"
+          :to="profile.github"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -63,7 +82,7 @@ useSeoMeta({
           variant="ghost"
         />
         <UButton
-          to="https://www.linkedin.com/in/kratosgado"
+          :to="profile.linkedin"
           target="_blank"
           icon="i-simple-icons-linkedin"
           aria-label="LinkedIn"
