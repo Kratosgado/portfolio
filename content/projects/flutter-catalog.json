@@ -1,0 +1,11 @@
+{
+  "name": "Flutter Catalog",
+  "description": "A practice project that explores flutter diverse packages and widgets.",
+  "github": "https://github.com/Kratosgado/flutter_catalog",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/flutter_catalog",
+  "stack": [
+    "Flutter",
+    "Dart"
+  ]
+}

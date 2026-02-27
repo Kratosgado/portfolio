@@ -1,10 +1,10 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content';
+import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
 export default defineContentConfig({
   collections: {
     profile: defineCollection({
-      type: 'data',
-      source: 'profile.json',
+      type: "data",
+      source: "profile.json",
       schema: z.object({
         name: z.string(),
         username: z.string(),
@@ -17,20 +17,21 @@ export default defineContentConfig({
       }),
     }),
     projects: defineCollection({
-      type: 'data',
-      source: 'projects.json',
+      type: "data",
+      source: "projects/*.json",
       schema: z.object({
         name: z.string(),
         description: z.string(),
         github: z.string(),
         liveUrl: z.string().optional(),
         imageUrl: z.string().optional(),
-        stack: z.array(z.string()).optional(),
+        stack: z.array(z.string()).default([]),
       }),
+      indexes: [{ columns: ["name"] }],
     }),
     certificates: defineCollection({
-      type: 'data',
-      source: 'certificates.json',
+      type: "data",
+      source: "certificates/*.json",
       schema: z.object({
         name: z.string(),
         organization: z.string(),
@@ -38,6 +39,7 @@ export default defineContentConfig({
         skills: z.string(),
         credential: z.string(),
       }),
+      indexes: [{ columns: ["name"] }],
     }),
   },
 });

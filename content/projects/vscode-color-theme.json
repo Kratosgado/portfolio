@@ -1,0 +1,11 @@
+{
+  "name": "VsCode Color Theme",
+  "description": "A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme.",
+  "github": "https://github.com/Kratosgado/kg-dark-theme",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/kg-dark-theme",
+  "stack": [
+    "JSON",
+    "VS Code Theme"
+  ]
+}

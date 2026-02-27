@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ButtonProps } from '@nuxt/ui';
+
 const { data: profile } = await useAsyncData('profile', () => queryCollection('profile').first());
 const { data: projectsData } = await useAsyncData('projects', () => queryCollection('projects').all());
 const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
@@ -6,7 +8,7 @@ const { data: certificatesData } = await useAsyncData('certificates', () => quer
 const projects = computed(() => projectsData.value || []);
 const certificates = computed(() => certificatesData.value || []);
 
-const heroLinks = computed(() => {
+const heroLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
     {
@@ -34,7 +36,7 @@ const heroLinks = computed(() => {
   ];
 });
 
-const ctaLinks = computed(() => {
+const ctaLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
     {

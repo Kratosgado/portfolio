@@ -1,0 +1,12 @@
+{
+  "name": "Nasm Compiler for Linux",
+  "description": "Vs Code Extension that automates the compilation and execution of assembly codes written in NASM.",
+  "github": "https://github.com/Kratosgado/nasm-compiler-linux",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/nasm-compiler-linux",
+  "stack": [
+    "VS Code Extension",
+    "NASM",
+    "Assembly"
+  ]
+}
