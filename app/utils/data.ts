@@ -1,3 +1,5 @@
+import type { Certificate, Project } from './types';
+
 export const profile = {
   name: 'Prince Mbeah Essilfie',
   username: 'Kratosgado',
@@ -15,63 +17,99 @@ export const projects: Project[] = [
     description:
       'A pseudo code interpreter written in rust that interprets pseudocode file passed to it as cli argument.',
     github: 'https://github.com/Kratosgado/pseudo_interpreter',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/pseudo_interpreter',
+    stack: ['Rust'],
   },
   {
     name: 'Smart Traffic Light System',
     description: 'IoT project created with Arduino(C++) and Android(Java).',
     github: 'https://github.com/Kratosgado/traffic_system',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/traffic_system',
+    stack: ['C++', 'Java', 'Arduino', 'Android'],
   },
   {
     name: 'Traffic Control App',
     description: 'Android(Java) application that communicates with Arduino traffic light via bluetooth.',
     github: 'https://github.com/Kratosgado/TrafficControlApp',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/TrafficControlApp',
+    stack: ['Java', 'Android', 'Bluetooth'],
   },
   {
     name: 'Pseudo Runner',
     description: 'A vscode extension that runs pseudo code files in the editor. Built with Typescript.',
     github: 'https://github.com/Kratosgado/pseudo-runner',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/pseudo-runner',
+    stack: ['TypeScript', 'VS Code Extension'],
   },
   {
     name: 'Nasm Compiler for Linux',
     description: 'Vs Code Extension that automates the compilation and execution of assembly codes written in NASM.',
     github: 'https://github.com/Kratosgado/nasm-compiler-linux',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/nasm-compiler-linux',
+    stack: ['VS Code Extension', 'NASM', 'Assembly'],
   },
   {
     name: 'Chat Backend App',
     description: 'Backend app for a chat application built with NestJs, Prisma and PostgreSQL.',
     github: 'https://github.com/Kratosgado/backend-chat-app',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/backend-chat-app',
+    stack: ['NestJs', 'Prisma', 'PostgreSQL', 'TypeScript'],
   },
   {
     name: 'Flutter Demo Chat App',
     description: 'Built using Flutter for the frontend and integrates with Firebase for backend services.',
     github: 'https://github.com/Kratosgado/demo_chat_app',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/demo_chat_app',
+    stack: ['Flutter', 'Dart', 'Firebase'],
   },
   {
     name: 'Bible Studies Wing',
     description:
       'Bible study app that allows users to create accounts, read bible verses, share bible verses, and connect.',
     github: 'https://github.com/Kratosgado/bible_studies_wing',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/bible_studies_wing',
+    stack: ['Mobile App'],
   },
   {
     name: 'Flutter Catalog',
     description: 'A practice project that explores flutter diverse packages and widgets.',
     github: 'https://github.com/Kratosgado/flutter_catalog',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/flutter_catalog',
+    stack: ['Flutter', 'Dart'],
   },
   {
     name: 'Instagram Clone',
     description: 'Clone of the Instagram app, built with Typescript and React Native.',
     github: 'https://github.com/Kratosgado/typescript-instaClone',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/typescript-instaClone',
+    stack: ['TypeScript', 'React Native'],
   },
   {
     name: 'AutoScroll Web Extension',
     description: 'Web extension that automatically scrolls the page for you.',
     github: 'https://github.com/Kratosgado/autoscroll-chrome-extension',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/autoscroll-chrome-extension',
+    stack: ['JavaScript', 'Web Extension'],
   },
   {
     name: 'VsCode Color Theme',
     description:
       'A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme.',
     github: 'https://github.com/Kratosgado/kg-dark-theme',
+    imageUrl: 'https://placehold.co/600x400',
+    liveUrl: 'https://github.com/Kratosgado/kg-dark-theme',
+    stack: ['JSON', 'VS Code Theme'],
   },
 ] as const;
 export const certificates: Certificate[] = [

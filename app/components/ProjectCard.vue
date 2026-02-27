@@ -21,20 +21,53 @@ defineProps<{ project: Project }>();
       </div>
     </template>
 
-    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+    <div
+      v-if="project.imageUrl"
+      class="-mt-4 -mx-4 mb-4 rounded-t-lg overflow-hidden"
+    >
+      <NuxtImg
+        :src="project.imageUrl"
+        :alt="project.name"
+        class="w-full h-48 object-cover"
+      />
+    </div>
+
+    <p class="text-muted text-sm leading-relaxed mb-4">
       {{ project.description }}
     </p>
 
+    <div v-if="project.stack" class="flex flex-wrap gap-2 mb-4 mt-auto">
+      <UBadge
+        v-for="tech in project.stack"
+        :key="tech"
+        color="neutral"
+        variant="subtle"
+        size="xs"
+      >
+        {{ tech }}
+      </UBadge>
+    </div>
+
     <template #footer>
-      <div class="flex justify-end">
+      <div class="flex justify-end gap-2">
+        <UButton
+          v-if="project.liveUrl"
+          label="Live Demo"
+          color="primary"
+          variant="soft"
+          size="xs"
+          :to="project.liveUrl"
+          target="_blank"
+          icon="i-lucide-external-link"
+        />
         <UButton
           label="View Code"
-          color="primary"
+          color="neutral"
           variant="soft"
           size="xs"
           :to="project.github"
           target="_blank"
-          icon="i-lucide-external-link"
+          icon="i-simple-icons-github"
         />
       </div>
     </template>

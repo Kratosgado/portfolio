@@ -4,6 +4,7 @@ export type Project = {
   github: string;
   liveUrl?: string;
   imageUrl?: string;
+  stack?: string[];
 };
 
 export type Certificate = {
