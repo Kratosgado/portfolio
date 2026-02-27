@@ -1,0 +1,13 @@
+{
+  "name": "Chat Backend App",
+  "description": "Backend app for a chat application built with NestJs, Prisma and PostgreSQL.",
+  "github": "https://github.com/Kratosgado/backend-chat-app",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/backend-chat-app",
+  "stack": [
+    "NestJs",
+    "Prisma",
+    "PostgreSQL",
+    "TypeScript"
+  ]
+}

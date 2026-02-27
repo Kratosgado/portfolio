@@ -1,0 +1,12 @@
+{
+  "name": "Flutter Demo Chat App",
+  "description": "Built using Flutter for the frontend and integrates with Firebase for backend services.",
+  "github": "https://github.com/Kratosgado/demo_chat_app",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/demo_chat_app",
+  "stack": [
+    "Flutter",
+    "Dart",
+    "Firebase"
+  ]
+}

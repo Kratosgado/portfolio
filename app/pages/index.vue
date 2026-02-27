@@ -1,36 +1,63 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { ButtonProps } from '@nuxt/ui';
+
+const { data: profile } = await useAsyncData('profile', () => queryCollection('profile').first());
+const { data: projectsData } = await useAsyncData('projects', () => queryCollection('projects').all());
+const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
+
+const projects = computed(() => projectsData.value || []);
+const certificates = computed(() => certificatesData.value || []);
+
+const heroLinks = computed<ButtonProps[]>(() => {
+  if (!profile.value) return [];
+  return [
+    {
+      label: 'Contact Me',
+      to: `mailto:${profile.value.email}`,
+      icon: 'i-lucide-mail',
+      color: 'primary',
+    },
+    {
+      label: 'GitHub',
+      to: profile.value.github,
+      target: '_blank',
+      color: 'neutral',
+      variant: 'subtle',
+      icon: 'i-simple-icons-github',
+    },
+    {
+      label: 'LinkedIn',
+      to: profile.value.linkedin,
+      target: '_blank',
+      color: 'neutral',
+      variant: 'subtle',
+      icon: 'i-simple-icons-linkedin',
+    },
+  ];
+});
+
+const ctaLinks = computed<ButtonProps[]>(() => {
+  if (!profile.value) return [];
+  return [
+    {
+      label: 'Send Email',
+      to: `mailto:${profile.value.email}`,
+      icon: 'i-lucide-mail',
+      color: 'primary',
+    },
+  ];
+});
+</script>
 
 <template>
   <div>
     <UPageHero
+      v-if="profile"
       :title="profile.name"
       :description="profile.bio"
       align="left"
       orientation="horizontal"
-      :links="[
-        {
-          label: 'Contact Me',
-          to: 'mailto:mbeahessilfieprince@gmail.com',
-          icon: 'i-lucide-mail',
-          color: 'primary',
-        },
-        {
-          label: 'GitHub',
-          to: 'https://github.com/Kratosgado',
-          target: '_blank',
-          color: 'neutral',
-          variant: 'subtle',
-          icon: 'i-simple-icons-github',
-        },
-        {
-          label: 'LinkedIn',
-          to: 'https://www.linkedin.com/in/kratosgado',
-          target: '_blank',
-          color: 'neutral',
-          variant: 'subtle',
-          icon: 'i-simple-icons-linkedin',
-        },
-      ]"
+      :links="heroLinks"
     >
       <img
         src="/images/profile_image.webp"
@@ -64,16 +91,10 @@
     </UPageSection>
 
     <UPageCTA
+      v-if="profile"
       title="Interested in working together?"
       description="Feel free to reach out via email or social media."
-      :links="[
-        {
-          label: 'Send Email',
-          to: 'mailto:mbeahessilfieprince@gmail.com',
-          icon: 'i-lucide-mail',
-          color: 'primary',
-        },
-      ]"
+      :links="ctaLinks"
     />
   </div>
 </template>

@@ -1,0 +1,10 @@
+{
+  "name": "Bible Studies Wing",
+  "description": "Bible study app that allows users to create accounts, read bible verses, share bible verses, and connect.",
+  "github": "https://github.com/Kratosgado/bible_studies_wing",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/bible_studies_wing",
+  "stack": [
+    "Mobile App"
+  ]
+}

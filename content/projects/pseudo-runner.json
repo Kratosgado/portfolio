@@ -1,0 +1,11 @@
+{
+  "name": "Pseudo Runner",
+  "description": "A vscode extension that runs pseudo code files in the editor. Built with Typescript.",
+  "github": "https://github.com/Kratosgado/pseudo-runner",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/pseudo-runner",
+  "stack": [
+    "TypeScript",
+    "VS Code Extension"
+  ]
+}

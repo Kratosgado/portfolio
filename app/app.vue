@@ -1,4 +1,6 @@
-<script setup>
+<script setup lang="ts">
+const { data: profile } = await useAsyncData('profile', () => queryCollection('profile').first());
+
 useHead({
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [{ rel: 'icon', href: '/favicon.ico' }],
@@ -11,15 +13,15 @@ const title = 'Prince Mbeah Essilfie - Portfolio';
 
 useSeoMeta({
   title,
-  description: profile.bio,
+  description: computed(() => profile.value?.bio),
   ogTitle: title,
-  ogDescription: profile.bio,
+  ogDescription: computed(() => profile.value?.bio),
   twitterCard: 'summary_large_image',
 });
 </script>
 
 <template>
-  <UApp>
+  <UApp v-if="profile">
     <UHeader>
       <template #left>
         <NuxtLink

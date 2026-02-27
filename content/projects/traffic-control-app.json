@@ -1,0 +1,12 @@
+{
+  "name": "Traffic Control App",
+  "description": "Android(Java) application that communicates with Arduino traffic light via bluetooth.",
+  "github": "https://github.com/Kratosgado/TrafficControlApp",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/TrafficControlApp",
+  "stack": [
+    "Java",
+    "Android",
+    "Bluetooth"
+  ]
+}

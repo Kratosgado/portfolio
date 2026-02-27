@@ -1,0 +1,10 @@
+{
+  "name": "Pseudo Code Interpreter",
+  "description": "A pseudo code interpreter written in rust that interprets pseudocode file passed to it as cli argument.",
+  "github": "https://github.com/Kratosgado/pseudo_interpreter",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/pseudo_interpreter",
+  "stack": [
+    "Rust"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "AutoScroll Web Extension",
+  "description": "Web extension that automatically scrolls the page for you.",
+  "github": "https://github.com/Kratosgado/autoscroll-chrome-extension",
+  "imageUrl": "https://placehold.co/600x400",
+  "liveUrl": "https://github.com/Kratosgado/autoscroll-chrome-extension",
+  "stack": [
+    "JavaScript",
+    "Web Extension"
+  ]
+}
