@@ -18,25 +18,18 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-15',
 
   nitro: {
-    preset: 'github_pages',
+    preset: 'vercel',
     prerender: {
       routes: ['/'],
       crawlLinks: true,
     },
   },
   studio: {
-    dev: true,
     repository: {
       provider: 'github',
       owner: 'Kratosgado',
       repo: 'portfolio',
-      branch: 'content',
-    },
-    auth: {
-      github: {
-        clientSecret: '',
-        clientId: '',
-      },
+      branch: 'main',
     },
   },
 });
