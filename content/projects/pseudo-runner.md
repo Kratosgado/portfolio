@@ -7,6 +7,8 @@ images:
   - https://placehold.co/800x400
   - https://placehold.co/800x400
 liveUrl: https://github.com/Kratosgado/pseudo-runner
+navigation:
+  icon: i-lucide-search
 stack:
   - TypeScript
   - VS Code Extension

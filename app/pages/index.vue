@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { ButtonProps } from '@nuxt/ui';
 
-const { data: profile } = await useAsyncData('profile', () => queryCollection('profile').first());
+const { data: profile } = await useProfile();
 const { data: projectsData } = await useAsyncData('projectData', () => queryCollection('projectData').all());
 const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
 

@@ -53,7 +53,7 @@ useHead({
       />
       <UButton
         v-if="page.liveUrl"
-        label="Live Demo"
+        label="Live URL"
         icon="i-lucide-external-link"
         color="primary"
         variant="soft"
