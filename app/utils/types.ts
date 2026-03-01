@@ -5,6 +5,7 @@ export type Project = {
   liveUrl?: string;
   imageUrl?: string;
   stack?: string[];
+  slug?: string;
 };
 
 export type Certificate = {

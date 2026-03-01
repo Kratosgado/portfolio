@@ -16,9 +16,9 @@ export default defineContentConfig({
         website: z.string(),
       }),
     }),
-    projects: defineCollection({
+    projectData: defineCollection({
       type: "data",
-      source: "projects/*.json",
+      source: "project-data/*.json",
       schema: z.object({
         name: z.string(),
         description: z.string(),
@@ -26,8 +26,22 @@ export default defineContentConfig({
         liveUrl: z.string().optional(),
         imageUrl: z.string().optional(),
         stack: z.array(z.string()).default([]),
+        slug: z.string().optional(),
       }),
       indexes: [{ columns: ["name"] }],
+    }),
+    projects: defineCollection({
+      type: "page",
+      source: "projects/*.md",
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        coverImage: z.string().optional(),
+        images: z.array(z.string()).default([]),
+        github: z.string().optional(),
+        liveUrl: z.string().optional(),
+        stack: z.array(z.string()).default([]),
+      }),
     }),
     certificates: defineCollection({
       type: "data",

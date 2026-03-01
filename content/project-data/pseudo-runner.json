@@ -7,5 +7,6 @@
   "stack": [
     "TypeScript",
     "VS Code Extension"
-  ]
+  ],
+  "slug": "pseudo-runner"
 }

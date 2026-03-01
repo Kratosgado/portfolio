@@ -2,7 +2,7 @@
 import type { ButtonProps } from '@nuxt/ui';
 
 const { data: profile } = await useAsyncData('profile', () => queryCollection('profile').first());
-const { data: projectsData } = await useAsyncData('projects', () => queryCollection('projects').all());
+const { data: projectsData } = await useAsyncData('projectData', () => queryCollection('projectData').all());
 const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
 
 const projects = computed(() => projectsData.value || []);
