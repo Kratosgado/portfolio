@@ -15,6 +15,22 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            vendor: [
+              'vue',
+              'vue-router',
+              // 'zod',
+            ],
+          },
+        },
+      },
+    },
+  },
+
   compatibilityDate: '2025-01-15',
 
   nitro: {
