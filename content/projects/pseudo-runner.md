@@ -1,12 +1,12 @@
 ---
 title: Pseudo Runner
-coverImage: https://placehold.co/1200x600
+coverImage: https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
 description: A VS Code extension that runs pseudo code files directly in the editor.
 github: https://github.com/Kratosgado/pseudo-runner
 images:
-  - https://placehold.co/800x400
-  - https://placehold.co/800x400
-liveUrl: https://github.com/Kratosgado/pseudo-runner
+  - https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
+  - https://image2url.com/r2/default/images/1772468076141-94683d8e-029b-4887-843f-99970e779057.png
+liveUrl: https://marketplace.visualstudio.com/publishers/Kratosgado
 navigation:
   icon: i-lucide-search
 stack:
