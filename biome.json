@@ -1,47 +1,52 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": true
-  },
-  "root": true,
-  "files": {
-    "ignoreUnknown": true,
-    "includes": ["app/**/*", "lib/**/*", "nuxt.config.ts", "package.json", "tsconfig.json"]
-  },
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "lineWidth": 120
-  },
-  "linter": {
-    "enabled": true,
-    "domains": {
-      "vue": "recommended"
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "recommended": true,
+        "useSortedKeys": {
+          "level": "on",
+          "options": {
+            "sortOrder": "natural"
+          }
+        }
+      }
     },
-    "rules": {
-      "recommended": true
-    }
-  },
-  "javascript": {
-    "formatter": {
-      "quoteStyle": "single",
-      "lineWidth": 120
-    }
+    "enabled": true
   },
   "css": {
     "parser": {
       "tailwindDirectives": true
     }
   },
-  "assist": {
+  "files": {
+    "ignoreUnknown": true,
+    "includes": ["app/**/*", "lib/**/*", "content/**/*", "nuxt.config.ts", "package.json", "tsconfig.json"]
+  },
+  "formatter": {
     "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on",
-        "recommended": true
-      }
+    "indentStyle": "space",
+    "lineWidth": 120
+  },
+  "javascript": {
+    "formatter": {
+      "lineWidth": 120,
+      "quoteStyle": "single"
+    }
+  },
+  "json": {
+    "assist": {
+      "enabled": true
+    }
+  },
+  "linter": {
+    "domains": {
+      "vue": "recommended"
+    },
+    "enabled": true,
+    "rules": {
+      "recommended": true
     }
   },
   "overrides": [
@@ -50,13 +55,19 @@
       "linter": {
         "domains": { "vue": "recommended" },
         "rules": {
-          "style": { "useConst": "off", "useImportType": "off" },
           "correctness": {
-            "noUnusedVariables": "off",
-            "noUnusedImports": "off"
-          }
+            "noUnusedImports": "off",
+            "noUnusedVariables": "off"
+          },
+          "style": { "useConst": "off", "useImportType": "off" }
         }
       }
     }
-  ]
+  ],
+  "root": true,
+  "vcs": {
+    "clientKind": "git",
+    "enabled": false,
+    "useIgnoreFile": true
+  }
 }

@@ -28,11 +28,7 @@ defineProps<{ project: Project }>();
         v-if="project.imageUrl"
         class="-mt-4 -mx-4 mb-4 rounded-t-lg overflow-hidden"
       >
-        <NuxtImg
-          :src="project.imageUrl"
-          :alt="project.name"
-          class="w-full h-48 object-cover"
-        />
+        <NuxtImg :src="project.imageUrl" :alt="project.name" />
       </div>
     </NuxtLink>
 

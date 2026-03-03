@@ -1,15 +1,4 @@
 {
-  "name": "portfolio_nuxt",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "biome check",
-    "typecheck": "nuxt typecheck"
-  },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.90",
     "@iconify-json/simple-icons": "^1.2.70",
@@ -24,5 +13,16 @@
   "devDependencies": {
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
-  }
+  },
+  "name": "portfolio_nuxt",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "lint": "biome check",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview",
+    "typecheck": "nuxt typecheck"
+  },
+  "type": "module"
 }

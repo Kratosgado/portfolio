@@ -1,15 +1,9 @@
 {
-  "name": "Cyale Website",
   "description": "Website for Community Youth Advocates for Learning Excellence in Abuesi",
   "github": "https://github.com/kratosgado/cyale",
-  "liveUrl": "https://cyale.org",
-  "stack": [
-    "NuxtJs",
-    "VueJs",
-    "TypeScript",
-    "Prisma",
-    "Postgres"
-  ],
   "imageUrl": "/images/cyale-homepage.png",
-  "slug": "cyale"
+  "liveUrl": "https://cyale.org",
+  "name": "Cyale Website",
+  "slug": "cyale",
+  "stack": ["NuxtJs", "VueJs", "TypeScript", "Prisma", "Postgres"]
 }
