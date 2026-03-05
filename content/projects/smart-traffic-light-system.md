@@ -1,5 +1,6 @@
 ---
 title: Smart Traffic Light System
+slug: smart-traffic-light-system
 coverImage: https://placehold.co/1200x600
 description: IoT project created with Arduino(C++) and Android(Java).
 github: https://github.com/Kratosgado/traffic_system

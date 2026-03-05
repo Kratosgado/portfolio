@@ -1,5 +1,6 @@
 ---
 title: Flutter Demo Chat App
+slug: flutter-demo-chat-app
 coverImage: https://placehold.co/1200x600
 description: Built using Flutter for the frontend and integrates with Firebase for backend services.
 github: https://github.com/Kratosgado/demo_chat_app

@@ -1,5 +1,6 @@
 ---
 title: Nasm Compiler for Linux
+slug: nasm-compiler-for-linux
 coverImage: https://lh3.googleusercontent.com/d/1Q0T-o9AQEvUnEgg5-1Vj_0Qm1ltGwhZI
 description: Vs Code Extension that automates the compilation and execution of assembly codes written in NASM.
 github: https://github.com/Kratosgado/nasm-compiler-linux

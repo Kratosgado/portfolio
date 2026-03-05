@@ -1,5 +1,6 @@
 ---
 title: Pseudo Runner
+slug: pseudo-runner
 coverImage: https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
 description: A VS Code extension that runs pseudo code files directly in the editor.
 github: https://github.com/Kratosgado/pseudo-runner

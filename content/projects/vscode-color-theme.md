@@ -1,5 +1,6 @@
 ---
 title: VsCode Color Theme
+slug: vscode-color-theme
 coverImage: https://placehold.co/1200x600
 description: A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme.
 github: https://github.com/Kratosgado/kg-dark-theme

@@ -1,5 +1,6 @@
 ---
 title: Cyale Website
+slug: cyale
 coverImage: /images/cyale-homepage.png
 description: Website for Community Youth Advocates for Learning Excellence in Abuesi
 github: https://github.com/kratosgado/cyale

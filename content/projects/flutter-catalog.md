@@ -1,5 +1,6 @@
 ---
 title: Flutter Catalog
+slug: flutter-catalog
 coverImage: https://placehold.co/1200x600
 description: A practice project that explores flutter diverse packages and widgets.
 github: https://github.com/Kratosgado/flutter_catalog

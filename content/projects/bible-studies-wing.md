@@ -1,5 +1,6 @@
 ---
 title: Bible Studies Wing
+slug: bible-studies-wing
 coverImage: https://placehold.co/1200x600
 description: Bible study app that allows users to create accounts, read bible verses, share bible verses, and connect.
 github: https://github.com/Kratosgado/bible_studies_wing
