@@ -1,18 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content'],
-
-  devtools: {
-    enabled: true,
-  },
+  compatibilityDate: '2025-01-15',
 
   css: ['~/assets/css/main.css'],
+
+  future: {
+    compatibilityVersion: 4,
+  },
+  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content'],
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/'],
+    },
+    preset: 'vercel',
+  },
 
   routeRules: {
     '/': { prerender: true },
   },
-  future: {
-    compatibilityVersion: 4,
+  studio: {
+    repository: {
+      branch: 'main',
+      owner: 'Kratosgado',
+      provider: 'github',
+      repo: 'portfolio',
+    },
   },
 
   vite: {
@@ -28,24 +42,6 @@ export default defineNuxtConfig({
           },
         },
       },
-    },
-  },
-
-  compatibilityDate: '2025-01-15',
-
-  nitro: {
-    preset: 'vercel',
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-    },
-  },
-  studio: {
-    repository: {
-      provider: 'github',
-      owner: 'Kratosgado',
-      repo: 'portfolio',
-      branch: 'main',
     },
   },
 });

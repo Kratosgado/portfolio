@@ -10,6 +10,38 @@ const { data: certificatesData } = await useAsyncData('certificates', () => quer
 const projects = computed(() => projectsData.value || []);
 const certificates = computed(() => certificatesData.value || []);
 
+const searchQuery = ref('');
+const selectedStack = ref<string[]>([]);
+
+const uniqueStacks = computed(() => {
+  const stacks = new Set<string>();
+  projects.value.forEach((project) => {
+    project.stack?.forEach((s: string) => {
+      stacks.add(s);
+    });
+  });
+  return Array.from(stacks).sort();
+});
+
+const filteredProjects = computed(() => {
+  if (!projects.value) return [];
+
+  return projects.value.filter((project) => {
+    const query = searchQuery.value.toLowerCase();
+    const title = project.title?.toLowerCase() || '';
+    const description = project.description?.toLowerCase() || '';
+
+    const matchesSearch = !query || title.includes(query) || description.includes(query);
+
+    const selected = selectedStack.value || [];
+    const stack = project.stack || [];
+
+    const matchesStack = selected.length === 0 || stack.some((s: string) => selected.includes(s));
+
+    return matchesSearch && matchesStack;
+  });
+});
+
 const heroLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
@@ -73,12 +105,38 @@ const ctaLinks = computed<ButtonProps[]>(() => {
       title="Projects"
       description="A selection of my work across various platforms and languages."
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-        <ProjectCard
-          v-for="project in projects"
-          :key="project.title"
-          :project
+      <div
+        class="flex items-center justify-center w-full flex-col sm:flex-row gap-4"
+      >
+        <UInput
+          v-model="searchQuery"
+          icon="i-heroicons-magnifying-glass-20-solid"
+          placeholder="Search projects..."
+          class="w-full sm:w-64"
         />
+        <USelectMenu
+          v-model="selectedStack"
+          :items="uniqueStacks"
+          placeholder="Filter by stack"
+          multiple
+          searchable
+          class="w-full sm:w-64"
+        />
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ProjectCard
+          v-for="project in filteredProjects"
+          :key="project.title"
+          :project="project"
+        />
+      </div>
+
+      <div
+        v-if="filteredProjects.length === 0"
+        class="text-center py-8 text-gray-500 dark:text-gray-400"
+      >
+        No projects found matching your criteria.
       </div>
     </UPageSection>
 

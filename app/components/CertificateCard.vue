@@ -7,6 +7,7 @@ defineProps<{ certificate: CertificatesCollectionItem }>();
 <template>
   <UPageCard
     class="hover:ring-2 hover:ring-primary-500 transition-all h-full flex flex-col"
+    :ui="{ footer: 'flex justify-end w-full' }"
     spotlight
   >
     <template #header>
@@ -20,23 +21,22 @@ defineProps<{ certificate: CertificatesCollectionItem }>();
       </div>
     </template>
 
-    <p v-if="certificate.skills" class="text-muted text-sm mt-2">
-      <span class="font-semibold">Skills:</span> {{ certificate.skills }}
-    </p>
+    <template #body>
+      <p v-if="certificate.skills" class="text-muted text-sm mt-2">
+        <span class="font-semibold">Skills:</span> {{ certificate.skills }}
+      </p>
+    </template>
 
     <template #footer>
-      <div class="flex justify-end">
-        <UButton
-          v-if="certificate.credential"
-          label="View Credential"
-          color="neutral"
-          variant="ghost"
-          size="xs"
-          :to="certificate.credential"
-          target="_blank"
-          icon="i-lucide-external-link"
-        />
-      </div>
+      <UButton
+        v-if="certificate.credential"
+        label="View Credential"
+        variant="soft"
+        size="sm"
+        :to="certificate.credential"
+        target="_blank"
+        icon="i-lucide-external-link"
+      />
     </template>
   </UPageCard>
 </template>
