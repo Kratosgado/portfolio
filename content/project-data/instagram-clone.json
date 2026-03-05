@@ -1,8 +1,0 @@
-{
-  "description": "Clone of the Instagram app, built with Typescript and React Native.",
-  "github": "https://github.com/Kratosgado/typescript-instaClone",
-  "imageUrl": "https://placehold.co/600x400",
-  "liveUrl": "https://github.com/Kratosgado/typescript-instaClone",
-  "name": "Instagram Clone",
-  "stack": ["TypeScript", "React Native"]
-}

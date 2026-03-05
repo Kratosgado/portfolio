@@ -9,6 +9,7 @@ images:
 liveUrl: https://github.com/Kratosgado/nasm-compiler-linux
 navigation:
   icon: i-lucide-search
+rank: 2
 stack:
   - VS Code Extension
   - NASM

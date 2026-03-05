@@ -8,6 +8,7 @@ images:
 liveUrl: https://github.com/Kratosgado/bible_studies_wing
 navigation:
   icon: i-lucide-search
+rank: 10
 stack:
   - Mobile App
 ---

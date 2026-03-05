@@ -6,6 +6,7 @@ github: https://github.com/Kratosgado/pseudo_interpreter
 liveUrl: https://github.com/Kratosgado/pseudo_interpreter
 navigation:
   icon: i-lucide-search
+rank: 2
 stack:
   - Rust
 ---

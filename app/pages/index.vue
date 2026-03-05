@@ -2,7 +2,9 @@
 import type { ButtonProps } from '@nuxt/ui';
 
 const { data: profile } = await useProfile();
-const { data: projectsData } = await useAsyncData('projectData', () => queryCollection('projectData').all());
+const { data: projectsData } = await useAsyncData('projects', () =>
+  queryCollection('projects').order('rank', 'ASC').all(),
+);
 const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
 
 const projects = computed(() => projectsData.value || []);
@@ -12,26 +14,26 @@ const heroLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
     {
+      color: 'primary',
+      icon: 'i-lucide-mail',
       label: 'Contact Me',
       to: `mailto:${profile.value.email}`,
-      icon: 'i-lucide-mail',
-      color: 'primary',
     },
     {
-      label: 'GitHub',
-      to: profile.value.github,
-      target: '_blank',
       color: 'neutral',
-      variant: 'subtle',
       icon: 'i-simple-icons-github',
+      label: 'GitHub',
+      target: '_blank',
+      to: profile.value.github,
+      variant: 'subtle',
     },
     {
-      label: 'LinkedIn',
-      to: profile.value.linkedin,
-      target: '_blank',
       color: 'neutral',
-      variant: 'subtle',
       icon: 'i-simple-icons-linkedin',
+      label: 'LinkedIn',
+      target: '_blank',
+      to: profile.value.linkedin,
+      variant: 'subtle',
     },
   ];
 });
@@ -40,10 +42,10 @@ const ctaLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
     {
+      color: 'primary',
+      icon: 'i-lucide-mail',
       label: 'Send Email',
       to: `mailto:${profile.value.email}`,
-      icon: 'i-lucide-mail',
-      color: 'primary',
     },
   ];
 });
@@ -72,7 +74,11 @@ const ctaLinks = computed<ButtonProps[]>(() => {
       description="A selection of my work across various platforms and languages."
     >
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-        <ProjectCard v-for="project in projects" :key="project.name" :project />
+        <ProjectCard
+          v-for="project in projects"
+          :key="project.title"
+          :project
+        />
       </div>
     </UPageSection>
 

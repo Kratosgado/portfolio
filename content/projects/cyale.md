@@ -12,6 +12,7 @@ images:
 liveUrl: https://cyale.org
 navigation:
   icon: i-lucide-search
+rank: 1
 stack:
   - NuxtJs
   - VueJs

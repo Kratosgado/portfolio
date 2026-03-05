@@ -9,6 +9,7 @@ images:
 liveUrl: https://marketplace.visualstudio.com/publishers/Kratosgado
 navigation:
   icon: i-lucide-search
+rank: 2
 stack:
   - TypeScript
   - VS Code Extension

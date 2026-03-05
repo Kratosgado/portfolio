@@ -1,14 +1,18 @@
 <script setup lang="ts">
-defineProps<{ project: Project }>();
+import type { ProjectsCollectionItem } from '@nuxt/content';
+
+defineProps<{ project: ProjectsCollectionItem }>();
 </script>
 
 <template>
-  <UCard
+  <UPageCard
     class="hover:ring-2 hover:ring-primary-500 transition-all h-full flex flex-col"
+    spotlight
+    :ui="{ header: 'w-full flex flex-col', footer: 'pt-2' }"
   >
     <template #header>
-      <div class="flex items-center justify-between">
-        <h3 class="font-bold text-lg text-primary">{{ project.name }}</h3>
+      <div class="flex justify-between items-center">
+        <h3 class="font-bold text-lg text-primary">{{ project.title }}</h3>
         <UButton
           v-if="project.github"
           icon="i-simple-icons-github"
@@ -18,37 +22,35 @@ defineProps<{ project: Project }>();
           target="_blank"
         />
       </div>
-    </template>
-    <NuxtLink
-      :to="project.slug ? `/projects/${project.slug}` : undefined"
-      class="block h-full"
-      :class="{ 'pointer-events-none': !project.slug }"
-    >
-      <div
-        v-if="project.imageUrl"
-        class="-mt-4 -mx-4 mb-4 rounded-t-lg overflow-hidden"
-      >
-        <NuxtImg :src="project.imageUrl" :alt="project.name" />
+      <div v-if="project.stack" class="flex flex-wrap gap-2 mt-auto">
+        <UBadge
+          v-for="tech in project.stack"
+          :key="tech"
+          color="neutral"
+          variant="subtle"
+          size="xs"
+        >
+          {{ tech }}
+        </UBadge>
       </div>
-    </NuxtLink>
+    </template>
 
-    <p class="text-muted text-sm leading-relaxed mb-4">
-      {{ project.description }}
-    </p>
-
-    <div v-if="project.stack" class="flex flex-wrap gap-2 mb-4 mt-auto">
-      <UBadge
-        v-for="tech in project.stack"
-        :key="tech"
-        color="neutral"
-        variant="subtle"
-        size="xs"
+    <template #body>
+      <NuxtLink
+        :to="project.slug ? `/projects/${project.slug}` : undefined"
+        class="block h-full"
+        :class="{ 'pointer-events-none': !project.slug }"
       >
-        {{ tech }}
-      </UBadge>
-    </div>
+        <div v-if="project.coverImage" class="rounded-t-lg overflow-hidden">
+          <NuxtImg :src="project.coverImage" :alt="project.title" />
+        </div>
+      </NuxtLink>
+    </template>
 
     <template #footer>
+      <p class="text-muted text-sm leading-relaxed mb-2">
+        {{ project.description }}
+      </p>
       <div class="flex justify-end gap-2">
         <UButton
           v-if="project.slug"
@@ -80,5 +82,5 @@ defineProps<{ project: Project }>();
         />
       </div>
     </template>
-  </UCard>
+  </UPageCard>
 </template>

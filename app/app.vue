@@ -2,11 +2,11 @@
 const { data: profile } = await useProfile();
 
 useHead({
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-  link: [{ rel: 'icon', href: '/favicon.ico' }],
   htmlAttrs: {
     lang: 'en',
   },
+  link: [{ href: '/images/favicon.webp', rel: 'icon' }],
+  meta: [{ content: 'width=device-width, initial-scale=1', name: 'viewport' }],
 });
 
 const title = 'Prince Mbeah Essilfie - Portfolio';

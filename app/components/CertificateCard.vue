@@ -1,10 +1,13 @@
 <script setup lang="ts">
-defineProps<{ certificate: Certificate }>();
+import type { CertificatesCollectionItem } from '@nuxt/content';
+
+defineProps<{ certificate: CertificatesCollectionItem }>();
 </script>
 
 <template>
-  <UCard
+  <UPageCard
     class="hover:ring-2 hover:ring-primary-500 transition-all h-full flex flex-col"
+    spotlight
   >
     <template #header>
       <div class="flex items-start justify-between gap-4">
@@ -35,5 +38,5 @@ defineProps<{ certificate: Certificate }>();
         />
       </div>
     </template>
-  </UCard>
+  </UPageCard>
 </template>

@@ -1,8 +1,0 @@
-{
-  "description": "IoT project created with Arduino(C++) and Android(Java).",
-  "github": "https://github.com/Kratosgado/traffic_system",
-  "imageUrl": "https://placehold.co/600x400",
-  "liveUrl": "https://github.com/Kratosgado/traffic_system",
-  "name": "Smart Traffic Light System",
-  "stack": ["C++", "Java", "Arduino", "Android"]
-}

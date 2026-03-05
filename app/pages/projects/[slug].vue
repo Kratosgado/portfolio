@@ -11,8 +11,8 @@ if (!page.value) {
 }
 
 useHead({
+  meta: [{ content: page.value.description, name: 'description' }],
   title: page.value.title,
-  meta: [{ name: 'description', content: page.value.description }],
 });
 </script>
 
