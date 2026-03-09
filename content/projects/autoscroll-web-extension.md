@@ -1,14 +1,15 @@
 ---
 title: AutoScroll Web Extension
-slug: autoscroll-web-extension
 coverImage: https://placehold.co/1200x600
 description: Web extension that automatically scrolls the page for you.
 github: https://github.com/Kratosgado/autoscroll-chrome-extension
 images:
   - https://placehold.co/800x400
-liveUrl: https://github.com/Kratosgado/autoscroll-chrome-extension
+liveUrl: ""
 navigation:
   icon: i-lucide-search
+rank: 10
+slug: autoscroll-web-extension
 stack:
   - JavaScript
   - Web Extension

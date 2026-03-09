@@ -1,14 +1,15 @@
 ---
 title: Instagram Clone
-slug: instagram-clone
 coverImage: https://placehold.co/1200x600
 description: Clone of the Instagram app, built with Typescript and React Native.
 github: https://github.com/Kratosgado/typescript-instaClone
 images:
   - https://placehold.co/800x400
-liveUrl: https://github.com/Kratosgado/typescript-instaClone
+liveUrl: ""
 navigation:
   icon: i-lucide-search
+rank: 10
+slug: instagram-clone
 stack:
   - TypeScript
   - React Native

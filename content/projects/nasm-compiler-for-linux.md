@@ -1,16 +1,16 @@
 ---
 title: Nasm Compiler for Linux
-slug: nasm-compiler-for-linux
 coverImage: https://lh3.googleusercontent.com/d/1Q0T-o9AQEvUnEgg5-1Vj_0Qm1ltGwhZI
 description: Vs Code Extension that automates the compilation and execution of assembly codes written in NASM.
 github: https://github.com/Kratosgado/nasm-compiler-linux
 images:
   - https://image2url.com/r2/default/images/1772468211054-abb465e3-17e6-4220-b412-63a35671e73b.png
   - https://lh3.googleusercontent.com/d/1Q0T-o9AQEvUnEgg5-1Vj_0Qm1ltGwhZI
-liveUrl: https://github.com/Kratosgado/nasm-compiler-linux
+liveUrl: https://marketplace.visualstudio.com/items?itemName=KratosGado.nasm-compiler-linux
 navigation:
   icon: i-lucide-search
 rank: 2
+slug: nasm-compiler-for-linux
 stack:
   - VS Code Extension
   - NASM
