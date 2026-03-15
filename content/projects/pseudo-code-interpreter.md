@@ -1,13 +1,13 @@
 ---
 title: Pseudo Code Interpreter
-slug: pseudo-code-interpreter
 coverImage: https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
 description: A pseudo code interpreter written in rust that interprets pseudocode file passed to it as cli argument.
 github: https://github.com/Kratosgado/pseudo_interpreter
-liveUrl: https://github.com/Kratosgado/pseudo_interpreter
+liveUrl: ""
 navigation:
   icon: i-lucide-search
 rank: 2
+slug: pseudo-code-interpreter
 stack:
   - Rust
 ---

@@ -1,16 +1,16 @@
 ---
 title: Pseudo Runner
-slug: pseudo-runner
 coverImage: https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
 description: A VS Code extension that runs pseudo code files directly in the editor.
 github: https://github.com/Kratosgado/pseudo-runner
 images:
   - https://lh3.googleusercontent.com/d/16349CIC6DYXDHTwt75gVh1bworLk95VZ
   - https://image2url.com/r2/default/images/1772468076141-94683d8e-029b-4887-843f-99970e779057.png
-liveUrl: https://marketplace.visualstudio.com/publishers/Kratosgado
+liveUrl: https://marketplace.visualstudio.com/items?itemName=KratosGado.pseudo-runner
 navigation:
   icon: i-lucide-search
 rank: 2
+slug: pseudo-runner
 stack:
   - TypeScript
   - VS Code Extension

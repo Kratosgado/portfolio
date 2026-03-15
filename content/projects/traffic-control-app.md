@@ -1,14 +1,15 @@
 ---
 title: Traffic Control App
-slug: traffic-control-app
-coverImage: https://placehold.co/1200x600
+coverImage: https://lh3.googleusercontent.com/wUTUmcPfuNOa_C6pVRmt-4QernUkCBcZjS86WlfryNc9ffC5NVjYLSUqbo7pA0WFr3Y
 description: Android(Java) application that communicates with Arduino traffic light via bluetooth.
 github: https://github.com/Kratosgado/TrafficControlApp
 images:
   - https://placehold.co/800x400
-liveUrl: https://github.com/Kratosgado/TrafficControlApp
+liveUrl: ""
 navigation:
   icon: i-lucide-search
+rank: 10
+slug: traffic-control-app
 stack:
   - Java
   - Android
