@@ -1,6 +1,17 @@
 ---
-title: Kratos Chat file
+title: Kratos Chat
+coverImage: https://image2url.com/r2/default/images/1774865798254-12aa3de8-c066-4997-bfe9-d658e97bd842.png
 description: Full featured Chat app with voice and video calls feature
+github: https://github.com/kratosgado/chatapp
+images:
+  - https://image2url.com/r2/default/images/1774865732629-481c876e-b06a-4229-90ba-81773d46eae5.png
+  - https://image2url.com/r2/default/images/1774865773848-b44133e1-5d0f-42eb-8942-4aa16ee1e24d.png
+  - https://image2url.com/r2/default/images/1774865798254-12aa3de8-c066-4997-bfe9-d658e97bd842.png
+  - https://image2url.com/r2/default/images/1774865832196-e0c7d7bd-a04d-46a3-93ad-167f34246fdf.png
+  - https://image2url.com/r2/default/images/1774865863500-446f5e3a-8568-4fa3-9729-1d72a7cc6a18.png
+  - /images/kratoschat.png
+liveUrl: https://gachat-67v.pages.dev/
+rank: 2
 seo:
   title: Kratos Chat file
   description: F
@@ -13,9 +24,6 @@ stack:
   - WebRTC
   - Vue
   - NuxtUI
-coverImage: /images/kratoschat.png
-github: https://github.com/kratosgado/chatapp
-liveUrl: https://gachat-67v.pages.dev/
 ---
 
 # Kratos Chat
