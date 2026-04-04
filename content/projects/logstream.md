@@ -1,5 +1,5 @@
 ---
-title: LogStream
+title: LogStream file
 coverImage: https://image2url.com/r2/default/images/1775320568063-c9e6a2c9-4146-4aad-8b76-b4cf7dc2511c.png
 description: LogStream is a log aggregation and analytics platform.
 github: https://github.com/AmaliTech-Training-Academy/NSP_25_26_Team_14
@@ -9,7 +9,7 @@ images:
   - https://image2url.com/r2/default/images/1775320749482-1048d11e-653d-45b5-9f40-30b0aa5818f3.png
   - https://image2url.com/r2/default/images/1775320796117-64b2f92e-faf4-4f0f-a31e-6efc12ec73cb.png
   - https://image2url.com/r2/default/images/1775320568063-c9e6a2c9-4146-4aad-8b76-b4cf7dc2511c.png
-rank: 3
+rank: 10
 seo:
   title: LogStream file
   description: LogStream is a log aggregation and analytics platform built with Spring Boot, PostgreSQL, React, and Python ETL. It ingests logs, supports search and retention, provides authentication, and generates analytics with an intuitive web dashboard.
@@ -21,6 +21,7 @@ stack:
   - React
   - Vite
   - Postgres
+  - SSE
 ---
 
 # LogStream - Log Aggregator
