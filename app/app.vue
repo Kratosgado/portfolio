@@ -53,6 +53,12 @@ useSeoMeta({
             icon: 'simple-icons:udemy',
             active: false,
           },
+          {
+            label: 'Resume',
+            to: '/resume',
+            icon: 'i-lucide-file-text',
+            active: false,
+          },
         ]"
       />
 

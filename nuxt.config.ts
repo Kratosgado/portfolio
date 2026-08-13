@@ -19,6 +19,8 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/resume': { prerender: true },
+    '/resume/**': { prerender: true },
   },
   studio: {
     repository: {

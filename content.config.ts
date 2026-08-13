@@ -1,7 +1,56 @@
 import { defineContentConfig, defineCollection, z } from "@nuxt/content";
 
+const linkSchema = z.object({ label: z.string(), url: z.string() });
+
 export default defineContentConfig({
   collections: {
+    resumes: defineCollection({
+      type: "data",
+      source: "resumes/*.json",
+      schema: z.object({
+        slug: z.string(),
+        title: z.string(),
+        targetRole: z.string().optional(),
+        isDefault: z.boolean().optional(),
+        header: z.object({
+          name: z.string(),
+          links: z.array(linkSchema),
+        }),
+        profile: z.string(),
+        education: z.array(
+          z.object({
+            institution: z.string(),
+            degree: z.string(),
+            period: z.string(),
+            bullets: z.array(z.string()).default([]),
+          })
+        ),
+        skills: z.array(
+          z.object({
+            category: z.string(),
+            items: z.array(z.string()),
+          })
+        ),
+        experience: z.array(
+          z.object({
+            company: z.string(),
+            role: z.string(),
+            period: z.string(),
+            location: z.string(),
+            url: z.string().optional(),
+            bullets: z.array(z.string()),
+          })
+        ),
+        projects: z.array(
+          z.object({
+            name: z.string(),
+            year: z.string().optional(),
+            links: z.array(linkSchema).default([]),
+            bullets: z.array(z.string()),
+          })
+        ),
+      }),
+    }),
     profile: defineCollection({
       type: "data",
       source: "profile.json",
