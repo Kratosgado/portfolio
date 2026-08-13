@@ -12,7 +12,7 @@ navigation:
 rank: 2
 slug: pseudo-runner
 toolType: vscode-extension
-installs: 13000
+installs: 1800
 year: "2024"
 resumeBullets:
   - Engineered a custom runtime engine and interpreter in Rust to parse and execute pseudocode syntax, implementing lexers, parsers, and ASTs to handle features like multi-conditional flows, loops, functions, and multidimensional arrays.

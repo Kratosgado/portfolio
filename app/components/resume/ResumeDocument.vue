@@ -34,7 +34,7 @@ defineProps<{
 
 <template>
   <div
-    class="resume-document max-w-[780px] mx-auto px-8 py-8 text-sm leading-snug"
+    class="resume-document max-w-[780px] mx-auto px-8 py-8 text-[15px] leading-normal"
   >
     <div class="text-center mb-4">
       <h1 class="text-2xl font-bold uppercase tracking-wide">
@@ -74,7 +74,7 @@ defineProps<{
       <div
         v-for="edu in resume.education"
         :key="edu.institution"
-        class="mb-1.5"
+        class="resume-entry mb-1.5"
       >
         <div class="flex justify-between">
           <span class="font-bold">{{ edu.institution }}</span>
@@ -110,7 +110,7 @@ defineProps<{
       <div
         v-for="exp in resume.experience"
         :key="exp.company + exp.period"
-        class="mb-2.5"
+        class="resume-entry mb-2.5"
       >
         <div class="flex justify-between items-baseline">
           <span class="font-bold">{{ exp.company }}</span>
@@ -144,7 +144,7 @@ defineProps<{
       <div
         v-for="project in resume.projects"
         :key="project.name"
-        class="mb-2.5"
+        class="resume-entry mb-2.5"
       >
         <div class="flex justify-between items-baseline gap-2">
           <div class="font-bold">

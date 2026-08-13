@@ -7,41 +7,53 @@ const { data: projectsData } = await useAsyncData('projects', () =>
 );
 const { data: certificatesData } = await useAsyncData('certificates', () => queryCollection('certificates').all());
 
-const projects = computed(() => projectsData.value || []);
-const certificates = computed(() => certificatesData.value || []);
+const projects = computed(() => projectsData.value ?? []);
+const certificates = computed(() => certificatesData.value ?? []);
 
+// ── Filtering ────────────────────────────────────────────────────
 const searchQuery = ref('');
 const selectedStack = ref<string[]>([]);
 
 const uniqueStacks = computed(() => {
   const stacks = new Set<string>();
-  projects.value.forEach((project) => {
-    project.stack?.forEach((s: string) => {
-      stacks.add(s);
-    });
-  });
-  return Array.from(stacks).sort();
+  for (const p of projects.value) {
+    for (const s of p.stack ?? []) stacks.add(s);
+  }
+  return [...stacks].sort();
 });
 
 const filteredProjects = computed(() => {
-  if (!projects.value) return [];
-
-  return projects.value.filter((project) => {
-    const query = searchQuery.value.toLowerCase();
-    const title = project.title?.toLowerCase() || '';
-    const description = project.description?.toLowerCase() || '';
-
-    const matchesSearch = !query || title.includes(query) || description.includes(query);
-
-    const selected = selectedStack.value || [];
-    const stack = project.stack || [];
-
-    const matchesStack = selected.length === 0 || stack.some((s: string) => selected.includes(s));
-
+  const query = searchQuery.value.toLowerCase().trim();
+  const selected = selectedStack.value;
+  return projects.value.filter((p) => {
+    const matchesSearch =
+      !query || (p.title ?? '').toLowerCase().includes(query) || (p.description ?? '').toLowerCase().includes(query);
+    const matchesStack = selected.length === 0 || (p.stack ?? []).some((s) => selected.includes(s));
     return matchesSearch && matchesStack;
   });
 });
 
+const hasActiveFilters = computed(() => searchQuery.value.trim() !== '' || selectedStack.value.length > 0);
+
+function clearFilters() {
+  searchQuery.value = '';
+  selectedStack.value = [];
+}
+
+// ── Pagination ───────────────────────────────────────────────────
+const PAGE_SIZE = 6;
+const page = ref(1);
+
+watch(filteredProjects, () => {
+  page.value = 1;
+});
+
+const paginatedProjects = computed(() => {
+  const start = (page.value - 1) * PAGE_SIZE;
+  return filteredProjects.value.slice(start, start + PAGE_SIZE);
+});
+
+// ── Hero / CTA links ─────────────────────────────────────────────
 const heroLinks = computed<ButtonProps[]>(() => {
   if (!profile.value) return [];
   return [
@@ -94,7 +106,7 @@ const ctaLinks = computed<ButtonProps[]>(() => {
       :links="heroLinks"
     >
       <img
-        src="/images/profile_image.webp"
+        src="/images/favicon.webp"
         alt="Prince Mbeah Essilfie"
         class="rounded-lg shadow-lg w-full max-w-sm mx-auto"
       />
@@ -106,11 +118,11 @@ const ctaLinks = computed<ButtonProps[]>(() => {
       description="A selection of my work across various platforms and languages."
     >
       <div
-        class="flex items-center justify-center w-full flex-col sm:flex-row gap-4"
+        class="flex items-center justify-center w-full flex-col sm:flex-row gap-3"
       >
         <UInput
           v-model="searchQuery"
-          icon="i-heroicons-magnifying-glass-20-solid"
+          icon="i-lucide-search"
           placeholder="Search projects..."
           class="w-full sm:w-64"
         />
@@ -119,14 +131,22 @@ const ctaLinks = computed<ButtonProps[]>(() => {
           :items="uniqueStacks"
           placeholder="Filter by stack"
           multiple
-          searchable
           class="w-full sm:w-64"
         />
+        <UButton
+          v-if="hasActiveFilters"
+          icon="i-lucide-x"
+          color="neutral"
+          variant="ghost"
+          @click="clearFilters"
+        >
+          Clear
+        </UButton>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <ProjectCard
-          v-for="project in filteredProjects"
+          v-for="project in paginatedProjects"
           :key="project.title"
           :project="project"
         />
@@ -134,9 +154,20 @@ const ctaLinks = computed<ButtonProps[]>(() => {
 
       <div
         v-if="filteredProjects.length === 0"
-        class="text-center py-8 text-gray-500 dark:text-gray-400"
+        class="text-center py-8 text-muted"
       >
         No projects found matching your criteria.
+      </div>
+
+      <div
+        v-if="filteredProjects.length > PAGE_SIZE"
+        class="flex justify-center mt-6"
+      >
+        <UPagination
+          v-model:page="page"
+          :total="filteredProjects.length"
+          :page-size="PAGE_SIZE"
+        />
       </div>
     </UPageSection>
 
@@ -145,7 +176,7 @@ const ctaLinks = computed<ButtonProps[]>(() => {
       title="Certifications"
       description="Continuous learning and professional development."
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
         <CertificateCard
           v-for="cert in certificates"
           :key="cert.name"

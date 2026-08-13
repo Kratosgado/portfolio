@@ -59,6 +59,29 @@ useHead({
 })
 
 function print() {
+  const el = document.querySelector('.resume-document') as HTMLElement | null
+  if (!el) { window.print(); return }
+
+  // Measure content at A4 width (794px at 96dpi)
+  const prev = { maxWidth: el.style.maxWidth, width: el.style.width }
+  el.style.maxWidth = '794px'
+  el.style.width = '794px'
+  const contentHeight = el.scrollHeight
+  el.style.maxWidth = prev.maxWidth
+  el.style.width = prev.width
+
+  // A4 at 96dpi minus 0.8cm top+bottom margins
+  const a4Usable = 1062
+  const zoom = contentHeight > a4Usable
+    ? Math.max(0.78, a4Usable / contentHeight)
+    : 1
+
+  const style = document.createElement('style')
+  style.id = '__resume-zoom'
+  style.textContent = `@media print { .resume-document { zoom: ${zoom.toFixed(3)} !important; } }`
+  document.head.appendChild(style)
+
+  window.addEventListener('afterprint', () => document.getElementById('__resume-zoom')?.remove(), { once: true })
   window.print()
 }
 </script>
@@ -69,14 +92,9 @@ function print() {
       <UButton to="/resume" variant="ghost" icon="i-lucide-arrow-left" color="neutral">
         All Resumes
       </UButton>
-      <div class="flex gap-2">
-        <UButton :to="`/resume/${slug}/edit`" color="neutral" variant="outline" icon="i-lucide-pencil">
-          Edit
-        </UButton>
-        <UButton icon="i-lucide-printer" @click="print">
-          Print / Save PDF
-        </UButton>
-      </div>
+      <UButton icon="i-lucide-printer" @click="print">
+        Print / Save PDF
+      </UButton>
     </div>
 
     <ResumeDocument :resume="resolvedResume" />

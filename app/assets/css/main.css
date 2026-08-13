@@ -33,14 +33,18 @@ html {
   .resume-document {
     max-width: 100% !important;
     padding: 0 !important;
-    font-size: 9.5pt;
-    line-height: 1.3;
-    zoom: 0.92;
+    font-size: 10.5pt;
+    line-height: 1.35;
   }
 
-  .resume-section {
+  .resume-entry {
     page-break-inside: avoid;
     break-inside: avoid;
+  }
+
+  h2.text-xs {
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   a {
