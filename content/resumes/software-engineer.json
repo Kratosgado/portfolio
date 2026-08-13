@@ -76,24 +76,21 @@
     {
       "toolRef": "liquibase-runner",
       "bullets": [
-        "Developed a VS Code extension in TypeScript for managing Liquibase database migrations directly from the editor, later ported to Neovim as liquibase.nvim.",
-        "Built a sidebar changelog/changeset tree view and a live dashboard panel surfacing migration status, with the full Liquibase command set (update, rollback, diff, snapshot, generate).",
-        "Implemented auto-detection of Maven, Gradle, and standalone CLI Liquibase setups so the extension works across differently configured Java projects with no manual config."
+        "TypeScript VS Code extension for Liquibase migration management, ported to Neovim as liquibase.nvim; auto-detects Maven, Gradle, and standalone CLI setups with no manual config.",
+        "Sidebar changelog/changeset tree, live migration dashboard, and full Liquibase command set (update, rollback, diff, snapshot, generate)."
       ]
     },
     {
       "toolRef": "hurl-plus",
       "bullets": [
-        "Built Hurl+, a VS Code extension delivering a complete HTTP testing toolkit for .hurl files, including syntax highlighting, IntelliSense, hover documentation, and diagnostics.",
-        "Implemented CodeLens-driven request execution directly above each .hurl request block, letting developers run individual requests without leaving the editor.",
-        "Designed a notebook view that runs .hurl requests as individual cells, plus environment profile switching for testing against multiple configurations."
+        "VS Code extension for .hurl files with syntax highlighting, IntelliSense, diagnostics, and CodeLens-driven inline request execution.",
+        "Notebook view for cell-based request execution with environment profile switching across multiple configurations."
       ]
     },
     {
       "toolRef": "rust-sqlite",
       "bullets": [
-        "Implemented a SQLite-compatible database engine from scratch in Rust, covering page-based storage, B-tree indexing, and query execution.",
-        "Explored database internals including the file format, storage engine design, and on-disk data structures to deepen understanding of how relational databases work under the hood."
+        "Built a SQLite-compatible database engine from scratch in Rust — page-based storage, B-tree indexing, and query execution — exploring file format and storage engine internals hands-on."
       ]
     }
   ],
