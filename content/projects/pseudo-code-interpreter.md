@@ -8,9 +8,10 @@ navigation:
   icon: i-lucide-search
 rank: 2
 slug: pseudo-code-interpreter
+toolType: cli
 resumeBullets:
   - Engineered a Rust CLI interpreter for pseudocode files, implementing a full lexer, parser, and AST evaluator supporting conditionals, loops, functions, and multi-dimensional arrays.
-  - Published as a standalone binary and crate on crates.io, used as the runtime engine backing the Pseudo Runner VS Code extension (1.7k+ installs).
+  - Published as a standalone binary and crate on crates.io, used as the runtime engine backing the Pseudo Runner VS Code extension (13k+ installs).
   - Designed the interpreter architecture to be embeddable, enabling tight integration with the companion TypeScript VS Code extension via native binary invocation.
 stack:
   - Rust

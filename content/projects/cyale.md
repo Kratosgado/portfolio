@@ -2,7 +2,7 @@
 title: Cyale Website
 slug: cyale
 coverImage: /images/cyale-homepage.png
-description: Website for Community Youth Advocates for Learning Excellence in Abuesi
+description: Website for a youth-advocacy nonprofit in Abuesi, Ghana, with member auth, an impact showcase, event announcements, donations, and a leadership directory.
 github: https://github.com/kratosgado/cyale
 images:
   - https://image2url.com/r2/default/images/1772468737517-1cfe0c98-e514-42d7-9665-cd28d6f9ba1e.png
@@ -15,26 +15,29 @@ navigation:
   icon: i-lucide-search
 rank: 1
 resumeBullets:
-  - Designed and delivered the full-stack website for CYALE (a community youth NGO) using NuxtJs, Vue 3, TypeScript, and PostgreSQL, live at cyale.org.
-  - Implemented Prisma ORM for type-safe database access and built content management for events, resources, and organizational announcements.
-  - Optimised for SEO and responsive across all device sizes using Nuxt's SSR capabilities and Tailwind CSS.
+  - Designed and delivered the full-stack website for CYALE (a youth-advocacy nonprofit in Abuesi, Ghana) using NuxtJs, Vue 3, TypeScript, and PostgreSQL, live at cyale.org.
+  - Built member authentication, a projects/impact showcase, event announcements, a donation flow, and a leadership directory.
+  - Implemented Prisma ORM for type-safe database access and deployed on Vercel with image CDN optimization for fast, responsive delivery across devices.
 stack:
   - NuxtJs
   - VueJs
   - TypeScript
   - Prisma
   - Postgres
+  - Vercel
 ---
 
 ## Overview
 
-The Cyale Website is the official platform for the Community Youth Advocates for Learning Excellence (CYALE) in Abuesi. It serves as a hub for organization information, events, and resources.
+The Cyale Website is the official platform for the Community Youth Advocates for Learning Excellence (CYALE), a youth-advocacy nonprofit based in Abuesi, Ghana. It serves as a hub for organization information, member sign-up, events, and impact reporting.
 
 ## Features
 
-- **Information Hub**: Provides details about CYALE's mission and activities.
-- **Events**: Lists upcoming events and activities.
-- **Resources**: Access educational materials and support.
+- **Member Authentication**: Sign-up and login for CYALE members.
+- **Projects & Impact Showcase**: Highlights CYALE's initiatives and community impact.
+- **Event Announcements**: Lists upcoming events and activities.
+- **Donation Flow**: Lets supporters contribute directly through the site.
+- **Leadership Directory**: Profiles of CYALE's leadership team.
 
 ## Technologies Used
 
