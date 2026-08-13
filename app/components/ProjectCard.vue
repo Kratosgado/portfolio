@@ -13,14 +13,25 @@ defineProps<{ project: ProjectsCollectionItem }>();
     <template #header>
       <div class="flex justify-between items-center">
         <h3 class="font-bold text-lg text-primary">{{ project.title }}</h3>
-        <UButton
-          v-if="project.github"
-          icon="i-simple-icons-github"
-          color="neutral"
-          variant="ghost"
-          :to="project.github"
-          target="_blank"
-        />
+        <div class="flex items-center gap-1">
+          <UBadge
+            v-if="project.installs"
+            color="primary"
+            variant="subtle"
+            size="xs"
+            icon="i-lucide-download"
+          >
+            {{ project.installs >= 1000 ? `${+(project.installs / 1000).toFixed(1)}k+` : project.installs }}
+          </UBadge>
+          <UButton
+            v-if="project.github"
+            icon="i-simple-icons-github"
+            color="neutral"
+            variant="ghost"
+            :to="project.github"
+            target="_blank"
+          />
+        </div>
       </div>
       <div v-if="project.stack" class="flex flex-wrap gap-2 mt-auto">
         <UBadge

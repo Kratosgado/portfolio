@@ -43,7 +43,8 @@ export default defineContentConfig({
         ),
         projects: z.array(
           z.object({
-            name: z.string(),
+            toolRef: z.string().optional(),
+            name: z.string().optional(),
             year: z.string().optional(),
             links: z.array(linkSchema).default([]),
             bullets: z.array(z.string()),
@@ -78,6 +79,10 @@ export default defineContentConfig({
         github: z.string().optional(),
         liveUrl: z.string().optional(),
         stack: z.array(z.string()).default([]),
+        toolType: z.enum(["vscode-extension", "neovim-plugin", "intellij-plugin", "cli", "library"]).optional(),
+        installs: z.number().optional(),
+        year: z.string().optional(),
+        resumeBullets: z.array(z.string()).default([]),
       }),
       indexes: [{ columns: ["slug"] }],
     }),

@@ -1,38 +1,11 @@
 {
-  "slug": "software-engineer",
   "title": "Software Engineer",
-  "targetRole": "General Application",
-  "isDefault": true,
-  "header": {
-    "name": "Essilfie Prince Mbeah",
-    "links": [
-      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
-      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
-      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
-      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
-    ]
-  },
-  "profile": "Backend-focused full-stack engineer with production experience across Spring Boot, NestJS, and TypeScript, delivering systems in health and enterprise domains — from authentication and authorization architecture to real-time communication and automated financial computation. Comfortable owning features end-to-end across frontend, backend, database, and cloud infrastructure.",
   "education": [
     {
       "institution": "Kwame Nkrumah University of Science and Technology",
       "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
       "period": "November 2021 – November 2025",
       "bullets": []
-    }
-  ],
-  "skills": [
-    {
-      "category": "Core Expertise",
-      "items": ["Spring Boot", "NestJs", "Typescript", "Rust", "Java", "PostgreSQL"]
-    },
-    {
-      "category": "Working Knowledge",
-      "items": ["Kotlin", "Vue", "NuxtJs", "ReactJS", "Angular", "Flutter"]
-    },
-    {
-      "category": "Tools",
-      "items": ["Git", "GitHub Actions", "Docker", "Cloudflare", "Google Cloud Platform", "WebSocket", "Socket.io", "Hurl"]
     }
   ],
   "experience": [
@@ -61,15 +34,32 @@
       ]
     }
   ],
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/kratosgado"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/Kratosgado"
+      },
+      {
+        "label": "Portfolio",
+        "url": "https://www.kratosgado.dev"
+      },
+      {
+        "label": "Credly Badges",
+        "url": "https://www.credly.com/users/kratosgado"
+      }
+    ]
+  },
+  "isDefault": true,
+  "profile": "Backend-focused full-stack engineer with production experience across Spring Boot, NestJS, and TypeScript, delivering systems in health and enterprise domains — from authentication and authorization architecture to real-time communication and automated financial computation. Comfortable owning features end-to-end across frontend, backend, database, and cloud infrastructure.",
   "projects": [
     {
-      "name": "Pseudocode Interpreter",
-      "year": "2024",
-      "links": [
-        { "label": "VSCode Extension", "url": "https://marketplace.visualstudio.com/items?itemName=kratosgado.pseudo-runner" },
-        { "label": "GitHub", "url": "https://github.com/Kratosgado/pseudo-runner" },
-        { "label": "Rust Interpreter (1.7k+ installs)", "url": "https://crates.io/crates/pseudocode-interpreter" }
-      ],
+      "toolRef": "pseudo-runner",
       "bullets": [
         "Engineered a custom runtime engine and interpreter in Rust to parse and execute pseudocode syntax, implementing lexers, parsers, and ASTs to handle features like multi-conditional flows, loops, functions, and multidimensional arrays.",
         "Developed and published a companion VS Code extension (Pseudo Runner) utilizing TypeScript to bridge the developer environment with the Rust native runtime binary.",
@@ -77,16 +67,50 @@
       ]
     },
     {
-      "name": "NASM-Compiler-Linux",
-      "year": "2023",
-      "links": [
-        { "label": "Repo", "url": "https://github.com/Kratosgado/NASM-Compiler-Linux" },
-        { "label": "VSCode Link (14k+ installs)", "url": "https://marketplace.visualstudio.com/items?itemName=kratosgado.nasm-compiler-linux" }
-      ],
+      "toolRef": "nasm-compiler-for-linux",
       "bullets": [
         "Engineered an automated compilation and linking pipeline in TypeScript to transform raw NASM assembly code into native Linux ELF binaries directly within the IDE interface.",
         "Replaces the manual linking and running of assembly codes with a click of a button."
       ]
     }
-  ]
+  ],
+  "skills": [
+    {
+      "category": "Core Expertise",
+      "items": [
+        "Spring Boot",
+        "NestJs",
+        "Typescript",
+        "Rust",
+        "Java",
+        "PostgreSQL"
+      ]
+    },
+    {
+      "category": "Working Knowledge",
+      "items": [
+        "Kotlin",
+        "Vue",
+        "NuxtJs",
+        "ReactJS",
+        "Angular",
+        "Flutter"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        "Git",
+        "GitHub Actions",
+        "Docker",
+        "Cloudflare",
+        "Google Cloud Platform",
+        "WebSocket",
+        "Socket.io",
+        "Hurl"
+      ]
+    }
+  ],
+  "slug": "software-engineer",
+  "targetRole": "General Application"
 }

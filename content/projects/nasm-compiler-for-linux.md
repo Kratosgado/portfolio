@@ -11,6 +11,12 @@ navigation:
   icon: i-lucide-search
 rank: 2
 slug: nasm-compiler-for-linux
+toolType: vscode-extension
+installs: 14000
+year: "2023"
+resumeBullets:
+  - Engineered an automated compilation and linking pipeline in TypeScript to transform raw NASM assembly code into native Linux ELF binaries directly within the IDE interface.
+  - Replaces the manual linking and running of assembly codes with a click of a button.
 stack:
   - VS Code Extension
   - NASM

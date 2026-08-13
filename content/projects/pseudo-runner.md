@@ -11,6 +11,13 @@ navigation:
   icon: i-lucide-search
 rank: 2
 slug: pseudo-runner
+toolType: vscode-extension
+installs: 1700
+year: "2024"
+resumeBullets:
+  - Engineered a custom runtime engine and interpreter in Rust to parse and execute pseudocode syntax, implementing lexers, parsers, and ASTs to handle features like multi-conditional flows, loops, functions, and multidimensional arrays.
+  - Developed and published a companion VS Code extension (Pseudo Runner) utilizing TypeScript to bridge the developer environment with the Rust native runtime binary.
+  - Streamlined the developer experience for early-stage engineering students by enabling seamless, localized execution of logical syntax directly from the IDE interface.
 stack:
   - TypeScript
   - VS Code Extension
