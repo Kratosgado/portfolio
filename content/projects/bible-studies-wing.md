@@ -12,6 +12,10 @@ navigation:
   icon: i-lucide-search
 rank: 10
 slug: bible-studies-wing
+resumeBullets:
+  - Built and published a cross-platform mobile Bible study app on the Google Play Store, implementing user authentication, verse reading, social sharing, and community connection features.
+  - Designed the user account and content persistence layer, supporting bookmarking, group discussions, and user-to-user connectivity.
+  - Delivered end-to-end — from UI design to Play Store publication — as a solo developer.
 stack:
   - Mobile App
 ---

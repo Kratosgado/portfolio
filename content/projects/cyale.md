@@ -14,6 +14,10 @@ liveUrl: https://cyale.org
 navigation:
   icon: i-lucide-search
 rank: 1
+resumeBullets:
+  - Designed and delivered the full-stack website for CYALE (a community youth NGO) using NuxtJs, Vue 3, TypeScript, and PostgreSQL, live at cyale.org.
+  - Implemented Prisma ORM for type-safe database access and built content management for events, resources, and organizational announcements.
+  - Optimised for SEO and responsive across all device sizes using Nuxt's SSR capabilities and Tailwind CSS.
 stack:
   - NuxtJs
   - VueJs

@@ -10,6 +10,10 @@ navigation:
   icon: i-lucide-search
 rank: 10
 slug: smart-traffic-light-system
+resumeBullets:
+  - Developed an IoT traffic management system using Arduino (C++) for hardware control, paired with an Android (Java) app for remote Bluetooth operation.
+  - Designed and implemented the Bluetooth communication protocol between the Android controller and Arduino microcontroller for real-time traffic light state management.
+  - Integrated sensor inputs and a finite-state machine in firmware to automate traffic light sequencing with manual override capability.
 stack:
   - C++
   - Java

@@ -10,6 +10,10 @@ navigation:
   icon: i-lucide-search
 rank: 10
 slug: traffic-control-app
+resumeBullets:
+  - Built an Android (Java) companion app for a Bluetooth-connected Arduino traffic light system, enabling remote control and real-time status monitoring from a smartphone.
+  - Implemented the Bluetooth communication layer using Android's BluetoothSocket API for reliable, low-latency hardware interfacing.
+  - Designed a clean control interface allowing operators to toggle light states and receive live feedback from the physical hardware.
 stack:
   - Java
   - Android

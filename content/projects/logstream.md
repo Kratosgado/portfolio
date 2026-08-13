@@ -10,6 +10,10 @@ images:
   - https://image2url.com/r2/default/images/1775320796117-64b2f92e-faf4-4f0f-a31e-6efc12ec73cb.png
   - https://image2url.com/r2/default/images/1775320568063-c9e6a2c9-4146-4aad-8b76-b4cf7dc2511c.png
 rank: 10
+resumeBullets:
+  - Collaborated in a team of 4 to build a production-grade log aggregation and analytics platform in 4 days using Spring Boot (Java) and React, supporting multi-service log ingestion, search, retention policies, and analytics dashboards.
+  - Built a Python ETL pipeline for log processing and analytics generation, containerised the full stack with Docker Compose.
+  - Implemented SSE-based real-time log streaming from backend to frontend dashboard.
 seo:
   title: LogStream file
   description: LogStream is a log aggregation and analytics platform built with Spring Boot, PostgreSQL, React, and Python ETL. It ingests logs, supports search and retention, provides authentication, and generates analytics with an intuitive web dashboard.

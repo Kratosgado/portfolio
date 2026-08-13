@@ -12,6 +12,10 @@ images:
   - /images/kratoschat.png
 liveUrl: https://gachat-67v.pages.dev/
 rank: 2
+resumeBullets:
+  - Built a full-featured real-time chat application with a Spring Boot (Kotlin) backend and Vue 3 TypeScript frontend, supporting private and group messaging via WebSocket (STOMP protocol).
+  - Implemented WebRTC signaling for peer-to-peer voice and video calls, with JWT-based authentication and Spring Security for access control.
+  - Designed frontend state management with Pinia, featuring live typing indicators, real-time message delivery, and a modern Nuxt UI interface.
 seo:
   title: Kratos Chat file
   description: F

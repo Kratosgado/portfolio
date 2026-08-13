@@ -1,6 +1,9 @@
 ---
 title: VsCode Color Theme
 slug: vscode-color-theme
+resumeBullets:
+  - Designed and published a custom VS Code color theme blending GitHub Dark, Andromeda, and VS Code Dark+ aesthetics, with tuned contrast ratios for extended coding sessions.
+  - Configured full token colour coverage across 20+ language grammars and VS Code UI surface areas including sidebar, terminal, and activity bar.
 coverImage: https://placehold.co/1200x600
 description: A color theme that combines Github dark default theme, Andromeda theme and vscode dark editor color scheme.
 github: https://github.com/Kratosgado/kg-dark-theme
