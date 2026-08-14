@@ -1,13 +1,7 @@
 <script setup lang="ts">
-defineProps<{
-  profile: {
-    email: string;
-    github: string;
-    linkedin: string;
-  };
-}>();
+const { data: profile, pending } = await useProfile();
 
-const socials = computed(() => [
+const socials = [
   {
     label: 'GitHub',
     icon: 'i-simple-icons-github',
@@ -32,7 +26,7 @@ const socials = computed(() => [
     href: 'https://blog.bitshiftdevs.com',
     color: '#f59e0b',
   },
-]);
+];
 </script>
 
 <template>
@@ -98,7 +92,9 @@ const socials = computed(() => [
 
       <!-- Direct CTA -->
       <div class="mt-10">
+        <div v-if="pending" class="animate-pulse h-12 w-52 bg-white/10 rounded-full mx-auto" />
         <a
+          v-else-if="profile"
           :href="`mailto:${profile.email}`"
           class="btn-neon btn-neon-primary inline-flex items-center gap-2 text-lg"
         >

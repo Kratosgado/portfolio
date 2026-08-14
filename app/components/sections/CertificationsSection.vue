@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { CertificatesCollectionItem } from '@nuxt/content';
+const { data: certificatesData, pending } = await useLazyAsyncData('certificates', () =>
+  queryCollection('certificates').all(),
+);
 
-defineProps<{
-  certificates: CertificatesCollectionItem[];
-}>();
+const certificates = computed(() => certificatesData.value ?? []);
 
 onMounted(async () => {
   const { gsap } = await import('gsap');
@@ -45,39 +45,56 @@ onMounted(async () => {
       <p class="section-subtitle mx-auto">Continuous learning and professional development.</p>
     </div>
 
-    <!-- Cert Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
-      <div
-        v-for="cert in certificates"
-        :key="cert.name"
-        class="cert-card glass-card p-6 transition-all duration-300 hover:border-[var(--color-accent-start)]/30 hover:[transform:perspective(1000px)_rotateY(3deg)_rotateX(-2deg)_translateY(-4px)]"
-      >
+    <!-- Loading skeleton -->
+    <div v-if="pending" class="animate-pulse grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+      <div v-for="i in 4" :key="i" class="glass-card p-6 space-y-3">
         <div class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="font-heading font-bold text-[var(--color-text-primary)]">{{ cert.name }}</h3>
-            <p class="text-sm text-[var(--color-text-muted)] mt-1">
-              {{ cert.organization }} • {{ cert.date }}
-            </p>
+          <div class="flex-1 space-y-2">
+            <div class="h-5 bg-white/5 rounded w-3/4" />
+            <div class="h-4 bg-white/5 rounded w-1/2" />
           </div>
-          <UIcon name="i-lucide-award" class="size-6 text-[var(--color-accent-start)] shrink-0" />
+          <div class="size-6 bg-white/5 rounded" />
         </div>
-
-        <p v-if="cert.skills" class="text-sm text-[var(--color-text-secondary)] mt-3">
-          {{ cert.skills }}
-        </p>
-
-        <a
-          v-if="cert.credential"
-          :href="cert.credential"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-1 mt-4 text-sm text-[var(--color-accent-start)] hover:text-[var(--color-neon-blue)] transition-colors"
-        >
-          View Credential
-          <UIcon name="i-lucide-external-link" class="size-3" />
-        </a>
+        <div class="h-4 bg-white/5 rounded w-full" />
+        <div class="h-4 bg-white/5 rounded w-5/6" />
       </div>
     </div>
+
+    <template v-else>
+      <!-- Cert Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
+        <div
+          v-for="cert in certificates"
+          :key="cert.name"
+          class="cert-card glass-card p-6 transition-all duration-300 hover:border-[var(--color-accent-start)]/30 hover:[transform:perspective(1000px)_rotateY(3deg)_rotateX(-2deg)_translateY(-4px)]"
+        >
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-heading font-bold text-[var(--color-text-primary)]">{{ cert.name }}</h3>
+              <p class="text-sm text-[var(--color-text-muted)] mt-1">
+                {{ cert.organization }} • {{ cert.date }}
+              </p>
+            </div>
+            <UIcon name="i-lucide-award" class="size-6 text-[var(--color-accent-start)] shrink-0" />
+          </div>
+
+          <p v-if="cert.skills" class="text-sm text-[var(--color-text-secondary)] mt-3">
+            {{ cert.skills }}
+          </p>
+
+          <a
+            v-if="cert.credential"
+            :href="cert.credential"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 mt-4 text-sm text-[var(--color-accent-start)] hover:text-[var(--color-neon-blue)] transition-colors"
+          >
+            View Credential
+            <UIcon name="i-lucide-external-link" class="size-3" />
+          </a>
+        </div>
+      </div>
+    </template>
 
     <!-- Blog CTA -->
     <div class="blog-cta relative overflow-hidden rounded-2xl p-8 md:p-12">
@@ -88,14 +105,12 @@ onMounted(async () => {
 
       <!-- Content -->
       <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
-        <!-- Icon -->
         <div class="shrink-0">
           <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[var(--color-accent-start)]/20 to-[var(--color-accent-end)]/20 flex items-center justify-center">
             <UIcon name="i-lucide-pen-tool" class="size-8 text-[var(--color-accent-start)]" />
           </div>
         </div>
 
-        <!-- Text -->
         <div class="flex-1 text-center md:text-left">
           <h3 class="text-2xl font-heading font-bold text-[var(--color-text-primary)]">
             I Write About Engineering
@@ -105,7 +120,6 @@ onMounted(async () => {
           </p>
         </div>
 
-        <!-- CTA -->
         <a
           href="https://blog.bitshiftdevs.com"
           target="_blank"

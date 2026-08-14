@@ -26,12 +26,17 @@ useHead({
           to="/#projects"
           class="inline-flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent-start)] transition-colors mb-8 group"
         >
-          <UIcon name="i-lucide-arrow-left" class="size-4 group-hover:-translate-x-1 transition-transform" />
+          <UIcon
+            name="i-lucide-arrow-left"
+            class="size-4 group-hover:-translate-x-1 transition-transform"
+          />
           <span class="text-sm">Back to Projects</span>
         </NuxtLink>
 
         <!-- Title & Meta -->
-        <h1 class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4">
+        <h1
+          class="text-4xl md:text-5xl font-heading font-bold gradient-text mb-4"
+        >
           {{ page.title }}
         </h1>
         <p class="text-lg text-[var(--color-text-secondary)] max-w-2xl mb-6">
@@ -74,29 +79,27 @@ useHead({
         </div>
 
         <!-- Cover Image -->
-        <div v-if="page.coverImage" class="rounded-xl overflow-hidden border border-white/10 mb-12">
-          <NuxtImg
-            :src="page.coverImage"
-            :alt="page.title"
-            class="w-full"
-          />
+        <div
+          v-if="page.coverImage"
+          class="rounded-xl overflow-hidden border border-white/10 mb-12"
+        >
+          <NuxtImg :src="page.coverImage" :alt="page.title" class="w-full" />
         </div>
 
         <!-- Content -->
-        <div class="prose prose-lg prose-invert max-w-none
-          prose-headings:font-heading prose-headings:text-[var(--color-text-primary)]
-          prose-p:text-[var(--color-text-secondary)]
-          prose-a:text-[var(--color-accent-start)] prose-a:no-underline hover:prose-a:underline
-          prose-code:text-[var(--color-neon-blue)] prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-          prose-strong:text-[var(--color-text-primary)]
-          prose-li:text-[var(--color-text-secondary)]
-        ">
+        <div
+          class="prose prose-lg prose-invert max-w-none prose-headings:font-heading prose-headings:text-[var(--color-text-primary)] prose-p:text-[var(--color-text-secondary)] prose-a:text-[var(--color-accent-start)] prose-a:no-underline hover:prose-a:underline prose-code:text-[var(--color-neon-blue)] prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-strong:text-[var(--color-text-primary)] prose-li:text-[var(--color-text-secondary)]"
+        >
           <ContentRenderer :value="page" />
         </div>
 
         <!-- Screenshots -->
         <div v-if="page.images?.length" class="mt-16">
-          <h2 class="text-2xl font-heading font-bold text-[var(--color-text-primary)] mb-6">Screenshots</h2>
+          <h2
+            class="text-2xl font-heading font-bold text-[var(--color-text-primary)] mb-6"
+          >
+            Screenshots
+          </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div
               v-for="(image, index) in page.images"

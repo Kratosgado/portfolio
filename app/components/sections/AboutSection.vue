@@ -1,13 +1,6 @@
 <script setup lang="ts">
 import { useScrollAnimation } from '~/composables/useScrollAnimation';
 
-defineProps<{
-  profile: {
-    name: string;
-    bio: string;
-  };
-}>();
-
 const { fadeInUp, animateCounter } = useScrollAnimation();
 
 const sectionRef = ref<HTMLElement>();
