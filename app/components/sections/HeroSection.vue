@@ -48,11 +48,6 @@ defineProps<{
       />
     </ClientOnly>
 
-    <!-- 3D Scene -->
-    <ClientOnly>
-      <HeroScene />
-    </ClientOnly>
-
     <!-- Gradient Overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg-base)] z-10 pointer-events-none" />
 

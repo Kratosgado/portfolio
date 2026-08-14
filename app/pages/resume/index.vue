@@ -10,7 +10,11 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen pt-24 pb-16">
+  <div>
+    <ClientOnly>
+      <HeroScene />
+    </ClientOnly>
+  <div class="relative z-10 min-h-screen pt-24 pb-16">
     <div class="max-w-5xl mx-auto px-6">
       <!-- Back -->
       <NuxtLink
@@ -48,5 +52,6 @@ useSeoMeta({
         </NuxtLink>
       </div>
     </div>
+  </div>
   </div>
 </template>

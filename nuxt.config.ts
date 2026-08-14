@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       crawlLinks: true,
       routes: ['/'],
     },
-    preset: 'vercel',
+    preset: process.env.NITRO_PRESET ?? 'vercel',
   },
 
   routeRules: {
@@ -39,15 +39,15 @@ export default defineNuxtConfig({
     },
   },
 
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag: string) => tag.startsWith('Tres') && tag !== 'TresCanvas',
+    },
+  },
+
   vite: {
     build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ['vue', 'vue-router'],
-          },
-        },
-      },
+      chunkSizeWarningLimit: 4000,
     },
   },
 });

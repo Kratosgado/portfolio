@@ -13,22 +13,23 @@ const certificates = computed(() => certificatesData.value ?? []);
 
 <template>
   <div>
-    <!-- Hero Section -->
-    <HeroSection v-if="profile" :profile="profile" />
+    <!-- Fixed 3D background — stays viewport-anchored while page scrolls -->
+    <ClientOnly>
+      <HeroScene />
+    </ClientOnly>
 
-    <!-- About & Skills Section -->
-    <AboutSection v-if="profile" :profile="profile" />
+    <!-- Hero Section — transparent so the 3D shows through -->
+    <div class="relative z-10">
+      <HeroSection v-if="profile" :profile="profile" />
+    </div>
 
-    <!-- Experience Timeline -->
-    <ExperienceSection />
-
-    <!-- Projects Showcase -->
-    <ProjectsSection :projects="projects" />
-
-    <!-- Certifications & Blog -->
-    <CertificationsSection :certificates="certificates" />
-
-    <!-- Contact / CTA -->
-    <ContactSection v-if="profile" :profile="profile" />
+    <!-- Remaining sections — transparent so the fixed 3D background shows through -->
+    <div class="relative z-10">
+      <AboutSection v-if="profile" :profile="profile" />
+      <ExperienceSection />
+      <ProjectsSection :projects="projects" />
+      <CertificationsSection :certificates="certificates" />
+      <ContactSection v-if="profile" :profile="profile" />
+    </div>
   </div>
 </template>
