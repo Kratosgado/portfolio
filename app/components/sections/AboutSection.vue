@@ -35,7 +35,7 @@ const skills = [
 
 const stats = [
   { decimal: true, label: 'Years Experience', suffix: '+', value: 3.5 },
-  { decimal: false, label: 'Projects Built', suffix: '', value: 21 },
+  { decimal: false, label: 'Projects Built', suffix: '+', value: 20 },
   { decimal: false, label: 'VS Code Extensions', suffix: '', value: 5 },
   { decimal: false, label: 'Extension Installs', suffix: '+', value: 1800 },
 ];

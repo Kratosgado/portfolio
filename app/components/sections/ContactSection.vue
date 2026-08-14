@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: profile, pending } = await useProfile();
+const { data: profile, pending } = useProfile();
 
 const socials = [
   {

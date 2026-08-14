@@ -1,39 +1,33 @@
 <script setup lang="ts">
-const { data: certificatesData, pending } = await useLazyAsyncData('certificates', () =>
+const { data: certificatesData, pending } = useLazyAsyncData('certificates', () =>
   queryCollection('certificates').all(),
 );
 
 const certificates = computed(() => certificatesData.value ?? []);
 
-onMounted(async () => {
-  const { gsap } = await import('gsap');
-  const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-  gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  const animate = async () => {
+    await nextTick();
+    const { gsap } = await import('gsap');
+    gsap.from('.cert-card', {
+      duration: 0.6,
+      ease: 'power3.out',
+      opacity: 0,
+      stagger: 0.08,
+      y: 30,
+    });
+  };
 
-  gsap.from('.cert-card', {
-    y: 30,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '#certifications',
-      start: 'top 75%',
-      once: true,
-    },
-  });
-
-  gsap.from('.blog-cta', {
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.blog-cta',
-      start: 'top 85%',
-      once: true,
-    },
-  });
+  if (!pending.value) {
+    animate();
+  } else {
+    const stop = watch(pending, (isPending) => {
+      if (!isPending) {
+        stop();
+        animate();
+      }
+    });
+  }
 });
 </script>
 

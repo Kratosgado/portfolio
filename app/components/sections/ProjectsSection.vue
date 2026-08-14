@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: projectsData, pending } = await useLazyAsyncData('projects', () =>
+const { data: projectsData, pending } = useLazyAsyncData('projects', () =>
   queryCollection('projects').order('rank', 'ASC').all(),
 );
 
@@ -87,23 +87,29 @@ function handleMouseLeave(event: MouseEvent) {
   card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
 }
 
-onMounted(async () => {
-  const { gsap } = await import('gsap');
-  const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-  gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  const animate = async () => {
+    await nextTick();
+    const { gsap } = await import('gsap');
+    gsap.from('.project-card', {
+      duration: 0.6,
+      ease: 'power3.out',
+      opacity: 0,
+      stagger: 0.08,
+      y: 30,
+    });
+  };
 
-  gsap.from('.project-card', {
-    duration: 0.6,
-    ease: 'power3.out',
-    opacity: 0,
-    scrollTrigger: {
-      once: true,
-      start: 'top 70%',
-      trigger: '#projects',
-    },
-    stagger: 0.1,
-    y: 40,
-  });
+  if (!pending.value) {
+    animate();
+  } else {
+    const stop = watch(pending, (isPending) => {
+      if (!isPending) {
+        stop();
+        animate();
+      }
+    });
+  }
 });
 </script>
 
