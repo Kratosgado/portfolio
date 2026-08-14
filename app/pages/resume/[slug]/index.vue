@@ -78,7 +78,6 @@ function print() {
     return;
   }
 
-  // Measure content at A4 width (794px at 96dpi)
   const prev = { maxWidth: el.style.maxWidth, width: el.style.width };
   el.style.maxWidth = '794px';
   el.style.width = '794px';
@@ -86,7 +85,6 @@ function print() {
   el.style.maxWidth = prev.maxWidth;
   el.style.width = prev.width;
 
-  // A4 at 96dpi minus 0.8cm top+bottom margins
   const a4Usable = 1062;
   const zoom = contentHeight > a4Usable ? Math.max(0.78, a4Usable / contentHeight) : 1;
 
@@ -101,21 +99,19 @@ function print() {
 </script>
 
 <template>
-  <div v-if="resolvedResume">
-    <div
-      class="no-print flex items-center justify-between max-w-195 mx-auto px-8 py-4 gap-4"
-    >
-      <UButton
+  <div v-if="resolvedResume" class="min-h-screen pt-20 pb-16">
+    <div class="no-print flex items-center justify-between max-w-195 mx-auto px-8 py-4 gap-4">
+      <NuxtLink
         to="/resume"
-        variant="ghost"
-        icon="i-lucide-arrow-left"
-        color="neutral"
+        class="inline-flex items-center gap-2 text-[var(--color-text-secondary)] hover:text-[var(--color-accent-start)] transition-colors group"
       >
-        All Resumes
-      </UButton>
-      <UButton icon="i-lucide-printer" @click="print">
+        <UIcon name="i-lucide-arrow-left" class="size-4 group-hover:-translate-x-1 transition-transform" />
+        <span class="text-sm">All Resumes</span>
+      </NuxtLink>
+      <button class="btn-neon flex items-center gap-2 text-sm" @click="print">
+        <UIcon name="i-lucide-printer" class="size-4" />
         Print / Save PDF
-      </UButton>
+      </button>
     </div>
 
     <ResumeDocument :resume="resolvedResume" />

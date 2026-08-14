@@ -1,13 +1,20 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  colorMode: {
+    fallback: 'dark',
+    preference: 'dark',
+  },
   compatibilityDate: '2025-01-15',
+
+  components: [{ path: '~/components', pathPrefix: false }],
 
   css: ['~/assets/css/main.css'],
 
   future: {
     compatibilityVersion: 4,
   },
-  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content'],
+
+  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content', '@tresjs/nuxt'],
 
   nitro: {
     prerender: {
@@ -22,6 +29,7 @@ export default defineNuxtConfig({
     '/resume': { prerender: true },
     '/resume/**': { prerender: true },
   },
+
   studio: {
     repository: {
       branch: 'main',
@@ -36,11 +44,7 @@ export default defineNuxtConfig({
       rollupOptions: {
         output: {
           manualChunks: {
-            vendor: [
-              'vue',
-              'vue-router',
-              // 'zod',
-            ],
+            vendor: ['vue', 'vue-router'],
           },
         },
       },

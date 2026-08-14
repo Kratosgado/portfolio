@@ -1,22 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+/* ─── Theme Tokens ─────────────────────────────────────────────── */
 @theme {
-  --font-sans: "Public Sans", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-bg-base: #0a0a0f;
+  --color-bg-elevated: #12121a;
+  --color-bg-card: #1a1a2e;
+  --color-bg-card-hover: #1e1e35;
+
+  --color-text-primary: #f0f0f5;
+  --color-text-secondary: #a0a0b8;
+  --color-text-muted: #6b6b80;
+
+  --color-accent-start: #d97706;
+  --color-accent-end: #f59e0b;
+  --color-accent-glow: #b45309;
+
+  --color-neon-blue: #38bdf8;
+  --color-neon-violet: #fbbf24;
+  --color-neon-emerald: #34d399;
 }
 
+/* ─── Base Styles ──────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-primary);
 }
 
+body {
+  background-color: var(--color-bg-base);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* ─── Typography ───────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* ─── Gradient Utilities ───────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent-start), var(--color-accent-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(270deg, var(--color-accent-start), var(--color-accent-end), var(--color-neon-blue), var(--color-accent-start));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Glass Card ───────────────────────────────────────────────── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(217, 119, 6, 0.1);
+}
+
+/* ─── Glow Effects ─────────────────────────────────────────────── */
+.glow-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--color-accent-start), var(--color-accent-end), var(--color-neon-blue));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--color-bg-card);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* ─── Neon Button ──────────────────────────────────────────────── */
+.btn-neon {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  border: 1px solid rgba(217, 119, 6, 0.5);
+  background: rgba(217, 119, 6, 0.1);
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-neon:hover {
+  background: rgba(217, 119, 6, 0.2);
+  border-color: var(--color-accent-start);
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.3), inset 0 0 20px rgba(217, 119, 6, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-neon-primary {
+  background: linear-gradient(135deg, var(--color-accent-start), var(--color-accent-end));
+  border: none;
+}
+
+.btn-neon-primary:hover {
+  box-shadow: 0 0 30px rgba(217, 119, 6, 0.4), 0 0 60px rgba(245, 158, 11, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ─── Floating Nav ─────────────────────────────────────────────── */
+.floating-nav {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.floating-nav.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ─── Section Styles ───────────────────────────────────────────── */
+.section-viewport {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 6rem 1.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* ─── Stagger Reveal Animations ────────────────────────────────── */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease forwards;
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ─── Scroll Reveal (initial hidden state) ─────────────────────── */
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scroll-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Page Transitions ─────────────────────────────────────────── */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ─── Custom Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-start);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-end);
+}
+
+/* ─── Resume Print Styles (preserved) ─────────────────────────── */
 .resume-document {
   font-family: 'Lato', sans-serif;
 }
 
 @media print {
-  header,
-  footer,
-  .no-print {
+  header, footer, .no-print, .floating-nav {
     display: none !important;
   }
 
@@ -42,13 +294,27 @@ html {
     break-inside: avoid;
   }
 
-  h2.text-xs {
-    page-break-after: avoid;
-    break-after: avoid;
-  }
-
   a {
     color: #1d4ed8;
     text-decoration: underline;
+  }
+}
+
+/* ─── Reduced Motion ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-hidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
