@@ -77,7 +77,7 @@ const socials = [
           :href="social.href"
           :target="social.href.startsWith('mailto') ? undefined : '_blank'"
           :rel="social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'"
-          class="group flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--color-accent-start)] hover:bg-white/8 transition-all duration-300 hover:shadow-[0_0_25px_rgba(217,119,6,0.2)] hover:-translate-y-1"
+          class="group w-20 flex flex-col items-center gap-2 p-4 rounded-xl bg-white/5 border border-white/10 hover:border-[var(--color-accent-start)] hover:bg-white/8 transition-all duration-300 hover:shadow-[0_0_25px_rgba(217,119,6,0.2)] hover:-translate-y-1"
           :aria-label="social.label"
         >
           <UIcon

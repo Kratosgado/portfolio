@@ -1,19 +1,14 @@
 {
-  "title": "Software Engineer",
   "education": [
     {
-      "institution": "Kwame Nkrumah University of Science and Technology",
+      "bullets": [],
       "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
-      "period": "November 2021 – November 2025",
-      "bullets": []
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "period": "November 2021 – November 2025"
     }
   ],
   "experience": [
     {
-      "company": "Amalitech",
-      "role": "Backend Engineer – NSP",
-      "period": "Nov 2025 – Present",
-      "location": "Takoradi, Ghana",
       "bullets": [
         "Worked in a team of 4 for 4 days to build a fully functional logging system for processing logs from different services and provided detailed analysis using Spring Boot and React.",
         "Architected and implemented a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
@@ -21,21 +16,24 @@
         "Resolved N+1 query performance issues in a GraphQL integration through batch fetching, and enforced data-integrity constraints via PostgreSQL triggers.",
         "Implemented aggregated monthly bonus computation per employee, seniority level management with pagination, and cascade deletion logic to maintain referential integrity across PI periods.",
         "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard."
-      ]
+      ],
+      "company": "Amalitech",
+      "location": "Takoradi, Ghana",
+      "period": "Nov 2025 – Present",
+      "role": "Backend Engineer – NSP"
     },
     {
-      "company": "Zomujo Foundation",
-      "role": "Backend Engineer – Freelance",
-      "period": "Oct 2023 – Feb 2026",
-      "location": "Remote, Ghana",
-      "url": "https://zomujo.com",
       "bullets": [
         "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, real-time notifications (SSE, WebSocket/Socket.io), and an EMR migration from TSOA to NestJS/Prisma."
-      ]
+      ],
+      "company": "Zomujo Foundation",
+      "location": "Remote, Ghana",
+      "period": "Oct 2023 – Feb 2026",
+      "role": "Backend Engineer – Freelance",
+      "url": "https://zomujo.com"
     }
   ],
   "header": {
-    "name": "Essilfie Prince Mbeah",
     "links": [
       {
         "label": "LinkedIn",
@@ -53,69 +51,56 @@
         "label": "Credly Badges",
         "url": "https://www.credly.com/users/kratosgado"
       }
-    ]
+    ],
+    "name": "Essilfie Prince Mbeah"
   },
   "isDefault": true,
-  "profile": "Backend-focused full-stack engineer with production experience across Spring Boot, NestJS, and TypeScript, delivering systems in health and enterprise domains — from authentication and authorization architecture to real-time communication and automated financial computation. Comfortable owning features end-to-end across frontend, backend, database, and cloud infrastructure.",
+  "profile": "Backend-focused full-stack engineer with production experience across Spring Boot, NestJS, and TypeScript, delivering systems in health and enterprise domains, from authentication and authorization architecture to real-time communication and automated financial computation. Comfortable owning features end-to-end across frontend, backend, database, and cloud infrastructure.",
   "projects": [
     {
-      "toolRef": "pseudo-runner",
       "bullets": [
         "Engineered a custom runtime engine and interpreter in Rust to parse and execute pseudocode syntax, implementing lexers, parsers, and ASTs to handle features like multi-conditional flows, loops, functions, and multidimensional arrays.",
         "Developed and published a companion VS Code extension (Pseudo Runner) utilizing TypeScript to bridge the developer environment with the Rust native runtime binary.",
         "Streamlined the developer experience for early-stage engineering students by enabling seamless, localized execution of logical syntax directly from the IDE interface."
-      ]
+      ],
+      "toolRef": "pseudo-runner"
     },
     {
-      "toolRef": "nasm-compiler-for-linux",
       "bullets": [
         "Engineered an automated compilation and linking pipeline in TypeScript to transform raw NASM assembly code into native Linux ELF binaries directly within the IDE interface.",
         "Replaces the manual linking and running of assembly codes with a click of a button."
-      ]
+      ],
+      "toolRef": "nasm-compiler-for-linux"
     },
     {
-      "toolRef": "liquibase-runner",
       "bullets": [
         "TypeScript VS Code extension for Liquibase migration management, ported to Neovim as liquibase.nvim; auto-detects Maven, Gradle, and standalone CLI setups with no manual config.",
         "Sidebar changelog/changeset tree, live migration dashboard, and full Liquibase command set (update, rollback, diff, snapshot, generate)."
-      ]
+      ],
+      "toolRef": "liquibase-runner"
     },
     {
-      "toolRef": "hurl-plus",
       "bullets": [
         "VS Code extension for .hurl files with syntax highlighting, IntelliSense, diagnostics, and CodeLens-driven inline request execution.",
         "Notebook view for cell-based request execution with environment profile switching across multiple configurations."
-      ]
+      ],
+      "toolRef": "hurl-plus"
     },
     {
-      "toolRef": "rust-sqlite",
       "bullets": [
         "Built a SQLite-compatible database engine from scratch in Rust — page-based storage, B-tree indexing, and query execution — exploring file format and storage engine internals hands-on."
-      ]
+      ],
+      "toolRef": "rust-sqlite"
     }
   ],
   "skills": [
     {
       "category": "Core Expertise",
-      "items": [
-        "Spring Boot",
-        "NestJs",
-        "Typescript",
-        "Rust",
-        "Java",
-        "PostgreSQL"
-      ]
+      "items": ["Spring Boot", "NestJs", "Typescript", "Rust", "Java", "PostgreSQL"]
     },
     {
       "category": "Working Knowledge",
-      "items": [
-        "Kotlin",
-        "Vue",
-        "NuxtJs",
-        "ReactJS",
-        "Angular",
-        "Flutter"
-      ]
+      "items": ["Kotlin", "Vue", "NuxtJs", "ReactJS", "Angular", "Flutter"]
     },
     {
       "category": "Tools",
@@ -132,5 +117,6 @@
     }
   ],
   "slug": "software-engineer",
-  "targetRole": "General Application"
+  "targetRole": "General Application",
+  "title": "Software Engineer"
 }

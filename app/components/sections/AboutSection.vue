@@ -104,7 +104,7 @@ onMounted(() => {
             <span class="text-[var(--color-neon-blue)]">Spring Boot</span>,
             <span class="text-[var(--color-neon-violet)]">NestJS</span>, and
             <span class="text-[var(--color-neon-emerald)]">TypeScript</span>,
-            delivering systems in health and enterprise domains — from
+            delivering systems in health and enterprise domains ... from
             authentication architecture to real-time communication and automated
             financial computation.
           </p>
@@ -112,7 +112,7 @@ onMounted(() => {
             class="text-lg text-[var(--color-text-secondary)] leading-relaxed mt-4"
           >
             Comfortable owning features end-to-end across frontend, backend,
-            database, and cloud infrastructure. I also build developer tools —
+            database, and cloud infrastructure. I also build developer tools ...
             VS Code extensions and Neovim plugins that streamline workflows.
           </p>
         </div>
