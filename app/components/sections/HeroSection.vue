@@ -44,7 +44,7 @@ const { data: profile, pending } = useProfile();
 
     <!-- Gradient Overlay -->
     <div
-      class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[var(--color-bg-base)] z-10 pointer-events-none"
+      class="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-bg-base z-10 pointer-events-none"
     />
 
     <!-- Loading skeleton -->
@@ -70,7 +70,7 @@ const { data: profile, pending } = useProfile();
       <div class="space-y-6">
         <!-- Greeting -->
         <p
-          class="text-[var(--color-text-secondary)] text-lg font-mono opacity-0 animate-fade-in-up stagger-1"
+          class="text-text-secondary text-lg font-mono opacity-0 animate-fade-in-up stagger-1"
         >
           Hola Mundo
         </p>
@@ -84,7 +84,7 @@ const { data: profile, pending } = useProfile();
 
         <!-- Tagline -->
         <p
-          class="text-xl md:text-2xl text-[var(--color-text-secondary)] max-w-2xl mx-auto opacity-0 animate-fade-in-up stagger-3"
+          class="text-xl md:text-2xl text-text-secondary max-w-2xl mx-auto opacity-0 animate-fade-in-up stagger-3"
         >
           {{ profile.bio }}
         </p>
@@ -125,12 +125,9 @@ const { data: profile, pending } = useProfile();
       <div
         class="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-in-up stagger-6"
       >
-        <div
-          class="flex flex-col items-center gap-2 text-[var(--color-text-muted)]"
-        >
-          <span class="text-xs font-mono">scroll</span>
+        <div class="flex flex-col items-center gap-2 text-text-muted">
           <div
-            class="w-px h-8 bg-gradient-to-b from-[var(--color-accent-start)] to-transparent animate-pulse"
+            class="w-px h-8 bg-linear-to-b from-accent-start to-transparent animate-pulse"
           />
         </div>
       </div>
