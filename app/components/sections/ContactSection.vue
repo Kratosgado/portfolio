@@ -31,33 +31,6 @@ const socials = [
 
 <template>
   <section id="contact" class="section-viewport relative flex items-center justify-center">
-    <!-- Particle Background -->
-    <ClientOnly>
-      <vue-particles
-        id="contact-particles"
-        :options="{
-          fullScreen: { enable: false },
-          background: { color: { value: 'transparent' } },
-          fpsLimit: 30,
-          particles: {
-            color: { value: ['#d97706', '#f59e0b'] },
-            move: {
-              enable: true,
-              speed: 0.3,
-              direction: 'none',
-              outModes: { default: 'out' },
-            },
-            number: { value: 30 },
-            opacity: { value: { min: 0.05, max: 0.2 } },
-            size: { value: { min: 0.5, max: 2 } },
-            shape: { type: 'circle' },
-          },
-          detectRetina: true,
-        }"
-        class="absolute inset-0 z-0"
-      />
-    </ClientOnly>
-
     <!-- Content -->
     <div class="relative z-10 text-center max-w-3xl mx-auto px-6">
       <!-- Heading -->

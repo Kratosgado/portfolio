@@ -5,12 +5,10 @@ defineProps<{ certificate: CertificatesCollectionItem }>();
 </script>
 
 <template>
-  <UPageCard
-    class="hover:ring-2 hover:ring-primary-500 transition-all h-full flex flex-col"
-    :ui="{ footer: 'flex justify-end w-full' }"
-    spotlight
-  >
-    <template #header>
+  <FloatingCard class="h-full">
+    <div
+      class="h-full flex flex-col rounded-2xl bg-[var(--ui-bg-elevated)] border border-white/10 p-5 gap-3"
+    >
       <div class="flex items-start justify-between gap-4">
         <div>
           <h3 class="font-bold text-lg text-primary">{{ certificate.name }}</h3>
@@ -19,24 +17,22 @@ defineProps<{ certificate: CertificatesCollectionItem }>();
           </p>
         </div>
       </div>
-    </template>
 
-    <template #body>
-      <p v-if="certificate.skills" class="text-muted text-sm mt-2">
+      <p v-if="certificate.skills" class="text-muted text-sm">
         <span class="font-semibold">Skills:</span> {{ certificate.skills }}
       </p>
-    </template>
 
-    <template #footer>
-      <UButton
-        v-if="certificate.credential"
-        label="View Credential"
-        variant="soft"
-        size="sm"
-        :to="certificate.credential"
-        target="_blank"
-        icon="i-lucide-external-link"
-      />
-    </template>
-  </UPageCard>
+      <div class="mt-auto flex justify-end">
+        <UButton
+          v-if="certificate.credential"
+          label="View Credential"
+          variant="soft"
+          size="sm"
+          :to="certificate.credential"
+          target="_blank"
+          icon="i-lucide-external-link"
+        />
+      </div>
+    </div>
+  </FloatingCard>
 </template>

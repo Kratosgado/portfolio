@@ -57,11 +57,14 @@ onMounted(() => {
     <template v-else>
       <!-- Cert Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-16">
-        <div
+        <FloatingCard
           v-for="cert in certificates"
           :key="cert.name"
-          class="cert-card glass-card p-6 transition-all duration-300 hover:border-[var(--color-accent-start)]/30 hover:[transform:perspective(1000px)_rotateY(3deg)_rotateX(-2deg)_translateY(-4px)]"
+          class="cert-card"
+          :rotate-depth="6"
+          :translate-depth="8"
         >
+        <div class="glass-card p-6 h-full">
           <div class="flex items-start justify-between gap-4">
             <div>
               <h3 class="font-heading font-bold text-[var(--color-text-primary)]">{{ cert.name }}</h3>
@@ -87,6 +90,7 @@ onMounted(() => {
             <UIcon name="i-lucide-external-link" class="size-3" />
           </a>
         </div>
+        </FloatingCard>
       </div>
     </template>
 

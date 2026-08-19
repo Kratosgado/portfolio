@@ -70,23 +70,6 @@ function loadMore() {
   showCount.value += 6;
 }
 
-function handleMouseMove(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement;
-  const rect = card.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-  const centerX = rect.width / 2;
-  const centerY = rect.height / 2;
-  const rotateX = ((y - centerY) / centerY) * -3;
-  const rotateY = ((x - centerX) / centerX) * 3;
-  card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-}
-
-function handleMouseLeave(event: MouseEvent) {
-  const card = event.currentTarget as HTMLElement;
-  card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-}
-
 onMounted(() => {
   const animate = async () => {
     await nextTick();
@@ -197,14 +180,15 @@ onMounted(() => {
         v-if="featuredProjects.length"
         class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
       >
-        <div
+        <FloatingCard
           v-for="project in featuredProjects"
           :key="project.slug ?? project.title"
-          class="project-card glass-card p-6 group transition-all duration-300 cursor-pointer"
+          class="project-card cursor-pointer"
+          :rotate-depth="8"
+          :translate-depth="10"
           @click="navigateTo(`/projects/${project.slug}`)"
-          @mousemove="handleMouseMove"
-          @mouseleave="handleMouseLeave"
         >
+        <div class="glass-card p-6 group h-full">
           <div class="flex items-center justify-between mb-3">
             <span
               class="text-xs font-mono px-2 py-0.5 rounded-full bg-[var(--color-accent-start)]/20 text-[var(--color-accent-start)]"
@@ -257,18 +241,20 @@ onMounted(() => {
             </span>
           </div>
         </div>
+        </FloatingCard>
       </div>
 
       <!-- Regular Projects -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div
+        <FloatingCard
           v-for="project in visibleRegular"
           :key="project.slug ?? project.title"
-          class="project-card glass-card p-5 group transition-all duration-300 cursor-pointer"
+          class="project-card cursor-pointer"
+          :rotate-depth="8"
+          :translate-depth="10"
           @click="navigateTo(`/projects/${project.slug}`)"
-          @mousemove="handleMouseMove"
-          @mouseleave="handleMouseLeave"
         >
+        <div class="glass-card p-5 group h-full">
           <div class="flex items-center justify-between mb-2">
             <h3
               class="text-base font-heading font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-start)] transition-colors"
@@ -311,6 +297,7 @@ onMounted(() => {
             </span>
           </div>
         </div>
+        </FloatingCard>
       </div>
 
       <!-- No results -->

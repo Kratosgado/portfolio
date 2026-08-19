@@ -79,12 +79,16 @@ useHead({
         </div>
 
         <!-- Cover Image -->
-        <div
+        <FloatingCard
           v-if="page.coverImage"
-          class="rounded-xl overflow-hidden border border-white/10 mb-12"
+          class="mb-12"
+          :rotate-depth="8"
+          :translate-depth="10"
         >
-          <NuxtImg :src="page.coverImage" :alt="page.title" class="w-full" />
-        </div>
+          <div class="rounded-xl overflow-hidden border border-white/10">
+            <NuxtImg :src="page.coverImage" :alt="page.title" class="w-full" />
+          </div>
+        </FloatingCard>
 
         <!-- Content -->
         <div
@@ -101,17 +105,22 @@ useHead({
             Screenshots
           </h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div
+            <FloatingCard
               v-for="(image, index) in page.images"
               :key="index"
-              class="rounded-xl overflow-hidden border border-white/10 hover:border-[var(--color-accent-start)]/30 transition-colors"
+              :rotate-depth="8"
+              :translate-depth="10"
             >
-              <NuxtImg
-                :src="image"
-                :alt="`${page.title} screenshot ${index + 1}`"
-                class="w-full"
-              />
-            </div>
+              <div
+                class="rounded-xl overflow-hidden border border-white/10 hover:border-[var(--color-accent-start)]/30 transition-colors"
+              >
+                <NuxtImg
+                  :src="image"
+                  :alt="`${page.title} screenshot ${index + 1}`"
+                  class="w-full"
+                />
+              </div>
+            </FloatingCard>
           </div>
         </div>
       </div>

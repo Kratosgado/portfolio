@@ -1,17 +1,18 @@
 <template>
   <div>
-    <!-- Fixed 3D background — stays viewport-anchored while page scrolls -->
+    <!-- Silk shader background — fixed behind page content -->
     <ClientOnly>
-      <HeroScene />
+      <SilkBackground
+        class="fixed inset-0 z-0 opacity-60 pointer-events-none"
+        :hue="30"
+        :saturation="0.7"
+        :brightness="0.9"
+        :speed="0.6"
+      />
     </ClientOnly>
 
-    <!-- Hero Section — transparent so the 3D shows through -->
     <div class="relative z-10">
       <HeroSection />
-    </div>
-
-    <!-- Remaining sections — transparent so the fixed 3D background shows through -->
-    <div class="relative z-10">
       <AboutSection />
       <ExperienceSection />
       <ProjectsSection />

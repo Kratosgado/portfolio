@@ -12,7 +12,13 @@ useSeoMeta({
 <template>
   <div>
     <ClientOnly>
-      <HeroScene />
+      <SilkBackground
+        class="fixed inset-0 z-0 opacity-50 pointer-events-none"
+        :hue="30"
+        :saturation="0.6"
+        :brightness="0.9"
+        :speed="0.5"
+      />
     </ClientOnly>
   <div class="relative z-10 min-h-screen pt-24 pb-16">
     <div class="max-w-5xl mx-auto px-6">

@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
 
-  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content', '@tresjs/nuxt'],
+  modules: ['@nuxt/ui', '@nuxt/image', 'nuxt-studio', '@nuxt/content', 'motion-v/nuxt'],
 
   nitro: {
     prerender: {
@@ -36,12 +36,6 @@ export default defineNuxtConfig({
       owner: 'Kratosgado',
       provider: 'github',
       repo: 'portfolio',
-    },
-  },
-
-  vue: {
-    compilerOptions: {
-      isCustomElement: (tag: string) => tag.startsWith('Tres') && tag !== 'TresCanvas',
     },
   },
 

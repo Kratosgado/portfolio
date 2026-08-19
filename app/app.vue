@@ -49,7 +49,7 @@ const navItems = [
 <template>
   <div
     v-if="profile"
-    class="min-h-screen bg-[var(--color-bg-base)] text-[var(--color-text-primary)]"
+    class="min-h-screen text-[var(--color-text-primary)]"
   >
     <!-- Floating Navigation -->
     <nav
@@ -96,6 +96,11 @@ const navItems = [
         </a>
       </div>
     </nav>
+
+    <!-- Global fluid cursor overlay -->
+    <ClientOnly>
+      <FluidCursor />
+    </ClientOnly>
 
     <!-- Page Content -->
     <NuxtPage :transition="{ name: 'page', mode: 'out-in' }" />

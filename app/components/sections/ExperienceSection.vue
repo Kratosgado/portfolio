@@ -107,7 +107,12 @@ onMounted(async () => {
             <div
               :class="i % 2 === 0 ? 'text-right pr-12' : 'col-start-2 pl-12'"
             >
-              <div class="glass-card p-6 inline-block text-left">
+              <FloatingCard
+                class="inline-block text-left"
+                :rotate-depth="6"
+                :translate-depth="8"
+              >
+              <div class="glass-card p-6">
                 <div class="flex items-center gap-2 mb-2">
                   <div
                     class="w-3 h-3 rounded-full bg-gradient-to-r from-[var(--color-accent-start)] to-[var(--color-accent-end)]"
@@ -147,6 +152,7 @@ onMounted(async () => {
                   </li>
                 </ul>
               </div>
+              </FloatingCard>
             </div>
 
             <!-- Node on the line -->
@@ -162,6 +168,7 @@ onMounted(async () => {
               class="absolute left-4 top-6 w-4 h-4 rounded-full border-2 border-[var(--color-accent-start)] bg-[var(--color-bg-base)]"
             />
 
+            <FloatingCard :rotate-depth="6" :translate-depth="8">
             <div class="glass-card p-5">
               <div class="flex items-center gap-2 mb-2">
                 <span
@@ -187,6 +194,7 @@ onMounted(async () => {
                 </li>
               </ul>
             </div>
+            </FloatingCard>
           </div>
         </div>
       </div>

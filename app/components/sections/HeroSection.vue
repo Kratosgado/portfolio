@@ -6,42 +6,6 @@ const { data: profile, pending } = useProfile();
   <section
     class="relative h-screen flex items-center justify-center overflow-hidden"
   >
-    <!-- Particle Background -->
-    <ClientOnly>
-      <vue-particles
-        id="hero-particles"
-        :options="{
-          fullScreen: { enable: false },
-          background: { color: { value: 'transparent' } },
-          fpsLimit: 60,
-          particles: {
-            color: { value: ['#d97706', '#f59e0b', '#38bdf8'] },
-            links: {
-              color: '#d97706',
-              distance: 150,
-              enable: true,
-              opacity: 0.15,
-              width: 1,
-            },
-            move: {
-              enable: true,
-              speed: 0.8,
-              direction: 'none',
-              outModes: { default: 'bounce' },
-            },
-            number: {
-              value: 60,
-              density: { enable: true },
-            },
-            opacity: { value: { min: 0.1, max: 0.4 } },
-            size: { value: { min: 1, max: 3 } },
-          },
-          detectRetina: true,
-        }"
-        class="absolute inset-0 z-0"
-      />
-    </ClientOnly>
-
     <!-- Gradient Overlay -->
     <div
       class="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-bg-base z-10 pointer-events-none"
