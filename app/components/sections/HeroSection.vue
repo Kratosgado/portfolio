@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import SparkleText from '../inspira/SparkleText.vue';
+
 const { data: profile, pending } = useProfile();
 </script>
 
@@ -39,12 +41,7 @@ const { data: profile, pending } = useProfile();
           Hola Mundo
         </p>
 
-        <!-- Name -->
-        <h1
-          class="text-5xl md:text-7xl lg:text-8xl font-heading font-bold gradient-text-animated opacity-0 animate-fade-in-up stagger-2"
-        >
-          {{ profile.name }}
-        </h1>
+        <SparkleText :text="profile.name" :sparkles-count="30" class="my-8" />
 
         <!-- Tagline -->
         <p
