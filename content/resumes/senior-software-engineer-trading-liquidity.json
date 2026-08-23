@@ -1,0 +1,101 @@
+{
+  "slug": "senior-software-engineer-trading-liquidity",
+  "title": "Senior Software Engineer",
+  "targetRole": "Senior Software Engineer – Trading & Liquidity (Quidax)",
+  "isDefault": false,
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
+      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
+      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
+      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
+    ]
+  },
+  "profile": "Backend-focused engineer with production Spring Boot experience building audit-critical, referentially-strict systems, from RSA/JWT authorization to an automated financial computation engine gated by multi-stage approval and published downstream through Kafka to a payroll system. I'm also building a multi-tenant SaaS backend with live Paystack payment integration on the side. Comfortable owning correctness under concurrency, investigating production incidents, and reasoning about trade-offs between consistency and throughput in financially-sensitive systems.",
+  "education": [
+    {
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
+      "period": "November 2021 – November 2025",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Core Expertise",
+      "items": ["Spring Boot", "Java", "Kotlin", "PostgreSQL", "NestJs", "TypeScript"]
+    },
+    {
+      "category": "Financial & Systems Design",
+      "items": [
+        "Kafka event publishing",
+        "Multi-stage approval / reconciliation workflows",
+        "Idempotent computation & audit logging",
+        "RBAC & JWT/OAuth2 authorization",
+        "Payment-provider integration (Paystack)",
+        "Multi-tenant architecture"
+      ]
+    },
+    {
+      "category": "Working Knowledge",
+      "items": ["Rust", "Vue", "NuxtJs", "ReactJS", "Angular"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub Actions", "Docker", "PostgreSQL triggers", "Google Cloud Platform", "WebSocket", "Socket.io", "Hurl", "JaCoCo"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Amalitech",
+      "role": "Backend Engineer – NSP",
+      "period": "Nov 2025 – Present",
+      "location": "Takoradi, Ghana",
+      "bullets": [
+        "Architected and implemented a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
+        "Owned an automated financial computation engine (PI-period bonus/performance scoring) gated by a multi-stage approval lifecycle (staffing computation, finance sign-off, finalized, closed) before data is released downstream, with versioned scoring configs and cascade-safe deletion to protect referential integrity.",
+        "Built the Kafka event-publishing integration that syncs finalized bonus data to Amalitech's payroll system, including a data-restructuring pass to match the payroll team's consumption spec, coordinating directly with the downstream system owner on schema and delivery contract.",
+        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
+        "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard.",
+        "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services (Spring Boot + React), supporting production incident investigation."
+      ]
+    },
+    {
+      "company": "Zomujo Foundation",
+      "role": "Backend Engineer – Freelance",
+      "period": "Oct 2023 – Feb 2026",
+      "location": "Remote, Ghana",
+      "url": "https://zomujo.com",
+      "bullets": [
+        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io) for time-sensitive appointment and consultation state changes.",
+        "Led an EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns (labs, radiology, diagnosis/prescription) while keeping the API surface backward compatible for existing clients."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Adzesua: Multi-Tenant School Management Platform",
+      "year": "2026",
+      "links": [],
+      "bullets": [
+        "Building a multi-tenant Spring Boot/Kotlin backend handling tenant onboarding, fee structures, and installment billing, integrated with Paystack for live payment processing.",
+        "Implemented per-tenant branding, Google OAuth2 authentication, and structured request-lifecycle logging (per-operation timing and outcome) to keep multi-tenant behavior observable and debuggable.",
+        "Applying a production-grade testing standard to the codebase (JaCoCo coverage, PIT mutation testing) to catch correctness regressions in billing and enrollment logic before they reach a tenant."
+      ]
+    },
+    {
+      "toolRef": "liquibase-runner",
+      "bullets": [
+        "Built a VS Code/Neovim extension for managing Liquibase database migrations directly from the editor: sidebar changelog tree, live migration dashboard, and the full command set (update, rollback, diff, snapshot, generate).",
+        "Auto-detects Maven, Gradle, or standalone CLI Liquibase setups, reflecting hands-on familiarity with how schema changes are actually shipped safely in Java backends."
+      ]
+    },
+    {
+      "toolRef": "rust-sqlite",
+      "bullets": [
+        "Implemented a SQLite-compatible database engine from scratch in Rust (page-based storage, B-tree indexing, and query execution) to understand storage-engine internals from first principles."
+      ]
+    }
+  ]
+}

@@ -323,7 +323,7 @@ code, pre {
     margin: 0.8cm;
   }
 
-  body {
+  html, body {
     background: white !important;
     color: black !important;
   }
@@ -335,13 +335,22 @@ code, pre {
     line-height: 1.35;
   }
 
+  .resume-document,
+  .resume-document * {
+    color: black !important;
+    background: transparent !important;
+    -webkit-text-fill-color: black !important;
+  }
+
   .resume-entry {
     page-break-inside: avoid;
     break-inside: avoid;
   }
 
+  .resume-document a,
   a {
-    color: #1d4ed8;
+    color: #1d4ed8 !important;
+    -webkit-text-fill-color: #1d4ed8 !important;
     text-decoration: underline;
   }
 }
