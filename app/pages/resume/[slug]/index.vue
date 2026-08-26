@@ -72,34 +72,15 @@ useHead({
 });
 
 function print() {
-  const el = document.querySelector('.resume-document') as HTMLElement | null;
-  if (!el) {
-    window.print();
-    return;
-  }
-
-  const prev = { maxWidth: el.style.maxWidth, width: el.style.width };
-  el.style.maxWidth = '794px';
-  el.style.width = '794px';
-  const contentHeight = el.scrollHeight;
-  el.style.maxWidth = prev.maxWidth;
-  el.style.width = prev.width;
-
-  const a4Usable = 1062;
-  const zoom = contentHeight > a4Usable ? Math.max(0.78, a4Usable / contentHeight) : 1;
-
-  const style = document.createElement('style');
-  style.id = '__resume-zoom';
-  style.textContent = `@media print { .resume-document { zoom: ${zoom.toFixed(3)} !important; } }`;
-  document.head.appendChild(style);
-
-  window.addEventListener('afterprint', () => document.getElementById('__resume-zoom')?.remove(), { once: true });
+  // Print density (font-size, line-height, margins) is baked directly into the .resume-document
+  // rules in main.css's @media print block, not toggled by JS here, so it applies identically
+  // whether triggered by this button or by the browser's own Ctrl+P / Print menu.
   window.print();
 }
 </script>
 
 <template>
-  <div v-if="resolvedResume" class="min-h-screen pt-20 pb-16">
+  <div v-if="resolvedResume" class="min-h-screen pt-20 pb-16 print:pt-0 print:pb-0">
     <div class="no-print flex items-center justify-between max-w-195 mx-auto px-8 py-4 gap-4">
       <NuxtLink
         to="/resume"

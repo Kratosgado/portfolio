@@ -320,19 +320,33 @@ code, pre {
 
   @page {
     size: A4;
-    margin: 0.8cm;
+    margin: 0.5cm;
   }
 
   html, body {
     background: white !important;
     color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
+  /* Baked in unconditionally (not JS-toggled) so it applies the same way whether the user
+     clicks "Print / Save PDF" or prints via Ctrl+P / the browser's own Print menu, where our
+     JS never runs. Measured to comfortably fit one A4 page even for a dense senior resume. */
   .resume-document {
     max-width: 100% !important;
     padding: 0 !important;
-    font-size: 10.5pt;
-    line-height: 1.35;
+    margin: 0 !important;
+    font-size: 10pt;
+    line-height: 1.3;
+  }
+
+  .resume-document .resume-section {
+    margin-bottom: 5px !important;
+  }
+
+  .resume-document .resume-entry {
+    margin-bottom: 3px !important;
   }
 
   .resume-document,
@@ -342,7 +356,8 @@ code, pre {
     -webkit-text-fill-color: black !important;
   }
 
-  .resume-entry {
+  .resume-entry,
+  .resume-document li {
     page-break-inside: avoid;
     break-inside: avoid;
   }
