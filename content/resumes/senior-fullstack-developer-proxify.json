@@ -1,0 +1,89 @@
+{
+  "slug": "senior-fullstack-developer-proxify",
+  "title": "Senior Fullstack Developer",
+  "targetRole": "Senior Fullstack Developer (React.js / Node.js) – Proxify AB",
+  "isDefault": false,
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
+      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
+      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
+      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
+    ]
+  },
+  "profile": "Full-stack engineer with production Node.js experience (NestJS) and TypeScript across the whole stack. I led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, and I've shipped React in production alongside deeper Vue work. Comfortable with relational schema design and direct SQL, not just ORM abstraction, including PostgreSQL triggers for data-integrity enforcement, and increasingly working with microservices boundaries and event-driven integration (Kafka). No production MongoDB yet, but relational-database fundamentals transfer fast. Based in Ghana (GMT), inside your CET +/-3 hour window.",
+  "education": [
+    {
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
+      "period": "November 2021 – November 2025",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Core Expertise",
+      "items": ["TypeScript", "NestJs", "React", "Node.js", "PostgreSQL", "Spring Boot"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["Vue", "NuxtJs", "ReactJS", "Angular"]
+    },
+    {
+      "category": "Backend & Data",
+      "items": [
+        "Microservices architecture",
+        "Event-driven integration (Kafka)",
+        "SQL & relational schema design",
+        "RESTful API design",
+        "Real-time systems (WebSocket, SSE, Socket.io)"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub Actions", "Docker", "Google Cloud Platform", "JaCoCo"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Zomujo Foundation",
+      "role": "Backend Engineer – Freelance",
+      "period": "Oct 2023 – Feb 2026",
+      "location": "Remote, Ghana",
+      "url": "https://zomujo.com",
+      "bullets": [
+        "Led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns (labs, radiology, diagnosis/prescription) while keeping the API surface backward compatible for existing clients.",
+        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io) for time-sensitive appointment and consultation state changes.",
+        "Built low-latency, stateful real-time flows on Node.js (NestJS) end to end, from data model through API to the client-facing notification, without a dedicated frontend or QA layer to catch gaps."
+      ]
+    },
+    {
+      "company": "Amalitech",
+      "role": "Backend Engineer – NSP",
+      "period": "Nov 2025 – Present",
+      "location": "Takoradi, Ghana",
+      "bullets": [
+        "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to Amalitech's payroll system), including a payload-restructuring pass to match the payroll team's spec.",
+        "Architected a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
+        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching, prioritizing low-latency, stable behavior under load.",
+        "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services, using Spring Boot on the backend and React on the frontend."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "toolRef": "kratos-chat",
+      "bullets": [
+        "Built a full-featured real-time chat application end to end: backend REST + WebSocket (STOMP) API, WebRTC signaling for peer-to-peer voice/video calls, and a Vue 3 frontend with Pinia state management and live typing indicators.",
+        "Chose STOMP over raw WebSocket for the messaging layer to get pub/sub semantics for free instead of hand-rolling message routing, a deliberate low-latency, stable-behavior tradeoff."
+      ]
+    },
+    {
+      "toolRef": "cyale",
+      "bullets": [
+        "Designed and delivered a full-stack website end to end, live in production: Vue/Nuxt/TypeScript frontend, Prisma ORM, and PostgreSQL, deployed on Vercel with image CDN optimization for fast, responsive delivery."
+      ]
+    }
+  ]
+}
