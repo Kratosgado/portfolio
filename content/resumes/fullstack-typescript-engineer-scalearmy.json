@@ -1,0 +1,94 @@
+{
+  "slug": "fullstack-typescript-engineer-scalearmy",
+  "title": "Full Stack TypeScript Engineer",
+  "targetRole": "Full Stack TypeScript Engineer – Next.js & AI (Scale Army)",
+  "isDefault": false,
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
+      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
+      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
+      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
+    ]
+  },
+  "profile": "Full-stack engineer with production TypeScript on both ends of the stack (NestJS backend, React and Vue frontend) and hands-on LLM integration experience: I built the Gemini-powered study feature in Echo, a Flutter app, including schema-constrained generation and a persistent chat session across app restarts. My production frontend work has mostly been Vue/Nuxt rather than Next.js specifically, but the underlying React and App Router concepts transfer directly, and I pick up new frameworks fast. Comfortable with real-time systems (WebSocket, SSE), REST API design, and using AI coding tools (Claude Code) daily while still verifying everything they produce.",
+  "education": [
+    {
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
+      "period": "November 2021 – November 2025",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Core Expertise",
+      "items": ["TypeScript", "React", "NestJs", "Node.js", "PostgreSQL"]
+    },
+    {
+      "category": "Frontend",
+      "items": ["Vue", "NuxtJs", "ReactJS", "Angular"]
+    },
+    {
+      "category": "AI & Real-Time",
+      "items": [
+        "LLM API integration (Gemini)",
+        "Schema-constrained / structured generation",
+        "Prompt engineering for grounded output",
+        "Real-time systems (WebSocket, SSE, Socket.io)",
+        "AI-assisted development (Claude Code)"
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub Actions", "Docker", "Firebase", "Google Cloud Platform"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Zomujo Foundation",
+      "role": "Backend Engineer – Freelance",
+      "period": "Oct 2023 – Feb 2026",
+      "location": "Remote, Ghana",
+      "url": "https://zomujo.com",
+      "bullets": [
+        "Led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns while keeping the API surface backward compatible for existing clients.",
+        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket) for time-sensitive state changes.",
+        "Built low-latency, stateful real-time flows on Node.js (NestJS) end to end, from data model through API to the client-facing notification."
+      ]
+    },
+    {
+      "company": "Amalitech",
+      "role": "Backend Engineer – NSP",
+      "period": "Nov 2025 – Present",
+      "location": "Takoradi, Ghana",
+      "bullets": [
+        "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to Amalitech's payroll system).",
+        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
+        "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services, using Spring Boot on the backend and React on the frontend."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "toolRef": "echo",
+      "bullets": [
+        "Built the Gemini-powered study feature end to end: uploads a PDF as multimodal content, constrains generation with a structured JSON schema, and grounds output with an explicit anti-hallucination prompt so quiz questions never invent content.",
+        "Designed a persistent chat session that survives app restarts by serializing conversation history locally and replaying it into a fresh model session, plus quota/rate-limit handling with user-facing messaging for production reliability."
+      ]
+    },
+    {
+      "toolRef": "kratos-chat",
+      "bullets": [
+        "Built a full-featured real-time chat application end to end: REST + WebSocket (STOMP) API, WebRTC signaling for voice/video calls, and a Vue 3 frontend with Pinia state management."
+      ]
+    },
+    {
+      "toolRef": "linux-simulator",
+      "bullets": [
+        "Built a browser-based, offline-first Linux desktop simulator in Svelte 5 (window manager, file manager, text editor, terminal, all sharing one virtual filesystem), with a framework-free TypeScript OS shell hosting the Svelte apps mounted per-window and a filesystem persisted to IndexedDB via debounced writes."
+      ]
+    }
+  ]
+}
