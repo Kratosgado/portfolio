@@ -10,7 +10,7 @@ const experience = [
     company: 'Amalitech',
     location: 'Takoradi, Ghana',
     period: 'Nov 2025 – Present',
-    role: 'Backend Engineer – NSP',
+    role: 'Backend Engineer',
   },
   {
     bullets: [

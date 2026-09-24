@@ -60,28 +60,27 @@
     },
     {
       "company": "Amalitech",
-      "role": "Backend Engineer – NSP",
+      "role": "Backend Engineer",
       "period": "Nov 2025 – Present",
       "location": "Takoradi, Ghana",
       "bullets": [
-        "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to Amalitech's payroll system).",
-        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
+        "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to Amalitech's payroll system), enforcing data integrity via PostgreSQL triggers.",
         "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services, using Spring Boot on the backend and React on the frontend."
       ]
     }
   ],
   "projects": [
     {
-      "toolRef": "echo",
+      "toolRef": "orbit",
       "bullets": [
-        "Built the Gemini-powered study feature end to end: uploads a PDF as multimodal content, constrains generation with a structured JSON schema, and grounds output with an explicit anti-hallucination prompt so quiz questions never invent content.",
-        "Designed a persistent chat session that survives app restarts by serializing conversation history locally and replaying it into a fresh model session, plus quota/rate-limit handling with user-facing messaging for production reliability."
+        "Built and run Orbit, an internal Jira-style project tracker in real daily use by a small dev group: Nuxt 4, Nitro API deployed as Vercel serverless functions, Postgres/Drizzle, with encrypted secrets (AES-256-GCM), audit logging, and TOTP MFA.",
+        "Built Orbit's MCP server exposing projects, issues, sprints, and secrets as tools so AI agents interact with it directly, plus a published GitHub Action that pulls a project's secrets from Orbit straight into CI, log-masked, instead of duplicating them into GitHub's own secret store."
       ]
     },
     {
-      "toolRef": "kratos-chat",
+      "toolRef": "echo",
       "bullets": [
-        "Built a full-featured real-time chat application end to end: REST + WebSocket (STOMP) API, WebRTC signaling for voice/video calls, and a Vue 3 frontend with Pinia state management."
+        "Built the Gemini-powered study feature end to end: PDFs uploaded as multimodal content, generation constrained by a structured JSON schema and an anti-hallucination prompt, with chat history persisted locally so context survives app restarts."
       ]
     },
     {
