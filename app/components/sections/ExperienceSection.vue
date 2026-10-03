@@ -9,7 +9,7 @@ const experience = [
     ],
     company: 'Amalitech',
     location: 'Takoradi, Ghana',
-    period: 'Nov 2025 – Present',
+    period: 'Nov 2025 – Oct 2026',
     role: 'Backend Engineer',
   },
   {

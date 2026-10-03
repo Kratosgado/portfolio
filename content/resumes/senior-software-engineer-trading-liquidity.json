@@ -50,7 +50,7 @@
     {
       "company": "Amalitech",
       "role": "Backend Engineer",
-      "period": "Nov 2025 – Present",
+      "period": "Nov 2025 – Oct 2026",
       "location": "Takoradi, Ghana",
       "bullets": [
         "Architected and implemented a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",

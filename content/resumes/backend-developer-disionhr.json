@@ -1,0 +1,97 @@
+{
+  "slug": "backend-developer-disionhr",
+  "title": "Backend Developer",
+  "targetRole": "Backend Developer – DisionHR Consult",
+  "isDefault": false,
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
+      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
+      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
+      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
+    ]
+  },
+  "profile": "Backend engineer with production experience across Java/Spring Boot and Node.js/NestJS, PostgreSQL, and REST API design. I own systems end to end: a financial computation engine, a JWT/RBAC authentication architecture, a Kafka event-driven integration, and a from-scratch platform migration, with a consistent focus on data integrity and security. Comfortable picking up new stacks fast, recent work spans Kotlin, TypeScript, Rust, and Dart.",
+  "education": [
+    {
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
+      "period": "November 2021 – November 2025",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Core Expertise",
+      "items": ["Java", "Spring Boot", "Kotlin", "NestJs", "Node.js", "TypeScript", "PostgreSQL"]
+    },
+    {
+      "category": "Backend & Data",
+      "items": [
+        "RESTful API design",
+        "Microservices architecture",
+        "Event-driven integration (Kafka)",
+        "SQL & relational schema design",
+        "Authentication & authorization (JWT, RBAC, OAuth2)",
+        "Data integrity & security"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": ["Vue", "NuxtJs", "ReactJS"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub Actions", "Docker", "Google Cloud Platform", "JaCoCo"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Amalitech",
+      "role": "Backend Engineer",
+      "period": "Nov 2025 – Oct 2026",
+      "location": "Takoradi, Ghana",
+      "bullets": [
+        "Architected a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
+        "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to the payroll system), with versioned configs and cascade-safe deletion to protect referential integrity.",
+        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
+        "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard."
+      ]
+    },
+    {
+      "company": "Zomujo Foundation",
+      "role": "Backend Engineer – Freelance",
+      "period": "Oct 2023 – Feb 2026",
+      "location": "Remote, Ghana",
+      "url": "https://zomujo.com",
+      "bullets": [
+        "Led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns while keeping the API surface backward compatible for existing clients.",
+        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io)."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "toolRef": "orbit",
+      "bullets": [
+        "Built and run Orbit, an internal project tracker in real daily use by a small dev group: Nuxt 4, Nitro API on Vercel serverless functions, Postgres/Drizzle, with encrypted secrets (AES-256-GCM), audit logging, and TOTP MFA.",
+        "Built Orbit's MCP server exposing projects, issues, sprints, and secrets as tools, plus a published GitHub Action that pulls a project's secrets from Orbit straight into CI, log-masked."
+      ]
+    },
+    {
+      "name": "Adzesua: Multi-Tenant School Management Platform",
+      "year": "2026",
+      "links": [],
+      "bullets": [
+        "Building a multi-tenant Spring Boot/Kotlin backend (tenant onboarding, fee structures, installment billing, Paystack payments) with Google OAuth2 and structured request-lifecycle logging."
+      ]
+    },
+    {
+      "toolRef": "cyale",
+      "bullets": [
+        "Designed and delivered a full-stack website end to end, live in production: Prisma ORM and PostgreSQL backend, deployed on Vercel with image CDN optimization for fast, responsive delivery."
+      ]
+    }
+  ]
+}

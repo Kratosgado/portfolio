@@ -61,7 +61,7 @@
     {
       "company": "Amalitech",
       "role": "Backend Engineer",
-      "period": "Nov 2025 – Present",
+      "period": "Nov 2025 – Oct 2026",
       "location": "Takoradi, Ghana",
       "bullets": [
         "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to Amalitech's payroll system), including a payload-restructuring pass to match the payroll team's spec.",
@@ -72,13 +72,6 @@
     }
   ],
   "projects": [
-    {
-      "toolRef": "kratos-chat",
-      "bullets": [
-        "Built a full-featured real-time chat application end to end: backend REST + WebSocket (STOMP) API, WebRTC signaling for peer-to-peer voice/video calls, and a Vue 3 frontend with Pinia state management and live typing indicators.",
-        "Chose STOMP over raw WebSocket for the messaging layer to get pub/sub semantics for free instead of hand-rolling message routing, a deliberate low-latency, stable-behavior tradeoff."
-      ]
-    },
     {
       "toolRef": "cyale",
       "bullets": [
