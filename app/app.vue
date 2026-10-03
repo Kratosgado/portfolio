@@ -42,15 +42,11 @@ const navItems = [
   { href: '/#experience', label: 'Experience' },
   { href: '/#projects', label: 'Projects' },
   { external: true, href: 'https://blog.bitshiftdevs.com', label: 'Blog' },
-  { href: '/resume', label: 'Resume' },
 ];
 </script>
 
 <template>
-  <div
-    v-if="profile"
-    class="min-h-screen text-[var(--color-text-primary)]"
-  >
+  <div v-if="profile" class="min-h-screen text-[var(--color-text-primary)]">
     <!-- Floating Navigation -->
     <nav
       :class="['floating-nav', { scrolled: isScrolled }]"
@@ -96,12 +92,6 @@ const navItems = [
         </a>
       </div>
     </nav>
-
-    <!-- Global fluid cursor overlay -->
-    <ClientOnly>
-      <FluidCursor />
-    </ClientOnly>
-
     <!-- Page Content -->
     <NuxtPage :transition="{ name: 'page', mode: 'out-in' }" />
 
