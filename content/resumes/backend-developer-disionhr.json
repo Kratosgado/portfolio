@@ -12,7 +12,7 @@
       { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
     ]
   },
-  "profile": "Backend engineer with production experience across Java/Spring Boot and Node.js/NestJS, PostgreSQL, and REST API design. I own systems end to end: a financial computation engine, a JWT/RBAC authentication architecture, a Kafka event-driven integration, and a from-scratch platform migration, with a consistent focus on data integrity and security. Comfortable picking up new stacks fast, recent work spans Kotlin, TypeScript, Rust, and Dart.",
+  "profile": "Backend engineer with production experience across Java/Spring Boot, Node.js/NestJS, and Rust (Actix Web, SeaORM), with PostgreSQL and REST API design throughout. I own systems end to end: a financial computation engine, a JWT/RBAC authentication architecture, a Kafka event-driven integration, and a from-scratch platform migration (one of them a full rewrite from a legacy Kotlin service to Rust), with a consistent focus on data integrity and security.",
   "education": [
     {
       "institution": "Kwame Nkrumah University of Science and Technology",
@@ -24,7 +24,7 @@
   "skills": [
     {
       "category": "Core Expertise",
-      "items": ["Java", "Spring Boot", "Kotlin", "NestJs", "Node.js", "TypeScript", "PostgreSQL"]
+      "items": ["Java", "Spring Boot", "Rust", "Actix Web", "NestJs", "Node.js", "TypeScript", "PostgreSQL"]
     },
     {
       "category": "Backend & Data",
@@ -55,8 +55,7 @@
       "bullets": [
         "Architected a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
         "Owned an automated financial computation engine end to end (data model, API, and a Kafka integration publishing finalized data to the payroll system), with versioned configs and cascade-safe deletion to protect referential integrity.",
-        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
-        "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard."
+        "Enforced data-integrity constraints via PostgreSQL triggers, resolved N+1 query issues via batch fetching, and maintained 70%+ test coverage (JaCoCo, Hurl E2E) with rate limiting (100 req/min/user)."
       ]
     },
     {
@@ -84,13 +83,13 @@
       "year": "2026",
       "links": [],
       "bullets": [
-        "Building a multi-tenant Spring Boot/Kotlin backend (tenant onboarding, fee structures, installment billing, Paystack payments) with Google OAuth2 and structured request-lifecycle logging."
+        "Rewrote a multi-tenant school-management backend from a legacy Kotlin/Ktor service to Rust (Actix Web, SeaORM, PostgreSQL with row-level security for tenant isolation): tenant onboarding, fee structures, installment billing with Paystack webhook-verified payments, and Google OAuth2."
       ]
     },
     {
-      "toolRef": "cyale",
+      "toolRef": "runnerx",
       "bullets": [
-        "Designed and delivered a full-stack website end to end, live in production: Prisma ORM and PostgreSQL backend, deployed on Vercel with image CDN optimization for fast, responsive delivery."
+        "Building Runnerx's backend in Rust (Actix Web, async-graphql, SeaORM/PostgreSQL): errand lifecycle, wallets with Paystack-backed payments, and a geospatial pricing engine, with real-time subscriptions over WebSocket."
       ]
     }
   ]

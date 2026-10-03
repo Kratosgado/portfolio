@@ -12,7 +12,7 @@
       { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
     ]
   },
-  "profile": "Full-stack engineer who takes ambiguous features from a blank page to a shipped system: scoping the problem, proposing the architecture, aligning the team, and delivering it. Comfortable across the stack (Spring Boot, NestJS, Kotlin, Vue/Nuxt, React), with practical DDD and service-boundary experience from production feature work and a hands-on monolith-to-microservices migration exercise. I mentor teammates directly, work closely with Product Owners, and have caught data-correctness issues before they reached production. No production .NET Core or React Native yet, but I pick up stacks fast: my background already spans Java, Kotlin, TypeScript, and Rust.",
+  "profile": "Full-stack engineer who takes ambiguous features from a blank page to a shipped system: scoping the problem, proposing the architecture, aligning the team, and delivering it. Comfortable across the stack (Spring Boot, NestJS, Kotlin, Rust, Vue/Nuxt, React), with practical DDD and service-boundary experience from production work and a hands-on monolith-to-microservices migration exercise. I mentor teammates directly and have caught data-correctness issues before they reached production. No production .NET Core or React Native yet, but I pick up stacks fast.",
   "education": [
     {
       "institution": "Kwame Nkrumah University of Science and Technology",
@@ -53,10 +53,10 @@
       "location": "Takoradi, Ghana",
       "bullets": [
         "Owned the Bonus Period feature end to end from an open-ended ask: scoped it into a lifecycle state machine (upcoming, active, computing, finance review, finalized, closed) and presented it to align the team on a new shared computation model.",
-        "Published computed bonus data to Kafka for consumption by Amalitech's payroll service, restructuring the payload to match their spec and coordinating directly with them on the integration contract.",
-        "Proactively flagged access-control and architecture risks to the Product Owner ahead of incidents, and caught a data-correctness bug (wrong computation cutoff date) before it reached production.",
+        "Published computed bonus data to Kafka for consumption by Amalitech's payroll service, restructuring the payload to match their spec and coordinating directly with them on the contract.",
+        "Proactively flagged access-control risks to the Product Owner ahead of incidents, and caught a data-correctness bug before it reached production.",
         "Mentored teammates directly: set up mock-server backend integration for one colleague, walked another through scoring/configuration internals, and paired on frontend pipeline fixes.",
-        "Architected JWT/RSA authentication with SSO and RBAC across six roles; enforced data integrity via PostgreSQL triggers, fixed N+1 GraphQL queries with batch fetching, and kept 70%+ test coverage (JaCoCo, Hurl E2E) with rate limiting as a production-grade standard."
+        "Architected JWT/RSA authentication with SSO and RBAC across six roles; enforced data integrity via PostgreSQL triggers and kept 70%+ test coverage (JaCoCo, Hurl E2E) with rate limiting."
       ]
     },
     {
@@ -66,8 +66,7 @@
       "location": "Remote, Ghana",
       "url": "https://zomujo.com",
       "bullets": [
-        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io) for time-sensitive appointment and consultation state changes.",
-        "Led an EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns (labs, radiology, diagnosis/prescription) while keeping the API surface backward compatible for existing clients."
+        "2.5+ years progressively owning backend systems for a health-tech platform: cloud storage, verification flows, PDF generation, real-time notifications (SSE, WebSocket), and an EMR migration from TSOA to NestJS/Prisma with zero data loss."
       ]
     }
   ],
@@ -77,14 +76,13 @@
       "year": "2026",
       "links": [],
       "bullets": [
-        "Completed a hands-on architecture lab decomposing a Spring Boot monolith into four bounded-context services (Customer, Restaurant, Order, Delivery) with DTO/event contracts, service discovery (Eureka), and an API gateway with edge JWT auth, containerized via Docker Compose.",
-        "Implemented event-driven communication with RabbitMQ (topic exchange, dead-letter queues, retry policy) and fault tolerance with Resilience4j circuit breakers and fallbacks."
+        "Completed a hands-on architecture lab decomposing a Spring Boot monolith into four bounded-context services with service discovery (Eureka), an API gateway with edge JWT auth, RabbitMQ event-driven communication, and Resilience4j circuit breakers, containerized via Docker Compose."
       ]
     },
     {
       "toolRef": "cyale",
       "bullets": [
-        "Designed and delivered a full-stack nonprofit website end to end, live in production (NuxtJs/Vue 3/TypeScript, Prisma, PostgreSQL, Vercel): member auth, an impact showcase, event announcements, and a donation flow, owned from schema through UI."
+        "Designed and delivered a full-stack nonprofit website end to end, live in production (NuxtJs/Vue 3/TypeScript, Prisma, PostgreSQL, Vercel), owned from schema through UI."
       ]
     },
     {
@@ -92,7 +90,7 @@
       "year": "2026",
       "links": [],
       "bullets": [
-        "Building a multi-tenant Spring Boot/Kotlin backend (tenant onboarding, fee structures, installment billing, Paystack payments) with per-tenant branding, Google OAuth2, and structured request-lifecycle logging."
+        "Rewrote a multi-tenant school-management backend from a legacy Kotlin/Ktor service to Rust (Actix Web, SeaORM, PostgreSQL with row-level security for tenant isolation): tenant onboarding, fee structures, and installment billing with Paystack webhook-verified payments."
       ]
     }
   ]

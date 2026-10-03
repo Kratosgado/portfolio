@@ -12,7 +12,7 @@
       { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
     ]
   },
-  "profile": "Backend-focused engineer with production Spring Boot experience building audit-critical, referentially-strict systems, from RSA/JWT authorization to an automated financial computation engine gated by multi-stage approval and published downstream through Kafka to a payroll system. I'm also building a multi-tenant SaaS backend with live Paystack payment integration on the side. Comfortable owning correctness under concurrency, investigating production incidents, and reasoning about trade-offs between consistency and throughput in financially-sensitive systems.",
+  "profile": "Backend-focused engineer with production Spring Boot experience building audit-critical, referentially-strict systems, from RSA/JWT authorization to a financial computation engine gated by multi-stage approval and published downstream through Kafka. I also rewrote a multi-tenant SaaS backend from Kotlin to Rust (Actix Web, SeaORM) with live Paystack payments on the side. Comfortable owning correctness under concurrency and reasoning about consistency/throughput trade-offs in financially-sensitive systems.",
   "education": [
     {
       "institution": "Kwame Nkrumah University of Science and Technology",
@@ -54,10 +54,9 @@
       "location": "Takoradi, Ghana",
       "bullets": [
         "Architected and implemented a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
-        "Owned an automated financial computation engine (PI-period bonus/performance scoring) gated by a multi-stage approval lifecycle (staffing computation, finance sign-off, finalized, closed) before data is released downstream, with versioned scoring configs and cascade-safe deletion to protect referential integrity.",
-        "Built the Kafka event-publishing integration that syncs finalized bonus data to Amalitech's payroll system, including a data-restructuring pass to match the payroll team's consumption spec, coordinating directly with the downstream system owner on schema and delivery contract.",
-        "Enforced data-integrity constraints via PostgreSQL triggers and resolved N+1 query performance issues in a GraphQL integration through batch fetching.",
-        "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard.",
+        "Owned an automated financial computation engine (PI-period bonus/performance scoring) gated by a multi-stage approval lifecycle (staffing computation, finance sign-off, finalized, closed) before data is released downstream.",
+        "Built the Kafka event-publishing integration that syncs finalized bonus data to Amalitech's payroll system, restructuring the payload to match the payroll team's spec and coordinating directly with them on the contract.",
+        "Enforced data-integrity constraints via PostgreSQL triggers, resolved N+1 query issues via batch fetching, and maintained 70%+ test coverage (JaCoCo, Hurl E2E) with rate limiting (100 req/min/user).",
         "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services (Spring Boot + React), supporting production incident investigation."
       ]
     },
@@ -68,8 +67,7 @@
       "location": "Remote, Ghana",
       "url": "https://zomujo.com",
       "bullets": [
-        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io) for time-sensitive appointment and consultation state changes.",
-        "Led an EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns (labs, radiology, diagnosis/prescription) while keeping the API surface backward compatible for existing clients."
+        "2.5+ years progressively owning backend systems for a health-tech platform: cloud storage, verification flows, PDF generation, real-time notifications (SSE, WebSocket), and an EMR migration from TSOA to NestJS/Prisma with zero data loss."
       ]
     }
   ],
@@ -79,22 +77,14 @@
       "year": "2026",
       "links": [],
       "bullets": [
-        "Building a multi-tenant Spring Boot/Kotlin backend handling tenant onboarding, fee structures, and installment billing, integrated with Paystack for live payment processing.",
-        "Implemented per-tenant branding, Google OAuth2 authentication, and structured request-lifecycle logging (per-operation timing and outcome) to keep multi-tenant behavior observable and debuggable.",
-        "Applying a production-grade testing standard to the codebase (JaCoCo coverage, PIT mutation testing) to catch correctness regressions in billing and enrollment logic before they reach a tenant."
+        "Rewrote a multi-tenant school-management backend from a legacy Kotlin/Ktor service to Rust (Actix Web, SeaORM, PostgreSQL with row-level security for tenant isolation): tenant onboarding, fee structures, and installment billing with Paystack webhook-verified payments.",
+        "Implemented per-tenant branding and Google OAuth2 authentication, with structured request-lifecycle logging to keep multi-tenant behavior observable and debuggable."
       ]
     },
     {
       "toolRef": "liquibase-runner",
       "bullets": [
-        "Built a VS Code/Neovim extension for managing Liquibase database migrations directly from the editor: sidebar changelog tree, live migration dashboard, and the full command set (update, rollback, diff, snapshot, generate).",
-        "Auto-detects Maven, Gradle, or standalone CLI Liquibase setups, reflecting hands-on familiarity with how schema changes are actually shipped safely in Java backends."
-      ]
-    },
-    {
-      "toolRef": "rust-sqlite",
-      "bullets": [
-        "Implemented a SQLite-compatible database engine from scratch in Rust (page-based storage, B-tree indexing, and query execution) to understand storage-engine internals from first principles."
+        "Built a VS Code/Neovim extension for managing Liquibase database migrations directly from the editor: sidebar changelog tree, live migration dashboard, and the full command set (update, rollback, diff, snapshot, generate), auto-detecting Maven, Gradle, or standalone CLI setups."
       ]
     }
   ]
