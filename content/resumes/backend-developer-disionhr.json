@@ -63,7 +63,7 @@
       "role": "Backend Engineer – Freelance",
       "period": "Oct 2023 – Feb 2026",
       "location": "Remote, Ghana",
-      "url": "https://zomujo.com",
+      "url": "https://fornixlink.com",
       "bullets": [
         "Led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns while keeping the API surface backward compatible for existing clients.",
         "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud file storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket/Socket.io)."

@@ -12,7 +12,7 @@
       "bullets": [
         "Worked in a team of 4 for 4 days to build a fully functional logging system for processing logs from different services and provided detailed analysis using Spring Boot and React.",
         "Architected and implemented a JWT RSA-based authentication and authorization system with SSO integration, custom @Authorization annotations, and role-based access control across six user roles.",
-        "Owned the design and delivery of a performance scoring engine managing PI periods, scoring frameworks, and automated target/bonus computation — reducing manual effort and closing referential-integrity gaps via cascade deletion logic.",
+        "Owned the design and delivery of a performance scoring engine managing PI periods, scoring frameworks, and automated target/bonus computation, reducing manual effort and closing referential-integrity gaps via cascade deletion logic.",
         "Resolved N+1 query performance issues in a GraphQL integration through batch fetching, and enforced data-integrity constraints via PostgreSQL triggers.",
         "Implemented aggregated monthly bonus computation per employee, seniority level management with pagination, and cascade deletion logic to maintain referential integrity across PI periods.",
         "Built rate limiting (100 req/min/user) and maintained 70%+ test coverage (JaCoCo, Hurl E2E) as part of a production-grade engineering standard."
@@ -30,7 +30,7 @@
       "location": "Remote, Ghana",
       "period": "Oct 2023 – Feb 2026",
       "role": "Backend Engineer – Freelance",
-      "url": "https://zomujo.com"
+      "url": "https://fornixlink.com"
     }
   ],
   "header": {
