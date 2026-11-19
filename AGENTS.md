@@ -1,74 +1,55 @@
-# Agent Guidelines for Portfolio Project
+# AGENTS.md
 
-This document provides essential context and rules for AI agents working on this codebase.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## 1. Project Overview
+## Stack
 
-- **Framework**: Nuxt 4 (with Vue 3 Composition API)
-- **Styling**: Tailwind CSS v4, @nuxt/ui
-- **Language**: TypeScript
-- **Package Manager**: bun
+Nuxt 4 (Vue 3, `<script setup lang="ts">`), Nuxt UI v4, Tailwind CSS v4, Nuxt Content v3 (SQLite via `better-sqlite3`), GSAP / motion-v for animation, `nuxt-studio` for in-browser content editing. Package manager is **bun**.
 
-## 2. Build & Development Commands
+## Commands
 
-Use these commands to run, build, and verify the application.
+| Command             | Purpose                                                                |
+| :------------------ | :--------------------------------------------------------------------- |
+| `bun run dev`       | Dev server (<http://localhost:3000>)                                     |
+| `bun run build`     | Production build (`NITRO_PRESET` selects target; defaults to `vercel`) |
+| `bun run preview`   | Preview the production build                                           |
+| `bun run lint`      | `biome check` (formatting + lint + import/key sorting)                 |
+| `bun run typecheck` | `nuxt typecheck` (vue-tsc)                                             |
 
-| Command             | Description                                   |
-| :------------------ | :-------------------------------------------- |
-| `bun run dev`       | Start the development server                  |
-| `bun run build`     | Build the application for production          |
-| `bun run preview`   | Preview the production build                  |
-| `bun run lint`      | Run Biomeint to check for code quality issues |
-| `bun run typecheck` | Run Vue/TypeScript type checking              |
+There are no tests. Verify changes with `lint`, `typecheck`, and `build`.
 
-**Note**: There are currently no unit tests configured. Rely on `lint`, `typecheck`, and `build` to verify changes.
+## Architecture
 
-## 3. Code Style & Conventions
+**All site data lives in `content/`, not in TS files.** Collections are defined and Zod-validated in `content.config.ts`; pages read them with `queryCollection('<name>')`:
 
-### General
+- `content/profile.json` → `profile` (name, bio, links; accessed via `useProfile()`)
+- `content/projects/*.md` → `projects` (markdown pages; front matter has `rank`, `stack`, `toolType`, `installs`, `liveUrl`, `resumeBullets`, …)
+- `content/certificates/*.json` → `certificates`
+- `content/resumes/*.json` → `resumes` (one file per targeted resume variant, e.g. per employer/role)
 
-- **Formatting**:
-  - Indentation: 2 spaces
-  - Quotes: Single quotes (`'`)
-  - Semicolons: Always use semicolons
-  - Trailing Commas: Yes, where valid (ES5+)
-  - Line Width: 120 characters (per `biome.json`)
-- **Linter**: This project uses both Biome and ESLint. Ensure code complies with the rules defined in `biome.json` .
+Adding or changing content means editing these files to match the schema in `content.config.ts`; changing the shape means updating the schema too.
 
-### Vue & Nuxt
+**Resumes reference projects.** In `app/pages/resume/[slug]/index.vue`, a resume `projects[]` entry with `toolRef` is resolved against the `projects` collection by `slug`: title, install count suffix, and GitHub/live links are derived from the project, while only `bullets` come from the resume. Entries without `toolRef` use their own `name`/`links`. Rendering is done by `app/components/resume/ResumeDocument.vue`; print layout is controlled entirely by the `@media print` block in `app/assets/css/main.css` (no JS toggling).
 
-- **Component Style**: Use `<script setup lang="ts">` for all components.
-- **Auto-imports**: Leverage Nuxt's auto-import feature for Vue composables (`ref`, `computed`), Nuxt utils (`useHead`, `useRoute`), and project utils (from `app/utils`). Do not manually import these unless necessary.
-- **Directory Structure**:
-  - Components go in `app/components/`
-  - Pages go in `app/pages/`
-  - Utilities and types go in `app/utils/`
-  - Global styles in `app/assets/css/`
-- **Naming**:
-  - Components: PascalCase (e.g., `ProjectCard.vue`, `CertificateCard.vue`)
-  - Composables: camelCase, prefixed with `use` (e.g., `useTheme`)
-  - Prop Interfaces: Define props using `defineProps<{ ... }>()` generic syntax.
+**Pages** (`app/pages/`): `index.vue` composes the landing page from `app/components/sections/*` over a client-only `SilkBackground` shader; `projects/[slug].vue`; `resume/index.vue` and `resume/[slug]/index.vue`. `/`, `/resume`, and `/resume/**` are prerendered (see `routeRules` in `nuxt.config.ts`).
 
-### TypeScript
+**Components:** `components` is configured with `pathPrefix: false`, so `app/components/sections/HeroSection.vue` is used as `<HeroSection />`. `components/inspira/` holds vendored Inspira UI effects (WebGL/ogl shaders) that must be wrapped in `<ClientOnly>`. GSAP is registered in `app/plugins/gsap.client.ts`.
 
-- **Strictness**: Types are enforced. Avoid `any`. Use interfaces or types for data structures (e.g., `Project`, `Certificate` in `app/utils/types.ts`).
-- **Data Files**: Static data should be typed and exported as `const` from `app/utils/data.ts`.
+**Theme:** color mode is forced to dark (`nuxt.config.ts`); custom styling uses CSS variables like `--color-accent-start` from `app/assets/css/main.css`.
 
-### CSS / UI
+## Deployment
 
-- **Tailwind**: Use utility classes for layout and spacing.
-- **Nuxt UI**: Prefer `@nuxt/ui` components (e.g., `UPageHero`, `UPageSection`) over building custom UI elements from scratch when possible.
-- **Icons**: Use the icon format `i-<collection>-<name>` (e.g., `i-lucide-mail`, `i-simple-icons-github`).
+Two targets from the same build: Vercel (`vercel.json`, default preset) and GitHub Pages via `.github/workflows/deploy.yml` (sets `NITRO_PRESET=github_pages`, pushes `.output/public` to `Kratosgado/Kratosgado.github.io` on every push to `main`).
 
-## 4. Error Handling
+## Code Style
 
-- Use `try/catch` blocks for async operations.
-- Ensure UI handles loading and error states gracefully, even if basic.
+Enforced by `biome.json` (run `bun run lint`): 2-space indent, single quotes, semicolons, trailing commas, 120-col lines, **object keys sorted naturally** (`useSortedKeys`), and sorted imports. Biome only covers `app/`, `content/`, and a few root config files.
 
-## 5. Agent Workflow
+- Rely on Nuxt auto-imports (`ref`, `computed`, `useRoute`, `queryCollection`, composables in `app/composables/`); don't import them manually.
+- Define props with `defineProps<{ ... }>()`; avoid `any`.
+- Prefer Nuxt UI components (`UPageHero`, `UPageSection`, `UIcon`, …); icons use `i-<collection>-<name>` (e.g. `i-lucide-mail`, `i-simple-icons-github`). Only the `lucide`, `simple-icons`, and `heroicons` icon sets are installed.
+- Handle loading and error states for async data (e.g. `throw createError({ statusCode: 404 })` when a content query returns nothing).
 
-1. **Analyze**: Read relevant files in `app/` to understand context.
-2. **Plan**: Verify dependencies and existing patterns before writing code.
-3. **Implement**: Write code following the style guides above.
-4. **Verify**: Run `bun run typecheck` and `bun run lint` to ensure no regressions.
-5. **Commit**: Keep changes atomic and descriptive.
+## Notes
+
+The user's Obsidian vault is at `~/vaults` (folders such as `work/`, `web/`, `personal/`, `dailies/`). It holds their personal notes and background on their experience and projects, so consult it when writing or updating resume, project, or profile content. Treat it as private: read from it, don't copy its contents into committed files without being asked, and don't modify it.
