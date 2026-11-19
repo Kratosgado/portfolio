@@ -1,0 +1,82 @@
+{
+  "slug": "fullstack-developer-accra",
+  "title": "Full-Stack Developer",
+  "targetRole": "Full-Stack Developer – React, Node.js & PostgreSQL (Accra)",
+  "isDefault": false,
+  "header": {
+    "name": "Essilfie Prince Mbeah",
+    "links": [
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/kratosgado" },
+      { "label": "GitHub", "url": "https://github.com/Kratosgado" },
+      { "label": "Portfolio", "url": "https://www.kratosgado.dev" },
+      { "label": "Credly Badges", "url": "https://www.credly.com/users/kratosgado" }
+    ]
+  },
+  "profile": "Full-stack developer with 2.5+ years of production experience building REST APIs and database-backed systems in TypeScript and Node.js (NestJS), with React and Vue frontends. I design PostgreSQL schemas, enforce data integrity at the database level, and manage all my work through Git and GitHub, including CI with GitHub Actions. I write clean, maintainable code and ship end to end, from data model to API to UI.",
+  "education": [
+    {
+      "institution": "Kwame Nkrumah University of Science and Technology",
+      "degree": "BSc Computer Science with MTN Bright Scholarship Reloaded. First Class Honours",
+      "period": "November 2021 – November 2025",
+      "bullets": []
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Tailwind CSS", "Vue", "NuxtJs"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "NestJs", "REST API design", "WebSocket", "SSE", "Kafka"]
+    },
+    {
+      "category": "Databases",
+      "items": ["PostgreSQL", "Prisma", "Drizzle", "Database design", "SQL triggers"]
+    },
+    {
+      "category": "Tools",
+      "items": ["Git", "GitHub", "GitHub Actions", "Docker"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Amalitech",
+      "role": "Backend Engineer",
+      "period": "Nov 2025 – Oct 2026",
+      "location": "Takoradi, Ghana",
+      "bullets": [
+        "Owned an automated financial computation engine end to end (data model, REST API, and a Kafka integration publishing finalized data to Amalitech's payroll system), enforcing data integrity via PostgreSQL triggers.",
+        "Worked in a team of 4 to build a logging system for aggregating and analyzing logs across services, using Spring Boot on the backend and React on the frontend."
+      ]
+    },
+    {
+      "company": "Zomujo Foundation",
+      "role": "Backend Engineer – Freelance",
+      "period": "Oct 2023 – Feb 2026",
+      "location": "Remote, Ghana",
+      "url": "https://fornixlink.com",
+      "bullets": [
+        "Led a from-scratch EMR migration from TSOA to NestJS/Prisma with zero data loss, restructuring serialized JSON columns while keeping the API surface backward compatible for existing clients.",
+        "2.5+ years progressively owning backend systems for a health-tech platform, from intern to freelance engineer: cloud storage, verification flows, PDF generation, and real-time notifications (SSE, WebSocket).",
+        "Built stateful real-time flows on Node.js (NestJS) end to end, from data model through API to the client-facing notification."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "toolRef": "cyale",
+      "bullets": [
+        "Designed and delivered the full-stack website for CYALE, a youth-advocacy nonprofit in Abuesi, Ghana, using Nuxt, Vue 3, TypeScript, and PostgreSQL, live at cyale.org.",
+        "Built member authentication, an impact showcase, event announcements, a donation flow, and a leadership directory, with Prisma for type-safe database access."
+      ]
+    },
+    {
+      "toolRef": "orbit",
+      "bullets": [
+        "Built and run Orbit, a Jira-style project tracker in daily use by a small dev group: Nuxt 4 frontend, Nitro REST API on Vercel serverless functions, Postgres/Drizzle, with encrypted secrets (AES-256-GCM), audit logging, and TOTP MFA.",
+        "Published a GitHub Action that pulls a project's secrets from Orbit into CI, log-masked, instead of duplicating them into GitHub's secret store."
+      ]
+    }
+  ]
+}
